@@ -6,11 +6,11 @@
 #include <stdlib.h>
 /*使用C的函數調用機制和名字處理規則，而非C++的Name Mangling*/
 #ifdef __cplusplus
-extern "C"{
-#include "Sorting_algorithm.h"
+  extern "C"{
+    #include "Sorting_algorithm.h"
 #endif
 #ifdef __cplusplus
-}
+  }
 #endif
 void readFile(int *dataSize, int data[]);
 void mean(const int [], int);
@@ -47,7 +47,7 @@ int main()
     median(data, dataSize);
     mode(frequency, data, dataSize);
 
-    return 0;  // indicates successful termination
+    return 0;  // indicates successful terminhttps://docs.google.com/?tab=Xo&authuser=0#homeation
 }
 
 void readFile(int *dataSize, int data[])
@@ -61,7 +61,7 @@ void readFile(int *dataSize, int data[])
 
      fp = fopen(filename, "rt");
      fscanf(fp, "%d", dataSize);
-     for (i=0; i<*dataSize; i++)
+     for (i=0; i < *dataSize; i++)
           fscanf(fp, "%d", &data[i]);
      fclose(fp);
 }
@@ -108,7 +108,7 @@ void median(int dataArray[], int arraySize)
 // function that sorts an array
 void sort(int a[], int size)
 {
-  mergeSort(a, 0, size);
+  mergeSort(a, 0, size - 1);
   return;
 }
 
