@@ -4,7 +4,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+/*使用C的函數調用機制和名字處理規則，而非C++的Name Mangling*/
+#ifdef __cplusplus
+extern "C"{
+#include "Sorting_algorithm.h"
+#endif
+#ifdef __cplusplus
+}
+#endif
 void readFile(int *dataSize, int data[]);
 void mean(const int [], int);
 void median(int [], int);
@@ -13,7 +20,7 @@ void sort(int[], int);
 void printArray(const int[], int);
 
 #define DATASIZE 150
-#define DEBUG
+#define NDEBUG
 
 int main()
 {
@@ -101,13 +108,16 @@ void median(int dataArray[], int arraySize)
 // function that sorts an array
 void sort(int a[], int size)
 {
+  mergeSort(a, 0, size);
+  return;
 }
 
 
 // determine most frequent data value
+/*freq陣列：*/
 void mode(int freq[], int dataArray[], int arraySize)
 {
-    int i, j, k;
+    int /*i,*/ j, k;
     int rating;
     int largest = 0;    // represents largest frequency
     int modeValue = 0;  // represents most frequent response
@@ -115,6 +125,15 @@ void mode(int freq[], int dataArray[], int arraySize)
     printf("\n********\n  Mode\n********\n");
 
     // calculate the occuring frequency of data
+    /* 將frequency陣列初始化為0 */
+    for ( rating = 1; rating <= 9; rating++ ) {
+      freq[ rating ] = 0;
+    } /* end for */
+
+    /* 總結frequency陣列 */
+    for ( j = 0; j < arraySize; j++ ) {
+      ++freq[ dataArray[ j ]];
+    } /* end for */
 
     // output headers for result columns
     printf("Data  Frequency       Histogram\n"
