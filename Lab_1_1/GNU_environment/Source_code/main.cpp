@@ -1,46 +1,46 @@
 /*main.cpp
 -----------------------------------
-ç¨‹å¼æ¡†æ¶ç‰ˆæœ¬(program framework version)ï¼šA
-ç¨‹å¼æ¡†æ¶ä¿®è¨‚è™Ÿ(program framework revision number)ï¼š201109251624
-æ›´æ–°ç´€éŒ„(changelog)ï¼š
+µ{¦¡®Ø¬[ª©¥»(program framework version)¡GA
+µ{¦¡®Ø¬[­×­q¸¹(program framework revision number)¡G201109251624
+§ó·s¬ö¿ı(changelog)¡G
   Changelog is now stored on github.
-å·²çŸ¥å•é¡Œ(known issues)ï¼š
+¤wª¾°İÃD(known issues)¡G
   Known issues is now stored on github.
 
   Todo is now stored on github.
 */
 
-/*--------------ç¨‹å¼ç¢¼é–‹å§‹(Code Started)--------------*/
-/*--------------å‰æœŸè™•ç†å™¨æŒ‡ä»¤(Preprocessor Directive)--------------*/
-/*////////ç’°å¢ƒè¨­å®š(Environment Settings)////////*/
-/*æ˜¯å¦é¡¯ç¤ºåµéŒ¯æ•¸æ“šï¼ˆï¼ç‚ºå¦ï¼‰ï¼Ÿ*/
-/*#define SHOW_DEBUG_MESSAGE 0*/
+/*--------------µ{¦¡½X¶}©l(Code Started)--------------*/
+/*--------------«e´Á³B²z¾¹«ü¥O(Preprocessor Directive)--------------*/
+/*////////Àô¹Ò³]©w(Environment Settings)////////*/
+/*¬O§_Åã¥Ü°»¿ù¼Æ¾Ú¡]¢¯¬°§_¡^¡H*/
+/*#define SHOW_DEBUG_MESSAGE*/
 
-/*ç·¨è­¯ï¼¯ï¼³ç¨®é¡ï¼š
+/*½sÄ¶¢İ¢áºØÃş¡G
 Windows console = 0, Linux console = 1, Symbian console = 2, PSP console = 3*/
-#define SYSTEM_CATEGORY 1
+#define SYSTEM_CATEGORY 0
 
 #define DEBUG
 
-/*////////ç¨‹å¼æ‰€includeçš„æ¨™é ­æª”(Included Headers)////////*/
+/*////////µ{¦¡©Òincludeªº¼ĞÀYÀÉ(Included Headers)////////*/
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "io.h"
 #include "statistics.h"
-/*////////å¸¸æ•¸èˆ‡å·¨é›†(Constants & Macros)ä»¥åŠå…¶ä»–#defineæŒ‡ä»¤////////*/
+/*////////±`¼Æ»P¥¨¶°(Constants & Macros)¥H¤Î¨ä¥L#define«ü¥O////////*/
 
 #define DATASIZE 150
-/*////////å…¶ä»–å‰æœŸè™•ç†å™¨æŒ‡ä»¤(Other Preprocessor Directives////////*/
+/*////////¨ä¥L«e´Á³B²z¾¹«ü¥O(Other Preprocessor Directives////////*/
 
-/*--------------å…¨åŸŸå®£å‘Šèˆ‡å®šç¾©(Global Declaration & Definition)--------------*/
-/*////////è³‡æ–™çµæ§‹(Structures)ã€typedefsè·Ÿenumerations////////*/
+/*--------------¥ş°ì«Å§i»P©w¸q(Global Declaration & Definition)--------------*/
+/*////////¸ê®Æµ²ºc(Structures)¡Btypedefs¸òenumerations////////*/
 
-/*////////å‡½å¼é››å‹(Function Prototypes)////////*/
+/*////////¨ç¦¡Âú«¬(Function Prototypes)////////*/
 
-/*////////å…¨åŸŸè®Šæ•¸(Global Variables)////////*/
+/*////////¥ş°ìÅÜ¼Æ(Global Variables)////////*/
 
-/*--------------ä¸»è¦ç¨‹å¼ç¢¼(Main Code)--------------*/
+/*--------------¥D­nµ{¦¡½X(Main Code)--------------*/
 
 // This program is supposed to compute the mean, median and mode
 // of the data. In addition, this program print out the sorted
@@ -53,13 +53,18 @@ int main()
     int data[DATASIZE];
 
 
-    /*æ¸¬è©¦ç•¶å‰çš„å·¥ä½œç›®éŒ„ç‚ºä½•ï¼Ÿ*/
+    /*´ú¸Õ·í«eªº¤u§@¥Ø¿ı¬°¦ó¡H*/
     #ifdef SHOW_DEBUG_MESSAGE
-    printf("\n====åµéŒ¯ç”¨è³‡è¨Š======\n");
-    printf("ç›®å‰çš„å·¥ä½œç›®éŒ„ç‚ºï¼š\n");
-    system("ls -l");
+    printf("\n====°»¿ù¥Î¸ê°T======\n");
+    printf("¥Ø«eªº¤u§@¥Ø¿ı¬°¡G\n");
+    if(SYSTEM_CATEGORY == 0){
+        system("dir");
+    }
+    else{
+        system("ls -l");
+    }
     printf("\n==================\n"
-           "è«‹æŒ‰Enteréµç¹¼çºŒ...");
+           "½Ğ«öEnterÁäÄ~Äò...");
     getchar();
     #endif
 
@@ -80,7 +85,7 @@ int main()
 
 
 // determine most frequent data value
-/*freqé™£åˆ—ï¼š*/
+/*freq°}¦C¡G*/
 void mode(int freq[], int dataArray[], int arraySize)
 {
     int /*i,*/ j, k;
@@ -91,12 +96,12 @@ void mode(int freq[], int dataArray[], int arraySize)
     printf("\n********\n  Mode\n********\n");
 
     // calculate the occuring frequency of data
-    /* å°‡frequencyé™£åˆ—åˆå§‹åŒ–ç‚º0 */
+    /* ±Nfrequency°}¦Cªì©l¤Æ¬°0 */
     for ( rating = 1; rating <= 9; rating++ ) {
       freq[ rating ] = 0;
     } /* end for */
 
-    /* ç¸½çµfrequencyé™£åˆ— */
+    /* Á`µ²frequency°}¦C */
     for ( j = 0; j < arraySize; j++ ) {
       ++freq[ dataArray[ j ]];
     } /* end for */

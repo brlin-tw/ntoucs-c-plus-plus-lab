@@ -10,7 +10,7 @@ void mean(const int dataArray[], int arraySize)
     printf("********\n  Mean\n********\n");
 
     // total response values
-    for (int i = 0; i <25 ; i++)
+    for (int i = 0; i < arraySize ; i++)
         total += dataArray[i];
 
     // format and output results
