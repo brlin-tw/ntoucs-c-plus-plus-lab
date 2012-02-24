@@ -6,22 +6,20 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="Debug">
+			<Target title="偵錯">
 				<Option output="Executable/Debug/GNU_environment.linux.x86.executable" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment" />
-				<Option object_output="Object_files/Debug/" />
+				<Option object_output="Object_files/Debug" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-pedantic" />
 					<Add option="-Wall" />
 					<Add option="-g" />
-					<Add option="-std=c99" />
 				</Compiler>
 			</Target>
-			<Target title="Release">
+			<Target title="釋出">
 				<Option output="Executable/Release/GNU_environment.linux.x86.executable" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment" />
+				<Option working_dir="../GNU_environment" />
 				<Option object_output="Object_files/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -38,13 +36,21 @@
 		</Compiler>
 		<Unit filename="Source_code/Sorting_algorithm.c">
 			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options -std=c99 $includes -c $file -o $object" />
 		</Unit>
 		<Unit filename="Source_code/Sorting_algorithm.h" />
-		<Unit filename="Source_code/StatisticsAndSort000.cpp" />
 		<Unit filename="Source_code/Swap_algorithm.c">
 			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="1" buildCommand="$compiler $options -std=c99 $includes -c $file -o $object" />
 		</Unit>
 		<Unit filename="Source_code/Swap_algorithm.h" />
+		<Unit filename="Source_code/io.cpp" />
+		<Unit filename="Source_code/io.h" />
+		<Unit filename="Source_code/main.cpp" />
+		<Unit filename="Source_code/sort.cpp" />
+		<Unit filename="Source_code/sort.h" />
+		<Unit filename="Source_code/statistics.cpp" />
+		<Unit filename="Source_code/statistics.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -14,7 +14,7 @@
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////環境設定(Environment Settings)////////*/
 /*是否顯示偵錯數據（０為否）？*/
-#define SHOW_DEBUG_MESSAGE 1
+/*#define SHOW_DEBUG_MESSAGE 0*/
 
 /*編譯ＯＳ種類：
 Windows console = 0, Linux console = 1, Symbian console = 2, PSP console = 3*/
@@ -54,11 +54,12 @@ int main()
 
 
     /*測試當前的工作目錄為何？*/
-    #ifdef DEBUG
+    #ifdef SHOW_DEBUG_MESSAGE
     printf("\n====偵錯用資訊======\n");
     printf("目前的工作目錄為：\n");
     system("ls -l");
-    printf("\n==================\n");
+    printf("\n==================\n"
+           "請按Enter鍵繼續...");
     getchar();
     #endif
 
