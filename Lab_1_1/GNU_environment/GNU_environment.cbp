@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="偵錯">
-				<Option output="Executable/Debug/GNU_environment.linux.x86.executable" prefix_auto="0" extension_auto="0" />
+				<Option output="Executable/Debug/1_1.GNU_environment.linux.x86.executable" prefix_auto="0" extension_auto="0" />
 				<Option object_output="Object_files/Debug" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -18,8 +18,7 @@
 				</Compiler>
 			</Target>
 			<Target title="釋出">
-				<Option output="Executable/Release/GNU_environment.linux.x86.executable" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="../GNU_environment" />
+				<Option output="Executable/Release/1_1.GNU_environment.linux.x86.executable" prefix_auto="0" extension_auto="0" />
 				<Option object_output="Object_files/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
