@@ -4,14 +4,37 @@
 	<stdlib.h>
 	"Sorting_algorithm.h"
 
-1329972069 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/Sorting_algorithm.h
+1330099073 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/Sorting_algorithm.h
 
 1319664332 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/Swap_algorithm.c
 
-1329972550 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/Sorting_algorithm.c
+1330100199 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/Sorting_algorithm.c
 	<stdio.h>
 	<stdlib.h>
 	"Swap_algorithm.h"
 
 1319664319 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/Swap_algorithm.h
+
+1330100894 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/main.cpp
+	<stdio.h>
+	<stdlib.h>
+	"io.h"
+	"statistics.h"
+
+1330098750 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/statistics.cpp
+	<stdio.h>
+	"io.h"
+	"sort.h"
+
+1330098147 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/io.h
+
+1330098304 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/io.cpp
+	<stdio.h>
+
+1330098738 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/sort.h
+
+1330099307 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/sort.cpp
+	"Sorting_algorithm.h"
+
+1330098443 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_1/GNU_environment/Source_code/statistics.h
 
