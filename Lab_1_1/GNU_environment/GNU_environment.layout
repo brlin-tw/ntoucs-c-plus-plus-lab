@@ -2,16 +2,16 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="偵錯" />
 	<File name="Source_code\Sorting_algorithm.c" open="1" top="0" tabpos="1">
-		<Cursor position="193" topLine="0" />
+		<Cursor position="1556" topLine="36" />
 	</File>
 	<File name="Source_code\Sorting_algorithm.h" open="1" top="0" tabpos="2">
-		<Cursor position="639" topLine="0" />
+		<Cursor position="165" topLine="0" />
 	</File>
 	<File name="Source_code\Swap_algorithm.c" open="1" top="0" tabpos="4">
-		<Cursor position="225" topLine="0" />
+		<Cursor position="424" topLine="0" />
 	</File>
 	<File name="Source_code\Swap_algorithm.h" open="1" top="0" tabpos="3">
-		<Cursor position="44" topLine="0" />
+		<Cursor position="191" topLine="0" />
 	</File>
 	<File name="Source_code\io.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="346" topLine="0" />
@@ -19,13 +19,13 @@
 	<File name="Source_code\io.h" open="1" top="0" tabpos="6">
 		<Cursor position="121" topLine="0" />
 	</File>
-	<File name="Source_code\main.cpp" open="1" top="1" tabpos="5">
-		<Cursor position="895" topLine="21" />
+	<File name="Source_code\main.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="535" topLine="27" />
 	</File>
-	<File name="Source_code\sort.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="273" topLine="0" />
+	<File name="Source_code\sort.cpp" open="1" top="1" tabpos="9">
+		<Cursor position="98" topLine="0" />
 	</File>
 	<File name="Source_code\statistics.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="187" topLine="0" />
+		<Cursor position="182" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

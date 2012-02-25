@@ -1,0 +1,8 @@
+﻿已經開始建置於 2012/2/25 下午 03:53:34。
+     1>節點 2 (build 目標) 上的專案 "I:\test_git\Lab_1_1\Visual_Studio_2010_environment\1_1\1_1.vcxproj"。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(283,5): error MSB8013: 這個專案未包含 Release|Win32 的組態和平台組合。
+     1>專案 "I:\test_git\Lab_1_1\Visual_Studio_2010_environment\1_1\1_1.vcxproj" (build 目標) 建置完成 -- 失敗。
+
+建置失敗。
+
+經過時間 00:00:00.01
