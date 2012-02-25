@@ -1,19 +1,19 @@
 #ifndef INCLUDED_SWAP_ALGORITHM_H
   #define INCLUDED_SWAP_ALGORITHM_H
-  /*¨Ï¥ÎCªº¨ç¼Æ½Õ¥Î¾÷¨î©Mnamespace³B²z³W«h¡A¦Ó«DC++ªºName Mangling*/
+  /*ä½¿ç”¨Cçš„å‡½æ•¸èª¿ç”¨æ©Ÿåˆ¶å’Œnamespaceè™•ç†è¦å‰‡ï¼Œè€ŒéC++çš„Name Mangling*/
   #ifdef __cplusplus
   extern "C"{
   #endif
-    /*swap¨ç¦¡ func. prototype*/
+    /*swapå‡½å¼ func. prototype*/
         void swapInt(int * swap_a, int * swap_b);
 
-    /*func. prototype for swap func.(unsigned¾ã¼Æ±M¥Îª©¥»)*/
+    /*func. prototype for swap func.(unsignedæ•´æ•¸å°ˆç”¨ç‰ˆæœ¬)*/
         void swapUnsignedInt(unsigned int * swap_a, unsigned int * swap_b);
 
     /*func. prototype of swapLongInt*/
         void swapLongInt(long int * a,long int * b);
 
-    /*func. prototype for Swap(µL­tµu¾ã¼Æ±M¥Îª©¥»)*/
+    /*func. prototype for Swap(ç„¡è² çŸ­æ•´æ•¸å°ˆç”¨ç‰ˆæœ¬)*/
         void swapUnsignedShortInt(unsigned short int * swap_a, unsigned short int * swap_b);
 
     /*swapDouble func. prototype*/

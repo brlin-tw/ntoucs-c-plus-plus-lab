@@ -3,6 +3,4 @@
 
   void sort(int[], int);
 
-
-
 #endif // INCLUDED_SORT_H

@@ -1,10 +1,6 @@
-#ifdef __cplusplus
-extern "C"{
-#endif
-  #include "Sorting_algorithm.h"
-#ifdef __cplusplus
-}
-#endif
+/*排序演算法header*/
+#include "Sorting_algorithm.h"
+
 // function that sorts an array
 void sort(int a[], int size)
 {
