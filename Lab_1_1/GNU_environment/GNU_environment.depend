@@ -43,7 +43,7 @@
 1330108881 source:i:\test_git\lab_1_1\gnu_environment\source_code\io.cpp
 	<stdio.h>
 
-1330110600 source:i:\test_git\lab_1_1\gnu_environment\source_code\main.cpp
+1330112313 source:i:\test_git\lab_1_1\gnu_environment\source_code\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	"io.h"
