@@ -1,19 +1,19 @@
 #ifndef INCLUDED_SORTING_ALGORITHM_H
   #define INCLUDED_SORTING_ALGORITHM_H
-  /*ä½¿ç”¨Cçš„å‡½æ•¸èª¿ç”¨æ©Ÿåˆ¶å’Œnamespaceè™•ç†è¦å‰‡ï¼Œè€ŒéC++çš„Name Mangling*/
+  /*¨Ï¥ÎCªº¨ç¼Æ½Õ¥Î¾÷¨î©Mnamespace³B²z³W«h¡A¦Ó«DC++ªºName Mangling*/
   #ifdef __cplusplus
   extern "C"{
   #endif
-  /*Insertion sortï¼ˆæ’å…¥å¼æ’åºæ¼”ç®—æ³•ï¼‰å‡½å¼çš„(function prototype)*/
+  /*Insertion sort¡]´¡¤J¦¡±Æ§Çºtºâªk¡^¨ç¦¡ªº(function prototype)*/
   void insertionSort(int array[], unsigned array_size);
 
-  /*bubble sortï¼ˆå†’æ³¡å¼æ’åºæ¼”ç®—æ³•ï¼‰å‡½å¼çš„(function prototype)*/
+  /*bubble sort¡]«_ªw¦¡±Æ§Çºtºâªk¡^¨ç¦¡ªº(function prototype)*/
   void bubbleSort(int data[],
                     const unsigned array_size,
                     int (*sortOrderBool)(int a,
                                           int b));
 
-  /*merge sort(åˆä½µå¼æ’åºæ¼”ç®—æ³•)å‡½å¼çš„function prototype*/
+  /*merge sort(¦X¨Ö¦¡±Æ§Çºtºâªk)¨ç¦¡ªºfunction prototype*/
   void mergeSort(int data[],
                   const unsigned start_index,
                   const unsigned end_index);
