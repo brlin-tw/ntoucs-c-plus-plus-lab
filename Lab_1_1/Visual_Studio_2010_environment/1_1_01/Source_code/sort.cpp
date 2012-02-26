@@ -12,7 +12,7 @@
  * consequential damages in connection with, or arising out of, the       *
  * furnishing, performance, or use of these programs.                     *
  **************************************************************************/
-/*排序演算法header*/
+/*�ƧǺt��kheader*/
 #include "Sorting_algorithm.h"
 
 // function that sorts an array

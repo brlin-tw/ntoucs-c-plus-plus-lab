@@ -1,15 +1,15 @@
-/*æ’åºæ¼”ç®—æ³•
+/*±Æ§Çºtºâªk
 -----------------------------------
-ç¨‹å¼æ¡†æ¶ç‰ˆæœ¬(program framework version)ï¼šA
-ç¨‹å¼æ¡†æ¶ä¿®è¨‚è™Ÿ(program framework revision number)ï¼š201109251624
-æ›´æ–°ç´€éŒ„(changelog)ï¼š
+µ{¦¡®Ø¬[ª©¥»(program framework version)¡GA
+µ{¦¡®Ø¬[­×­q¸¹(program framework revision number)¡G201109251624
+§ó·s¬ö¿ı(changelog)¡G
   Changelog is now stored on github
-å·²çŸ¥å•é¡Œ(known issues)ï¼š
+¤wª¾°İÃD(known issues)¡G
   Known issues is now stored on github
-å¾…è¾¦äº‹é …(todo)ï¼š
+«İ¿ì¨Æ¶µ(todo)¡G
   Todo is now stored on github
-æ™ºæ…§è²¡ç”¢æˆæ¬Šæ¢æ¬¾ï¼š
-*//* Copyright (C) 2012 æ—åšä»(Henry Lin)
+´¼¼z°]²£±ÂÅv±ø´Ú¡G
+*//* Copyright (C) 2012 ªL³Õ¤¯(Henry Lin)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -26,21 +26,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-/*æ¨™æº–è¼¸å…¥ï¼è¼¸å‡ºå‡½å¼åº«(standard input/output library)
-  ç‰ˆæœ¬ï¼š1.12(4)
+/*¼Ğ·Ç¿é¤J¡ş¿é¥X¨ç¦¡®w(standard input/output library)
+  ª©¥»¡G1.12(4)
   for printf(), scanf(), fgetc()...etc*/
 #include <stdio.h>
 /*or in C++*/
 /*#include <cstdio>*/
 
 /*C Standard General Utilities Library
-  ç‰ˆæœ¬ï¼š1.01(8)*/
+  ª©¥»¡G1.01(8)*/
 #include <stdlib.h>
 /*or in C++*/
 /*#include <cstdlib>*/
 
 /* swap algorithm header file
- * ç‰ˆæœ¬ï¼š1.00(0)
+ * ª©¥»¡G1.00(0)
  */
 #include "Swap_algorithm.h"
 
@@ -48,79 +48,79 @@
 /*maxHeapify function prototype*/
 void maxHeapify(int data[], unsigned array_size, unsigned current_index);
 
-/*Insertion sortï¼ˆæ’å…¥å¼æ’åºæ¼”ç®—æ³•ï¼‰å‡½å¼
-  ç‰ˆæœ¬ï¼š1.02(12)
-  å‚³å…¥å€¼ï¼šarrayæ•´æ•¸é™£åˆ—ã€array_sizeé™£åˆ—å¤§å°
-  å‚³å›å€¼ï¼šç„¡
+/*Insertion sort¡]´¡¤J¦¡±Æ§Çºtºâªk¡^¨ç¦¡
+  ª©¥»¡G1.02(12)
+  ¶Ç¤J­È¡Garray¾ã¼Æ°}¦C¡Barray_size°}¦C¤j¤p
+  ¶Ç¦^­È¡GµL
   */
 void insertionSort(int array[], unsigned array_size)
 {
-  /*å®£å‘Šèˆ‡å®šç¾©(Declaration & Definition)*/
-  /*--å‡½å¼é››å‹(function prototype)--*/
+  /*«Å§i»P©w¸q(Declaration & Definition)*/
+  /*--¨ç¦¡Âú«¬(function prototype)--*/
 
-  /*--å±€åŸŸè®Šæ•¸--*/
-  /*ç•¶å‰è¦æ’å…¥çš„å…ƒç´ */
+  /*--§½°ìÅÜ¼Æ--*/
+  /*·í«e­n´¡¤Jªº¤¸¯À*/
   int current_insert_element;
 
-  /*ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼*/
+  /*¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ*/
   {
     unsigned final_insert_index;
 
-    /*è™•ç†åºåˆ—ä¸­ç¬¬äºŒå€‹ç‰©ä»¶åˆ°æœ€å¾Œä¸€å€‹ç‰©ä»¶çš„è¿´åœˆã€‚å®Œæˆæ­¤
-     * è¿´åœˆè¡¨ç¤ºåºåˆ—å·²ç¶“å®Œæˆæ’åºã€‚*/
+    /*³B²z§Ç¦C¤¤²Ä¤G­Óª«¥ó¨ì³Ì«á¤@­Óª«¥óªº°j°é¡C§¹¦¨¦¹
+     * °j°éªí¥Ü§Ç¦C¤w¸g§¹¦¨±Æ§Ç¡C*/
     unsigned i;
     for(i = 1; i < array_size; i++){
-      /*ç”¨ä¸€å€‹è®Šæ•¸current_insert_elementå‚™ä»½ç›®å‰è™•ç†çš„ç‰©ä»¶çš„å€¼ã€‚*/
+      /*¥Î¤@­ÓÅÜ¼Æcurrent_insert_element³Æ¥÷¥Ø«e³B²zªºª«¥óªº­È¡C*/
       current_insert_element = array[i];
 
-      /*ç”¨ä¸€å€‹è®Šæ•¸final_insert_indexæŒæœ‰æœ€å¾Œè¦æ’å…¥ç›®å‰è™•
-       * ç†çš„ç‰©ä»¶çš„indexï¼ˆç´¢å¼•ï¼‰*/
+      /*¥Î¤@­ÓÅÜ¼Æfinal_insert_index«ù¦³³Ì«á­n´¡¤J¥Ø«e³B
+       * ²zªºª«¥óªºindex¡]¯Á¤Ş¡^*/
       final_insert_index = i;
 
-      /*å¾iåˆ°0å°‹æ‰¾æ’å…¥çš„ä½ç½®ï¼ˆæ¯”è¼ƒç¾åœ¨è¦æ’å…¥çš„å…ƒç´ è·Ÿå‰é¢çš„å…ƒç´ çš„å¤§å°ï¼‰*/
+      /*±qi¨ì0´M§ä´¡¤Jªº¦ì¸m¡]¤ñ¸û²{¦b­n´¡¤Jªº¤¸¯À¸ò«e­±ªº¤¸¯Àªº¤j¤p¡^*/
       while(final_insert_index != 0 &&
               array[final_insert_index - 1] >
               current_insert_element){
-        /*å°‡å‰é¢çš„å…ƒç´ ç§»åˆ°å¾Œé¢*/
+        /*±N«e­±ªº¤¸¯À²¾¨ì«á­±*/
         array[final_insert_index] = array[final_insert_index - 1];
-        /*åˆ¤æ–·æ›´å‰é¢çš„å…ƒç´ */
+        /*§PÂ_§ó«e­±ªº¤¸¯À*/
         final_insert_index--;
       }
 
-      /*æ’å…¥ç¾åœ¨è¦æ’å…¥çš„å…ƒç´ */
+      /*´¡¤J²{¦b­n´¡¤Jªº¤¸¯À*/
       array[final_insert_index] = current_insert_element;
 
     }
   }
-  /*ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼*/
-  /*å‚³å›å…§å®¹*/
+  /*¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ*/
+  /*¶Ç¦^¤º®e*/
   return ;
 }
 
-/*bubble sortå‡½å¼
-å‚³å…¥åƒæ•¸ï¼šä¸€å€‹inté™£åˆ—dataã€ä¸€å€‹const unsignedçš„data
-        é™£åˆ—å¤§å°ã€ä¸€å€‹æŒ‡å‘æä¾›æ’åºé †åºåˆ¤æ–·çš„å‡½å¼çš„æŒ‡æ¨™
-å‚³å›å€¼ï¼šç„¡*/
+/*bubble sort¨ç¦¡
+¶Ç¤J°Ñ¼Æ¡G¤@­Óint°}¦Cdata¡B¤@­Óconst unsignedªºdata
+        °}¦C¤j¤p¡B¤@­Ó«ü¦V´£¨Ñ±Æ§Ç¶¶§Ç§PÂ_ªº¨ç¦¡ªº«ü¼Ğ
+¶Ç¦^­È¡GµL*/
 void bubbleSort(int data[],
                   const unsigned array_size,
                   int (*sortOrderBool)(int a,
                                         int b))
     {
-        /*æä¾›bubble sortéå¢é †åºæ¯”è¼ƒæ¢ä»¶å‡½å¼*/
+        /*´£¨Ñbubble sort»¼¼W¶¶§Ç¤ñ¸û±ø¥ó¨ç¦¡*/
         int sortAscendingly(int a, int b);
 
-        /*æä¾›bubble sortéæ¸›é †åºæ¯”è¼ƒæ¢ä»¶å‡½å¼*/
+        /*´£¨Ñbubble sort»¼´î¶¶§Ç¤ñ¸û±ø¥ó¨ç¦¡*/
         int sortDescendingly(int a, int b);
 
-        /*æ¬¡æ•¸è¨ˆæ•¸å™¨*/
+        /*¦¸¼Æ­p¼Æ¾¹*/
         unsigned times;
         unsigned compare;
 
-        /*å¾æœ€å¾Œä¸€å€‹æ•¸è¢«ä¿è­‰æ’åºæ­£ç¢ºè‡³ç¬¬äºŒå€‹æ•¸è¢«ä¿è­‰æ’åºæ­£ç¢º*/
+        /*±q³Ì«á¤@­Ó¼Æ³Q«OÃÒ±Æ§Ç¥¿½T¦Ü²Ä¤G­Ó¼Æ³Q«OÃÒ±Æ§Ç¥¿½T*/
         for(times = array_size - 1; times >= 1; times--){
-            /*å¾ç¬¬ä¸€å€‹æ•¸è‡³timesçš„å‰ä¸€å€‹æ•¸å–compareèˆ‡compare+1é–‹å§‹åˆ¤æ–·*/
+            /*±q²Ä¤@­Ó¼Æ¦Ütimesªº«e¤@­Ó¼Æ¨úcompare»Pcompare+1¶}©l§PÂ_*/
             for(compare = 0; compare <= times - 1; compare++){
-                /*å¦‚æœcompareå¤§æ–¼compare+1å°±äº’æ›*/
+                /*¦pªGcompare¤j©ócompare+1´N¤¬´«*/
                  if((*sortOrderBool)(data[compare], data[compare + 1])){
                     swapInt(&data[compare], &data[compare + 1]);
                  }
@@ -129,29 +129,29 @@ void bubbleSort(int data[],
         return;
     }
 
-/*æä¾›bubble sortéå¢é †åºæ¯”è¼ƒæ¢ä»¶å‡½å¼*/
+/*´£¨Ñbubble sort»¼¼W¶¶§Ç¤ñ¸û±ø¥ó¨ç¦¡*/
 int sortAscendingly(int a, int b)
     {
-        /*å¦‚æœaå°æ–¼bå‰‡ä¸å°èª¿*/
+        /*¦pªGa¤p©ób«h¤£¹ï½Õ*/
         return (a < b)? 0 : 1;
     }
 
-/*æä¾›bubble sortéæ¸›é †åºæ¯”è¼ƒæ¢ä»¶å‡½å¼*/
+/*´£¨Ñbubble sort»¼´î¶¶§Ç¤ñ¸û±ø¥ó¨ç¦¡*/
 int sortDescendingly(int a, int b)
     {
-        /*å¦‚æœaå¤§æ–¼bå‰‡ä¸å°èª¿*/
+        /*¦pªGa¤j©ób«h¤£¹ï½Õ*/
         return (a > b)? 0 : 1;
     }
 
-/*åˆä½µå¼çš„æ’åºæ¼”ç®—æ³•
- * ç‰ˆæœ¬ï¼š1.00(0)201110052034
- * å‚³å…¥å€¼ï¼š
+/*¦X¨Ö¦¡ªº±Æ§Çºtºâªk
+ * ª©¥»¡G1.00(0)201110052034
+ * ¶Ç¤J­È¡G
  *  array
  *  start_index
- *  end_indexï¼šæœ€å¾Œä¸€å€‹å­˜åœ¨çš„index value
- * å‚³å›å€¼ï¼š
- *  0 -> æˆåŠŸ
- *  -1 ->å¯ç”¨è¨˜æ†¶é«”ä¸è¶³
+ *  end_index¡G³Ì«á¤@­Ó¦s¦bªºindex value
+ * ¶Ç¦^­È¡G
+ *  0 -> ¦¨¥\
+ *  -1 ->¥i¥Î°O¾ĞÅé¤£¨¬
  */
 void mergeSort(int array[],
           unsigned start_index,
@@ -169,11 +169,11 @@ void mergeSort(int array[],
       }
 
 }
-/*åˆä½µä¸¦æ’åºå­é™£åˆ—çš„å‡½å¼*/
+/*¦X¨Ö¨Ã±Æ§Ç¤l°}¦Cªº¨ç¦¡*/
 int mergeAndSort(int subArray[], unsigned start_index,
       unsigned half_index, unsigned end_index)
 {
-  /*å°‡å…©å­é™£åˆ—è³‡æ–™è¤‡è£½åˆ°è¨˜æ†¶é«”*/
+  /*±N¨â¤l°}¦C¸ê®Æ½Æ»s¨ì°O¾ĞÅé*/
   unsigned sizeA = half_index - start_index + 1,
             sizeB = end_index - half_index;
 
@@ -182,7 +182,7 @@ int mergeAndSort(int subArray[], unsigned start_index,
 
   if(memPtrA != NULL){
   }else{
-    printf("å¤±æ•—ï¼è«‹ç¢ºå®šå¯ç”¨è¨˜æ†¶é«”æ˜¯å¦ä¸è¶³ã€‚\n");
+    printf("¥¢±Ñ¡I½Ğ½T©w¥i¥Î°O¾ĞÅé¬O§_¤£¨¬¡C\n");
     return -1;
   }
 
@@ -197,7 +197,7 @@ int mergeAndSort(int subArray[], unsigned start_index,
 
   if(memPtrB != NULL){
   }else{
-    printf("å¤±æ•—ï¼è«‹ç¢ºå®šå¯ç”¨è¨˜æ†¶é«”æ˜¯å¦ä¸è¶³ã€‚\n");
+    printf("¥¢±Ñ¡I½Ğ½T©w¥i¥Î°O¾ĞÅé¬O§_¤£¨¬¡C\n");
     return -1;
   }
 
@@ -232,7 +232,7 @@ int mergeAndSort(int subArray[], unsigned start_index,
   }
   }
 
-  /*çµæŸå‰æ¸…ç†*/
+  /*µ²§ô«e²M²z*/
   free(memPtrA);
   free(memPtrB);
 
@@ -240,21 +240,21 @@ int mergeAndSort(int subArray[], unsigned start_index,
 }
 
 
-/*maxHeapifyå‡½å¼
-  ç‰ˆæœ¬ï¼š0.00(0)*/
+/*maxHeapify¨ç¦¡
+  ª©¥»¡G0.00(0)*/
 void maxHeapify(int data[], unsigned array_size, unsigned current_index)
     {
-    /*å®£å‘Šèˆ‡å®šç¾©(Declaration & Definition)*/
-    /*--å‡½å¼é››å‹(function prototype)--*/
+    /*«Å§i»P©w¸q(Declaration & Definition)*/
+    /*--¨ç¦¡Âú«¬(function prototype)--*/
 
-    /*--å±€åŸŸè®Šæ•¸--*/
+    /*--§½°ìÅÜ¼Æ--*/
     /*current largest node*/
     unsigned largest_index = current_index;
 
     /*the child index of current node may be*/
     unsigned left_child_index = current_index * 2,
             right_child_index = current_index * 2 + 1;
-    /*ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼*/
+    /*¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ*/
     /*if left child exist and greater than current node*/
     if(left_child_index <= array_size - 1 &&
        data[left_child_index] > data[current_index]){
@@ -274,7 +274,7 @@ void maxHeapify(int data[], unsigned array_size, unsigned current_index)
       maxHeapify(data, array_size, largest_index);
     }
 
-    /*ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼*/
-    /*å‚³å›å…§å®¹*/
+    /*¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ¡Ğ*/
+    /*¶Ç¦^¤º®e*/
     return ;
     }
