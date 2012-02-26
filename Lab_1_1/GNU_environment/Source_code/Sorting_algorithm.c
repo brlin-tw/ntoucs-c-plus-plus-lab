@@ -64,11 +64,11 @@ void insertionSort(int array[], unsigned array_size)
 
   /*－－－－－－－－－－－－－－－－－－－－－*/
   {
-    int final_insert_index;
+    unsigned final_insert_index;
 
     /*處理序列中第二個物件到最後一個物件的迴圈。完成此
      * 迴圈表示序列已經完成排序。*/
-    int i;
+    unsigned i;
     for(i = 1; i < array_size; i++){
       /*用一個變數current_insert_element備份目前處理的物件的值。*/
       current_insert_element = array[i];
@@ -178,6 +178,7 @@ int mergeAndSort(int subArray[], unsigned start_index,
             sizeB = end_index - half_index;
 
   int *memPtrA = (int *) malloc(sizeof(int) * sizeA);
+  int *memPtrB = (int *) malloc(sizeof(int) * sizeB);
 
   if(memPtrA != NULL){
   }else{
@@ -193,7 +194,6 @@ int mergeAndSort(int subArray[], unsigned start_index,
 
   }
 
-  int *memPtrB = (int *) malloc(sizeof(int) * sizeB);
 
   if(memPtrB != NULL){
   }else{

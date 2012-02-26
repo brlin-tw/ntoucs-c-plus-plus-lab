@@ -56,7 +56,7 @@ void median(int dataArray[], int arraySize)
 
 
 // determine most frequent data value
-/*freqé™£åˆ—ï¼š*/
+/*freq°}¦C¡G*/
 void mode(int freq[], int dataArray[], int arraySize)
 {
     int j, k;
@@ -67,12 +67,12 @@ void mode(int freq[], int dataArray[], int arraySize)
     printf("\n********\n  Mode\n********\n");
 
     // calculate the occuring frequency of data
-    /* å°‡frequencyé™£åˆ—åˆå§‹åŒ–ç‚º0 */
+    /* ±Nfrequency°}¦Cªì©l¤Æ¬°0 */
     for ( rating = 1; rating <= 9; rating++ ) {
       freq[ rating ] = 0;
     } /* end for */
 
-    /* ç¸½çµfrequencyé™£åˆ— */
+    /* Á`µ²frequency°}¦C */
     for ( j = 0; j < arraySize; j++ ) {
       ++freq[ dataArray[ j ]];
     } /* end for */

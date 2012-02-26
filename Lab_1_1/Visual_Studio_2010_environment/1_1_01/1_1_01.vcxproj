@@ -10,39 +10,24 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Source_code\io.cpp" />
-    <ClCompile Include="Source_code\main.cpp" />
-    <ClCompile Include="Source_code\sort.cpp" />
-    <ClCompile Include="Source_code\Sorting_algorithm.c" />
-    <ClCompile Include="Source_code\statistics.cpp" />
-    <ClCompile Include="Source_code\Swap_algorithm.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Source_code\io.h" />
-    <ClInclude Include="Source_code\sort.h" />
-    <ClInclude Include="Source_code\Sorting_algorithm.h" />
-    <ClInclude Include="Source_code\statistics.h" />
-    <ClInclude Include="Source_code\Swap_algorithm.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A475FF23-F28E-427F-B519-17D9439E4483}</ProjectGuid>
+    <ProjectGuid>{F92582FD-6B9C-4250-B78E-C5CA60C9C051}</ProjectGuid>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>My1_1</RootNamespace>
+    <RootNamespace>My1_1_01</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CLRSupport>false</CLRSupport>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <CLRSupport>true</CLRSupport>
-    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -65,9 +50,6 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <CompileAsManaged>false</CompileAsManaged>
-      <UseUnicodeForAssemblerListing>true</UseUnicodeForAssemblerListing>
-      <ExceptionHandling>SyncCThrow</ExceptionHandling>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -86,6 +68,24 @@
       </AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source_code\io.cpp" />
+    <ClCompile Include="Source_code\main.cpp" />
+    <ClCompile Include="Source_code\sort.cpp" />
+    <ClCompile Include="Source_code\Sorting_algorithm.c" />
+    <ClCompile Include="Source_code\statistics.cpp" />
+    <ClCompile Include="Source_code\Swap_algorithm.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source_code\io.h" />
+    <ClInclude Include="Source_code\sort.h" />
+    <ClInclude Include="Source_code\Sorting_algorithm.h" />
+    <ClInclude Include="Source_code\statistics.h" />
+    <ClInclude Include="Source_code\Swap_algorithm.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="raw1.dat" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

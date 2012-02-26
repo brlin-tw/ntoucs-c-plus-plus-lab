@@ -1,15 +1,15 @@
-/* swap演算法
+/* swap�t��k
  * -----------------------------------
- * 程式框架版本(program framework version)：A
- * 程式框架修訂號(program framework revision number)：201109251624
- * 更新紀錄(changelog)：
+ * �{���ج[����(program framework version)�GA
+ * �{���ج[�׭q��(program framework revision number)�G201109251624
+ * ��s����(changelog)�G
  *  Changelog is now stored on github
- * 已知問題(known issues)：
+ * �w�����D(known issues)�G
  *  Known issues is now stored on github
- * 待辦事項(todo)：
+ * �ݿ�ƶ�(todo)�G
  *  Todo is now stored on github
- * 智慧財產授權條款：
- *//* Copyright (C) 2012 林博仁(Henry Lin)
+ * ���z�]�����v���ڡG
+ *//* Copyright (C) 2012 �L�դ�(Henry Lin)
    *
    * This library is free software; you can redistribute it and/or
    * modify it under the terms of the GNU Lesser General Public
@@ -26,33 +26,33 @@
    * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
    */
 
-/*swap函式(整數專用版本)
-  版本：1.01(2)
-  傳入值：指向要swap的兩個整數變數的指標
-  傳回值：無*/
+/*swap�禡(��ƱM�Ϊ���)
+  �����G1.01(2)
+  �ǤJ�ȡG���V�nswap����Ӿ���ܼƪ�����
+  �Ǧ^�ȡG�L*/
 void swapInt(int * swap_a, int * swap_b)
 	{
-		/*宣告與定義(declaration & definition)*/
-        int buffer;/*暫時保存數值的變數*/
+		/*�ŧi�P�w�q(declaration & definition)*/
+        int buffer;/*�ȮɫO�s�ƭȪ��ܼ�*/
 
-		/*－－－－－－－－－－－－－－－－－－－－－*/
+		/*�СССССССССССССССССССС�*/
         /*swap*/
             buffer = *swap_a;/*backup a*/
             *swap_a = *swap_b;/*assign a with *b*/
             *swap_b = buffer;/*assign *b with backuped *a*/
-		/*－－－－－－－－－－－－－－－－－－－－－*/
+		/*�СССССССССССССССССССС�*/
 		return;
 	}
 
-/*swap func.(unsigned整數專用版本)
-  版本：1.00(0)*/
+/*swap func.(unsigned��ƱM�Ϊ���)
+  �����G1.00(0)*/
 void swap_unsigned_int(unsigned int * swap_a, unsigned int * swap_b)
 	{
-        /*宣告與定義(Declaration & Definition)*/
+        /*�ŧi�P�w�q(Declaration & Definition)*/
         /*mem*/
             unsigned int buffer;
 
-        /*－－－－－－－－－－－－－－－－－－－－－*/
+        /*�СССССССССССССССССССС�*/
         /*swap*/
         /*backup a*/
             buffer = *swap_a;
@@ -60,19 +60,19 @@ void swap_unsigned_int(unsigned int * swap_a, unsigned int * swap_b)
             *swap_a = *swap_b;
         /*assign *b with backuped a*/
             *swap_b = buffer;
-        /*－－－－－－－－－－－－－－－－－－－－－*/
+        /*�СССССССССССССССССССС�*/
         return;
 	}
 
-/*swapLongInt func.(長整數專用版本)
-  版本：1.01(1)*/
+/*swapLongInt func.(����ƱM�Ϊ���)
+  �����G1.01(1)*/
 void swapLongInt(long int * a,long int * b)
 	{
-		/*宣告與定義(Declaration & Definition)*/
+		/*�ŧi�P�w�q(Declaration & Definition)*/
         /*mem*/
             long int mem;
 
-		/*－－－－－－－－－－－－－－－－－－－－－*/
+		/*�СССССССССССССССССССС�*/
         /*swap*/
             /*backup a*/
                 mem = *a;
@@ -80,19 +80,19 @@ void swapLongInt(long int * a,long int * b)
                 *a = *b;
             /*assign *b with backuped a*/
                 *b = mem;
-		/*－－－－－－－－－－－－－－－－－－－－－*/
+		/*�СССССССССССССССССССС�*/
 		return;
 	}
 
-/*Swap(無負短整數專用版本)
-  版本：1.01(1)*/
+/*Swap(�L�t�u��ƱM�Ϊ���)
+  �����G1.01(1)*/
 void swapUnsignedShortInt(unsigned short int * swap_a, unsigned short int * swap_b)
 	{
-		/*宣告與定義(Declaration & Definition)*/
+		/*�ŧi�P�w�q(Declaration & Definition)*/
         /*mem*/
             unsigned short int buffer;
 
-		/*－－－－－－－－－－－－－－－－－－－－－*/
+		/*�СССССССССССССССССССС�*/
         /*swap*/
             /*backup a*/
                 buffer = *swap_a;
@@ -100,19 +100,19 @@ void swapUnsignedShortInt(unsigned short int * swap_a, unsigned short int * swap
                 *swap_a = *swap_b;
             /*assign *b with backuped a*/
                 *swap_b = buffer;
-		/*－－－－－－－－－－－－－－－－－－－－－*/
+		/*�СССССССССССССССССССС�*/
 		return;
 	}
 
-/*swap func.(雙精確度浮點數通用版本)
-  版本：1.01(2)*/
+/*swap func.(����T�ׯB�I�Ƴq�Ϊ���)
+  �����G1.01(2)*/
 void swapDouble(double * a,double * b)
 	{
-		/*宣告與定義(Declaration & Definition)*/
+		/*�ŧi�P�w�q(Declaration & Definition)*/
         /*mem*/
             double mem;
 
-		/*－－－－－－－－－－－－－－－－－－－－－*/
+		/*�СССССССССССССССССССС�*/
         /*swap*/
             /*backup a*/
                 mem = *a;
@@ -120,6 +120,6 @@ void swapDouble(double * a,double * b)
                 *a = *b;
             /*assign *b with backuped a*/
                 *b = mem;
-		/*－－－－－－－－－－－－－－－－－－－－－*/
+		/*�СССССССССССССССССССС�*/
 		return;
 	}
