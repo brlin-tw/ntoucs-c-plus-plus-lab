@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1_1_01", "1_1_01\1_1_01.vcproj", "{E3779B04-AE55-4B9F-952E-F826CEC0E344}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		偵錯版本|Win32 = 偵錯版本|Win32
+		釋出版本|Win32 = 釋出版本|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3779B04-AE55-4B9F-952E-F826CEC0E344}.偵錯版本|Win32.ActiveCfg = Debug|Win32
+		{E3779B04-AE55-4B9F-952E-F826CEC0E344}.偵錯版本|Win32.Build.0 = Debug|Win32
+		{E3779B04-AE55-4B9F-952E-F826CEC0E344}.釋出版本|Win32.ActiveCfg = Release|Win32
+		{E3779B04-AE55-4B9F-952E-F826CEC0E344}.釋出版本|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
