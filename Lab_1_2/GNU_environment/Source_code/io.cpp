@@ -15,9 +15,9 @@
 #include <stdio.h>
 #include <assert.h>
 
-void readFile(int *dataSize, int data[])
+void readFile(unsigned *dataSize, int data[], unsigned dataSizeMax)
 {
-     int i;
+     unsigned i;
      FILE *fp;
      char filename[30];
 
@@ -25,8 +25,13 @@ void readFile(int *dataSize, int data[])
      gets(filename);
 
      fp = fopen(filename, "rt");
+     /*假設讀取檔案存在*/
      assert(fp != NULL);
-     fscanf(fp, "%d", dataSize);
+     fscanf(fp, "%u", dataSize);
+
+     /*假設資料大小小於陣列最大大小*/
+     assert(*dataSize <= dataSizeMax);
+
      for (i=0; i < *dataSize; i++)
           fscanf(fp, "%d", &data[i]);
      fclose(fp);

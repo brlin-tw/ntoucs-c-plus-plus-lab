@@ -36,6 +36,10 @@ Desktop.ini
 *.o
 *.obj
 
+##可執行檔
+#*.exe
+#*.executable
+
 ##封存／壓縮檔
 *.7z
 *.zip

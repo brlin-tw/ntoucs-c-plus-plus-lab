@@ -62,7 +62,7 @@ Windows console = 0, Linux console = 1, Symbian console = 2, PSP console = 3*/
 
 int main()
 {
-    int dataSize;
+    unsigned dataSize;
     int frequency[10] = {0};
     int data[DATASIZE];
 
@@ -83,7 +83,7 @@ int main()
     #endif
 
     // reading file
-    readFile(&dataSize, data);
+    readFile(&dataSize, data, DATASIZE);
 
 
     // process responses
