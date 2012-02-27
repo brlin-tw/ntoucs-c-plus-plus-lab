@@ -3,11 +3,15 @@
 	<stdio.h>
 	<assert.h>
 
+1330291675 
+
 1330293119 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/statistics.cpp
 	<stdio.h>
 	<assert.h>
 	"io.h"
 	"sort.h"
+
+1330293119 
 
 1330293637 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/io.h
 
@@ -17,6 +21,8 @@
 	<stdio.h>
 	<stdlib.h>
 	"Swap_algorithm.h"
+
+1330266325 rithm.h"
 
 1330266325 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/Swap_algorithm.h
 
@@ -34,6 +40,8 @@
 	<stdlib.h>
 	"io.h"
 	"statistics.h"
+
+1330321373 s.h"
 
 1330098443 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/statistics.h
 
@@ -74,4 +82,44 @@
 	"statistics.h"
 
 1330098443 z:\home\vdragon\ubuntu one\programming\c_c_plus_plus\my_projects\ntou_cpp_lab_opensource_project\lab_1_2\gnu_environment\source_code\statistics.h
+
+1330101904 source:d:\home\vdragon\ubuntu one\programmin
+
+1330365868 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/sort.cpp
+	"Sorting_algorithm.h"
+	<assert.h>
+	<stdlib.h>
+
+1330365847 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/Sorting_algorithm.h
+
+1330365853 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/Swap_algorithm.c
+
+1330365845 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/Sorting_algorithm.c
+	<stdio.h>
+	<stdlib.h>
+	"Swap_algorithm.h"
+
+1330365856 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/Swap_algorithm.h
+
+1330365860 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/io.cpp
+	<stdio.h>
+	<assert.h>
+
+1330365849 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/statistics.cpp
+	<stdio.h>
+	<assert.h>
+	"io.h"
+	"sort.h"
+
+1330365862 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/io.h
+
+1330365842 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/sort.h
+
+1330366026 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/main.cpp
+	<stdio.h>
+	<stdlib.h>
+	"io.h"
+	"statistics.h"
+
+1330365851 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/statistics.h
 
