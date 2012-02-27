@@ -13,6 +13,7 @@
  * furnishing, performance, or use of these programs.                     *
  **************************************************************************/
 #include <stdio.h>
+#include <assert.h>
 #include "io.h"
 #include "sort.h"
 
@@ -49,6 +50,7 @@ void median(int dataArray[], int arraySize)
     printArray(dataArray, arraySize);  // output sorted array
 
     // display median element
+    /*不實作：求出 median 值時是否有一半以上的資料大於等於它, 有一半以下的資料小於等於它*/
     printf("\n\nThe median is the %d-th element of\nthe sorted %d"
            " element array.\nFor this run the median is %d\n\n",
            arraySize/2, arraySize, dataArray[arraySize / 2]);
@@ -64,6 +66,12 @@ void mode(int freq[], int dataArray[], int arraySize)
     int largest = 0;    // represents largest frequency
     int modeValue = 0;  // represents most frequent response
 
+    /*checkFrequency()：檢查frequency陣列的和 == arraySize的函式
+        傳回數值：
+          0→正常
+          -1→異常*/
+    short checkFrequency(int freq[], unsigned arraySize);
+
     printf("\n********\n  Mode\n********\n");
 
     // calculate the occuring frequency of data
@@ -76,6 +84,9 @@ void mode(int freq[], int dataArray[], int arraySize)
     for ( j = 0; j < arraySize; j++ ) {
       ++freq[ dataArray[ j ]];
     } /* end for */
+
+    /*假設總結完freq[1~9]的和 == arraySize*/
+    assert(checkFrequency(freq, arraySize) == 0);
 
     // output headers for result columns
     printf("Data  Frequency       Histogram\n"
@@ -105,3 +116,16 @@ void mode(int freq[], int dataArray[], int arraySize)
            "occurred %d times.\n", modeValue, largest);
 }
 
+short checkFrequency(int freq[], unsigned arraySize)
+{
+  unsigned i, sum = 0;
+
+  for(i = 1; i <= 9; ++i){
+    sum += freq[i];
+  }
+
+  if(sum != arraySize){
+    return -1;
+  }
+  return 0;
+}

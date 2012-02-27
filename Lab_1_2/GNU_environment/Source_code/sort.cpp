@@ -15,27 +15,40 @@
 /*排序演算法header*/
 #include "Sorting_algorithm.h"
 #include <assert.h>
+#include <stdlib.h>
 
-/*checkSortedInt函式：確定int排序演算法沒有出錯
-    auguments:
-      sorted_data：應該要被排序的int資料陣列
-      size：陣列大小
-    回傳數值：
-      -1：排序有問題
-      0：排序正常*/
-short checkSortedInt(int sorted_data[], unsigned size);
 
 // function that sorts an array
 void sort(int a[], int size)
 {
-  mergeSort(a, 0, size - 1);
-  assert(checkSortedInt(a, size) == 0);
+  /*checkSortedInt函式：確定int排序演算法沒有出錯
+      auguments:
+        sorted_data：應該要被排序的int資料陣列
+        size：陣列大小
+      回傳數值：
+        -1：排序有問題
+        0：排序正常*/
+  short checkSortedInt(const int sorted_data[], const unsigned size);
+
+  /*compareAccumulate函式：用於qsort()的遞增compare函式
+      augments:
+        firstPtr：指向第一個數的指標
+        secondPtr：指向第二個數的指標
+      return value:
+        http://www.cplusplus.com/reference/clibrary/cstdlib/qsort/
+  */
+  int compareAccumulate(const void * firstPtr, const void * secondPtr);
+
+  /*mergeSort(a, 0, size - 1);*/
+  qsort(a, size, sizeof(int), compareAccumulate);
+
   /*假設排序沒有問題*/
+  assert(checkSortedInt(a, size) == 0);
 
   return;
 }
 
-short checkSortedInt(int sorted_data[], unsigned size)
+short checkSortedInt(const int sorted_data[], const unsigned size)
 {
   unsigned i;
 
@@ -45,4 +58,9 @@ short checkSortedInt(int sorted_data[], unsigned size)
     }
   }
   return 0;/*排序正常*/
+}
+
+int compareAccumulate(const void * firstPtr, const void * secondPtr)
+{
+  return (*(int *)firstPtr - *(int *)secondPtr);
 }

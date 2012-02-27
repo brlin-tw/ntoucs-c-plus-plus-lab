@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="除錯版本(Linux x86)" />
-	<File name="Source_code/io.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor1 position="1116" topLine="12" />
+	<File name="Source_code/sort.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="2004" topLine="33" />
 	</File>
-	<File name="Source_code/statistics.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor1 position="1273" topLine="69" />
+	<File name="Source_code/io.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor1 position="1418" topLine="21" />
+	</File>
+	<File name="Source_code/statistics.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="184" topLine="0" />
+	</File>
+	<File name="Source_code/Swap_algorithm.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="0" topLine="0" />
+	</File>
+	<File name="Source_code/Sorting_algorithm.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="206" topLine="0" />
+	</File>
+	<File name="Source_code/statistics.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor1 position="3429" topLine="76" />
+	</File>
+	<File name="Source_code/Sorting_algorithm.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="5585" topLine="157" />
+	</File>
+	<File name="Source_code/io.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor1 position="44" topLine="0" />
+	</File>
+	<File name="Source_code/sort.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="75" topLine="0" />
 	</File>
 	<File name="Source_code/main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor1 position="2741" topLine="56" />
-	</File>
-	<File name="Source_code/io.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="0" />
+		<Cursor1 position="1752" topLine="27" />
 	</File>
 </CodeBlocks_layout_file>
