@@ -139,3 +139,5 @@ BuildLog.htm
 ##排除Templates目錄
 !Templates/
 
+##資料檔案
+*.dat
