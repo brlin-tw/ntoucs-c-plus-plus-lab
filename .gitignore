@@ -16,7 +16,7 @@
 !.gitignore
 
 #KDE的資料夾設定
-.desktop
+.directory
 
 ##Windows通用設定
 # Windows image file caches
