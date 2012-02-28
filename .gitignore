@@ -129,8 +129,8 @@ UpgradeLog*.XML
 *.idb
 
 ##排除Resources目錄底下的檔案
-Resources/
+!Resources/
 
 ##排除Templates目錄
-Templates/
+!Templates/
 
