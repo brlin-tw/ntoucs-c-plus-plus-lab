@@ -127,3 +127,7 @@ UpgradeLog*.XML
 #Visual C++ stuff
 *.dep
 *.idb
+
+##排除Resources目錄底下的檔案
+Resources/
+
