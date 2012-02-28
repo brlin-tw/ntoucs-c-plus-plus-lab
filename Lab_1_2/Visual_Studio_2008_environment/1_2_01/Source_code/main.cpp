@@ -28,7 +28,7 @@
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////環境設定(Environment Settings)////////*/
 /*是否顯示偵錯數據（０為否）？*/
-#define SHOW_DEBUG_MESSAGE
+/*#define SHOW_DEBUG_MESSAGE*/
 
 /*編譯ＯＳ種類：
 Windows console = 0, Linux console = 1, Symbian console = 2, PSP console = 3*/

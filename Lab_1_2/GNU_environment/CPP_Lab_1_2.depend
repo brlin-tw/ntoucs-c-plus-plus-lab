@@ -3,15 +3,13 @@
 	<stdio.h>
 	<assert.h>
 
-1330291675 
+1330293119 
 
 1330293119 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/statistics.cpp
 	<stdio.h>
 	<assert.h>
 	"io.h"
 	"sort.h"
-
-1330293119 
 
 1330293637 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/io.h
 
@@ -115,7 +113,7 @@
 
 1330365842 /home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/sort.h
 
-1330366026 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/main.cpp
+1330457511 source:/home/vdragon/Ubuntu One/Programming/C_C_plus_plus/My_projects/NTOU_CPP_Lab_Opensource_Project/Lab_1_2/GNU_environment/Source_code/main.cpp
 	<stdio.h>
 	<stdlib.h>
 	"io.h"
