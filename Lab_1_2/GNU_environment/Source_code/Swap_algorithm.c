@@ -1,4 +1,21 @@
 ﻿/* swap演算法
+ * 智慧財產授權人(Copyright holder)：林博仁(Henry Lin, pika1021@gmail.com)於2012
+Copyright 2012 林博仁(Henry Lin, pika1021@gmail.com)
+本程式採用的授權條款 | The license used by this software
+  LGPL version 3 or later
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the Lesser GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  Lesser GNU General Public License for more details.
+
+  You should have received a copy of the Lesser GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * -----------------------------------
  * 程式框架版本(program framework version)：A
  * 程式框架修訂號(program framework revision number)：201109251624
@@ -8,23 +25,7 @@
  *  Known issues is now stored on github
  * 待辦事項(todo)：
  *  Todo is now stored on github
- * 智慧財產授權條款：
- *//* Copyright (C) 2012 林博仁(Henry Lin)
-   *
-   * This library is free software; you can redistribute it and/or
-   * modify it under the terms of the GNU Lesser General Public
-   * License as published by the Free Software Foundation version 2.1
-   * of the License.
-   *
-   * This library is distributed in the hope that it will be useful,
-   * but WITHOUT ANY WARRANTY; without even the implied warranty of
-   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   * Lesser General Public License for more details.
-   *
-   * You should have received a copy of the GNU Lesser General Public
-   * License along with this library; if not, write to the Free Software
-   * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-   */
+
 
 /*swap函式(整數專用版本)
   版本：1.01(2)
