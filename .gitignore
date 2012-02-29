@@ -35,6 +35,7 @@ Desktop.ini
 ##Object Code...
 *.o
 *.obj
+Object_files/
 
 ##可執行檔
 *.exe
@@ -141,3 +142,4 @@ BuildLog.htm
 
 ##資料檔案
 *.dat
+
