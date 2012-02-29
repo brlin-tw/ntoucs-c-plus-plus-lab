@@ -1,0 +1,10 @@
+Information about this folder
+
+Executables/ -> build 出來的可執行檔
+Object_files/ -> build 途中產生的object檔案
+Resources/ -> 程式可能會用到的檔案
+Source_code/ -> 原始程式碼
+*.sln -> Visual C++ Solution File
+*.vcproj -> Visual C++ 專案檔案
+
+關於軟體使用的智慧財產授權條款，請見各個原始程式碼開頭的宣告。
