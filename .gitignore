@@ -40,6 +40,7 @@ Object_files/
 ##可執行檔
 *.exe
 *.executable
+Executables/
 
 ##封存／壓縮檔
 *.7z
