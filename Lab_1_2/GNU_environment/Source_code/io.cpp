@@ -15,16 +15,30 @@
 #include <stdio.h>
 #include <assert.h>
 
+#define MAX_FILENAME_SIZE 30
+
 void readFile(unsigned *dataSize, int data[], unsigned dataSizeMax)
 {
-     unsigned i;
+     unsigned i, j;
      FILE *fp;
      char filename[30];
 
      printf("Input the file name: ");
-     gets(filename);
+     fgets(filename, MAX_FILENAME_SIZE, stdin);
 
+      /*如果遇到換行符號就改成\0*/
+      for(j = 0; j < MAX_FILENAME_SIZE; j++){
+        if(filename[j] == '\r' || filename[j] == '\n'){
+          filename[j] = '\0';
+          break;
+        }
+      }
+
+    /*因為可移植性不夠所以不實作fopen的安全性加強，用C++的library來替代之
+      http://stackoverflow.com/questions/2575116/fopen-fopen-s-and-writing-to-files
+    */
      fp = fopen(filename, "rt");
+
      /*假設讀取檔案存在*/
      assert(fp != NULL);
      fscanf(fp, "%u", dataSize);
