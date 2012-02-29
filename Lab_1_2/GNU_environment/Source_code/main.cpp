@@ -26,23 +26,18 @@
  **************************************************************************/
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
-/*////////環境設定(Environment Settings)////////*/
-/*是否顯示偵錯數據（０為否）？*/
-#define SHOW_DEBUG_MESSAGE
-
-/*編譯ＯＳ種類：
-Windows console = 0, Linux console = 1, Symbian console = 2, PSP console = 3*/
-#define SYSTEM_CATEGORY 1
 
 /*////////程式所include的標頭檔(Included Headers)////////*/
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "main.h"
 #include "io.h"
 #include "statistics.h"
+#include "Pause_program.h"
+
 /*////////常數與巨集(Constants & Macros)以及其他#define指令////////*/
 
-#define DATASIZE 150
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
 
 /*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
@@ -62,8 +57,10 @@ int main()
 {
     unsigned dataSize;
     int frequency[10] = {0};
-    int data[DATASIZE];
+    int data[MAX_DATASIZE];
 
+/*program restart point*/
+restart_program:
 
     /*測試當前的工作目錄為何？*/
     #ifdef SHOW_DEBUG_MESSAGE
@@ -81,7 +78,7 @@ int main()
     #endif
 
     // reading file
-    readFile(&dataSize, data, DATASIZE);
+    readFile(&dataSize, data);
 
 
     // process responses
@@ -89,6 +86,10 @@ int main()
     median(data, dataSize);
     mode(frequency, data, dataSize);
 
+    // pause program
+    if(pauseProgram() == 1){
+      goto restart_program;
+    }
 
     return 0;  // indicates successful termination
 }

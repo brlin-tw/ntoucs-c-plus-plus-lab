@@ -80,6 +80,7 @@
 		<Unit filename="Source_code/io.cpp" />
 		<Unit filename="Source_code/io.h" />
 		<Unit filename="Source_code/main.cpp" />
+		<Unit filename="Source_code/main.h" />
 		<Unit filename="Source_code/sort.cpp" />
 		<Unit filename="Source_code/sort.h" />
 		<Unit filename="Source_code/statistics.cpp" />

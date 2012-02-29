@@ -16,10 +16,12 @@
 #include <assert.h>
 
 #define MAX_FILENAME_SIZE 30
+#include "main.h"
 
-void readFile(unsigned *dataSize, int data[], unsigned dataSizeMax)
+void readFile(unsigned *dataSize, int data[])
 {
      unsigned i, j;
+
      FILE *fp;
      char filename[30];
 
@@ -54,16 +56,17 @@ void readFile(unsigned *dataSize, int data[], unsigned dataSizeMax)
 
      }while(1);
 
-      /**/
+      /*將讀取範圍限制在9999以內*/
      fscanf(fp, "%4u", dataSize);
 
      /*假設資料大小小於陣列最大大小*/
-     assert(*dataSize <= dataSizeMax);
+     assert(*dataSize <= MAX_DATASIZE);
 
      for (i=0; i < *dataSize; i++){
         fscanf(fp, "%5d", &data[i]);
+
         /*假設讀取到的資料都在 1 和 9 之間*/
-        assert(data[i] >=1 && data[i] <= 9);
+        assert(data[i] >= 1 && data[i] <= 9);
      }
 
 
