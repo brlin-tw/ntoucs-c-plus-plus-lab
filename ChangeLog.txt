@@ -1,3 +1,12 @@
+* 新增pauseProgram()、修正不相容C的C++註解 - 040902e (Thu Mar 1 03:01:12 2012 +0800) Ｖ字龍(Vdragon)
+* 解決issue #8、加入pauseProgram() - b4d6871 (Thu Mar 1 02:33:10 2012 +0800) Ｖ字龍(Vdragon)
+* 部份修正issue #8 - 90351b4 (Wed Feb 29 23:21:47 2012 +0800) Ｖ字龍(Vdragon)
+*   Merge branch 'do_issue_#8' of github.com:Vdragon/NTOU_CPP_Lab_Opensource_Project into do_issue_#8 fixing #8：處理fgets()忽視fopen() - eb9018a (Wed Feb 29 21:18:51 2012 +0800) Ｖ字龍(Vdragon)
+|\  
+| * 處理fgets()忽視fopen() - 342bf6d (Wed Feb 29 21:15:36 2012 +0800) Ｖ字龍(Vdragon)
+* | fixing issue #8：處理fgets()忽視fopen() - 2f4dd37 (Wed Feb 29 21:16:33 2012 +0800) Ｖ字龍(Vdragon)
+|/  
+* 加入ChangeLog - 3e8213c (Wed Feb 29 20:12:48 2012 +0800) Ｖ字龍(Vdragon)
 * 加入目錄說明 - aec1feb (Wed Feb 29 19:57:20 2012 +0800) Ｖ字龍(Vdragon)
 * 更新.gitignore：排除Executables路徑 - 8f1d639 (Wed Feb 29 19:37:39 2012 +0800) Ｖ字龍(Vdragon)
 * 更新.gitignore：排除Object_files/ - 0e7757a (Wed Feb 29 17:28:54 2012 +0800) Ｖ字龍(Vdragon)
