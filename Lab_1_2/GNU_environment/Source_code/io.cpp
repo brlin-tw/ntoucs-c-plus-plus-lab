@@ -23,7 +23,11 @@ void readFile(unsigned *dataSize, int data[], unsigned dataSizeMax)
      FILE *fp;
      char filename[30];
 
+
+    do{
      printf("Input the file name: ");
+
+     /*使用標準C函式fgets代替較不安全的gets()*/
      fgets(filename, MAX_FILENAME_SIZE, stdin);
 
       /*如果遇到換行符號就改成\0*/
@@ -39,15 +43,25 @@ void readFile(unsigned *dataSize, int data[], unsigned dataSizeMax)
     */
      fp = fopen(filename, "rt");
 
-     /*假設讀取檔案存在*/
-     assert(fp != NULL);
-     fscanf(fp, "%u", dataSize);
+     if(fp == NULL){
+      printf("您輸入的檔案名稱不存在於您目前的工作目錄，請再次輸入一次或是按下Ctrl-C按鍵組合強行中止程式運行。\n"
+             "請按Enter鍵繼續…\n");
+      getchar();
+      continue;
+     }else{
+      break;
+     }
+
+     }while(1);
+
+      /**/
+     fscanf(fp, "%4u", dataSize);
 
      /*假設資料大小小於陣列最大大小*/
      assert(*dataSize <= dataSizeMax);
 
      for (i=0; i < *dataSize; i++){
-        fscanf(fp, "%d", &data[i]);
+        fscanf(fp, "%5d", &data[i]);
         /*假設讀取到的資料都在 1 和 9 之間*/
         assert(data[i] >=1 && data[i] <= 9);
      }
