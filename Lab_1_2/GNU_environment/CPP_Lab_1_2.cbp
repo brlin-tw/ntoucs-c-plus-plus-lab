@@ -69,6 +69,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Source_code/Pause_program.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Source_code/Pause_program.h" />
 		<Unit filename="Source_code/Sorting_algorithm.c">
 			<Option compilerVar="CC" />
 		</Unit>

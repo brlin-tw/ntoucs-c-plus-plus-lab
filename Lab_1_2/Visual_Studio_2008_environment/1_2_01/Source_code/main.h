@@ -13,4 +13,4 @@
   #define MAX_DATASIZE 150
 
 
-#endif // INCLUDED_MAIN_H
+#endif /* INCLUDED_MAIN_H*/

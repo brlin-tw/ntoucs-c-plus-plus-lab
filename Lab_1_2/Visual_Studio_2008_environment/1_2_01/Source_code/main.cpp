@@ -34,6 +34,7 @@
 #include "main.h"
 #include "io.h"
 #include "statistics.h"
+#include "Pause_program.h"
 
 /*////////常數與巨集(Constants & Macros)以及其他#define指令////////*/
 
@@ -58,6 +59,8 @@ int main()
     int frequency[10] = {0};
     int data[MAX_DATASIZE];
 
+/*program restart point*/
+restart_program:
 
     /*測試當前的工作目錄為何？*/
     #ifdef SHOW_DEBUG_MESSAGE
@@ -83,6 +86,10 @@ int main()
     median(data, dataSize);
     mode(frequency, data, dataSize);
 
+    // pause program
+    if(pauseProgram() == 1){
+      goto restart_program;
+    }
 
     return 0;  // indicates successful termination
 }

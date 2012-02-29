@@ -29,7 +29,9 @@ void readFile(unsigned *dataSize, int data[])
     do{
      printf("Input the file name: ");
 
-     /*使用標準C函式fgets代替較不安全的gets()*/
+     /*使用標準C函式fgets代替較不安全的gets()
+       因為fgets()讀不到字串時fopen()會開檔失敗故無需檢查回傳
+       數值*/
      fgets(filename, MAX_FILENAME_SIZE, stdin);
 
       /*如果遇到換行符號就改成\0*/

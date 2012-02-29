@@ -66,7 +66,7 @@ void readFile(unsigned *dataSize, int data[])
         fscanf(fp, "%5d", &data[i]);
 
         /*假設讀取到的資料都在 1 和 9 之間*/
-        assert(data[i] >=1 && data[i] <= 9);
+        assert(data[i] >= 1 && data[i] <= 9);
      }
 
 
