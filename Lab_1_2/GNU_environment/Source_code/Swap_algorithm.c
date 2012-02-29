@@ -25,7 +25,7 @@ Copyright 2012 林博仁(Henry Lin, pika1021@gmail.com)
  *  Known issues is now stored on github
  * 待辦事項(todo)：
  *  Todo is now stored on github
-
+*/
 
 /*swap函式(整數專用版本)
   版本：1.01(2)

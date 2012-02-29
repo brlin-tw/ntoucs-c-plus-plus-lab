@@ -25,7 +25,7 @@ Copyright 2012 林博仁(Henry Lin, pika1021@gmail.com)
   Known issues is now stored on github
 待辦事項(todo)：
   Todo is now stored on github
-
+*/
 
 /*標準輸入／輸出函式庫(standard input/output library)
   版本：1.12(4)
