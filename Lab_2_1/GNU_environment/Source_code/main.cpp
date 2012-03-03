@@ -31,7 +31,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-
 #include "main.h"
 #include "io.h"
 #include "statistics.h"
@@ -49,7 +48,7 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
-
+using namespace std;
 // This program is supposed to compute the mean, median and mode
 // of the data. In addition, this program print out the sorted
 // data according to the computed statistics
@@ -64,12 +63,12 @@ int main()
 restart_program:
 
     /*呼叫ios::sync_with_stdio(), 以避免 iostream 和 stdio 各用各的緩衝區的問題*/
-    /*ios::sync_with_stdio(true);*/
+    ios::sync_with_stdio(true);
 
     /*測試當前的工作目錄為何？*/
     #ifdef SHOW_DEBUG_MESSAGE
-    std::cout << "\n====偵錯用資訊======" << std::endl;
-    std::cout <<"目前的工作目錄為：" << std :: endl;
+    cout << "\n====偵錯用資訊======" << endl;
+    cout <<"目前的工作目錄為：" << endl;
     if(SYSTEM_CATEGORY == 0){
         system("dir");
     }
