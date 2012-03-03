@@ -1,15 +1,15 @@
-/*main.cpp
+ï»¿/*main.cpp
 -----------------------------------
-µ{¦¡®Ø¬[ª©¥»(program framework version)¡GA
-µ{¦¡®Ø¬[­×­q¸¹(program framework revision number)¡G201109251624
-§ó·s¬ö¿ı(changelog)¡G
+ç¨‹å¼æ¡†æ¶ç‰ˆæœ¬(program framework version)ï¼šA
+ç¨‹å¼æ¡†æ¶ä¿®è¨‚è™Ÿ(program framework revision number)ï¼š201109251624
+æ›´æ–°ç´€éŒ„(changelog)ï¼š
   Changelog is now stored on github.
-¤wª¾°İÃD(known issues)¡G
+å·²çŸ¥å•é¡Œ(known issues)ï¼š
   Known issues is now stored on github.
-«İ¿ì¨Æ¶µ(Todo)¡G
+å¾…è¾¦äº‹é …(Todo)ï¼š
   Todo is now stored on github.
 */
-/*´¼¼z°]²£±ÂÅv±ø´Ú¡G
+/*æ™ºæ…§è²¡ç”¢æˆæ¬Šæ¢æ¬¾ï¼š
   *************************************************************************
  * (C) Copyright 1992-2007 by Deitel & Associates, Inc. and               *
  * Pearson Education, Inc. All Rights Reserved.                           *
@@ -19,42 +19,36 @@
  * development, research, and testing of the theories and programs        *
  * to determine their effectiveness. The authors and publisher make       *
  * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
+ * programs or to the documentation contained in thesek books. The authors*
  * and publisher shall not be liable in any event for incidental or       *
  * consequential damages in connection with, or arising out of, the       *
  * furnishing, performance, or use of these programs.                     *
  **************************************************************************/
-/*--------------µ{¦¡½X¶}©l(Code Started)--------------*/
-/*--------------«e´Á³B²z¾¹«ü¥O(Preprocessor Directive)--------------*/
-/*////////Àô¹Ò³]©w(Environment Settings)////////*/
-/*¬O§_Åã¥Ü°»¿ù¼Æ¾Ú¡]¢¯¬°§_¡^¡H*/
-#define SHOW_DEBUG_MESSAGE
+/*--------------ç¨‹å¼ç¢¼é–‹å§‹(Code Started)--------------*/
+/*--------------å‰æœŸè™•ç†å™¨æŒ‡ä»¤(Preprocessor Directive)--------------*/
 
-/*½sÄ¶¢İ¢áºØÃş¡G
-Windows console = 0, Linux console = 1, Symbian console = 2, PSP console = 3*/
-#define SYSTEM_CATEGORY 0
-
-#define DEBUG
-
-/*////////µ{¦¡©Òincludeªº¼ĞÀYÀÉ(Included Headers)////////*/
+/*////////ç¨‹å¼æ‰€includeçš„æ¨™é ­æª”(Included Headers)////////*/
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 
+#include "main.h"
 #include "io.h"
 #include "statistics.h"
-/*////////±`¼Æ»P¥¨¶°(Constants & Macros)¥H¤Î¨ä¥L#define«ü¥O////////*/
+#include "Pause_program.h"
 
-#define DATASIZE 150
-/*////////¨ä¥L«e´Á³B²z¾¹«ü¥O(Other Preprocessor Directives////////*/
+/*////////å¸¸æ•¸èˆ‡å·¨é›†(Constants & Macros)ä»¥åŠå…¶ä»–#defineæŒ‡ä»¤////////*/
 
-/*--------------¥ş°ì«Å§i»P©w¸q(Global Declaration & Definition)--------------*/
-/*////////¸ê®Æµ²ºc(Structures)¡Btypedefs¸òenumerations////////*/
+/*////////å…¶ä»–å‰æœŸè™•ç†å™¨æŒ‡ä»¤(Other Preprocessor Directives////////*/
 
-/*////////¨ç¦¡Âú«¬(Function Prototypes)////////*/
+/*--------------å…¨åŸŸå®£å‘Šèˆ‡å®šç¾©(Global Declaration & Definition)--------------*/
+/*////////è³‡æ–™çµæ§‹(Structures)ã€typedefsè·Ÿenumerations////////*/
 
-/*////////¥ş°ìÅÜ¼Æ(Global Variables)////////*/
+/*////////å‡½å¼é››å‹(Function Prototypes)////////*/
 
-/*--------------¥D­nµ{¦¡½X(Main Code)--------------*/
+/*////////å…¨åŸŸè®Šæ•¸(Global Variables)////////*/
+
+/*--------------ä¸»è¦ç¨‹å¼ç¢¼(Main Code)--------------*/
 
 // This program is supposed to compute the mean, median and mode
 // of the data. In addition, this program print out the sorted
@@ -62,23 +56,28 @@ Windows console = 0, Linux console = 1, Symbian console = 2, PSP console = 3*/
 
 int main()
 {
-    int dataSize;
+    unsigned dataSize;
     int frequency[10] = {0};
-    int data[DATASIZE];
+    int data[MAX_DATASIZE];
 
+/*program restart point*/
+restart_program:
 
-    /*´ú¸Õ·í«eªº¤u§@¥Ø¿ı¬°¦ó¡H*/
+    /*å‘¼å«ios::sync_with_stdio(), ä»¥é¿å… iostream å’Œ stdio å„ç”¨å„çš„ç·©è¡å€çš„å•é¡Œ*/
+    /*ios::sync_with_stdio(true);*/
+
+    /*æ¸¬è©¦ç•¶å‰çš„å·¥ä½œç›®éŒ„ç‚ºä½•ï¼Ÿ*/
     #ifdef SHOW_DEBUG_MESSAGE
-    printf("\n====°»¿ù¥Î¸ê°T======\n");
-    printf("¥Ø«eªº¤u§@¥Ø¿ı¬°¡G\n");
+    std::cout << "\n====åµéŒ¯ç”¨è³‡è¨Š======" << std::endl;
+    std::cout <<"ç›®å‰çš„å·¥ä½œç›®éŒ„ç‚ºï¼š" << std :: endl;
     if(SYSTEM_CATEGORY == 0){
         system("dir");
     }
     else{
         system("ls -l");
     }
-    printf("\n==================\n"
-           "½Ğ«öEnterÁäÄ~Äò...");
+    std::cout << std::endl << "==================" << std::endl
+                            <<"è«‹æŒ‰Enteréµç¹¼çºŒ...";
     getchar();
     #endif
 
@@ -91,7 +90,10 @@ int main()
     median(data, dataSize);
     mode(frequency, data, dataSize);
 
-	getchar();
+    // pause program
+    if(pauseProgram() == 1){
+      goto restart_program;
+    }
 
     return 0;  // indicates successful termination
 }
