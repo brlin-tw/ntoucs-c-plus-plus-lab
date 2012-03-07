@@ -35,6 +35,7 @@ void readFile(unsigned *dataSize, int data[])
      fgets(filename, MAX_FILENAME_SIZE, stdin);
 
       /*如果遇到換行符號就改成\0*/
+      /*FIXME：僅英數環境下適用，為一個不好的workaround*/
       for(j = 0; j < MAX_FILENAME_SIZE; j++){
         if(filename[j] == '\r' || filename[j] == '\n'){
           filename[j] = '\0';
@@ -44,6 +45,10 @@ void readFile(unsigned *dataSize, int data[])
 
     /*因為可移植性不夠所以不實作fopen的安全性加強，用C++的library來替代之
       http://stackoverflow.com/questions/2575116/fopen-fopen-s-and-writing-to-files
+    */
+    /*
+    't' Open in text (translated) mode.
+    http://msdn.microsoft.com/en-us/library/yeby3zcb(v=vs.71).aspx
     */
      fp = fopen(filename, "rt");
 
