@@ -12,7 +12,7 @@
  * consequential damages in connection with, or arising out of, the       *
  * furnishing, performance, or use of these programs.                     *
  **************************************************************************/
-#include <stdio.h>
+/*#include <stdio.h>*/
 #include <assert.h>
 #include <fstream>
 #include <iostream>
@@ -72,9 +72,12 @@ void printArray(const int a[], int size)
     for (int i = 0; i < size; i++)
     {
         if (i % 20 == 0)  // begin new line every 20 values
-            printf("\n");
+            cout << endl;
 
-        printf("%2d", a[i]);
+        /*printf("%2d", a[i]);*/
+        /*設定下一個cout使用的field大小*/
+        cout.width(2);
+        cout << a[i];
 
     }
 }

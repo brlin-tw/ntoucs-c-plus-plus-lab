@@ -79,7 +79,7 @@ short int pauseProgram(void)
 	char inputChar;
 
     do{
-        printf("請問您要重新運行本程式嗎（Ｙ／Ｎ）？\nDo you want to execute this program again(Y/N)?");
+        printf("請問您要重新運行本程式嗎（Ｙ／Ｎ）？\nDo you want to execute this program again(Y/N)?\n");
 
     /*確保輸入是正確的*/
     }while(!((inputChar = getchar()) == 'y' || inputChar == 'Y'
