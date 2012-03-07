@@ -35,6 +35,7 @@ void readFile(unsigned *dataSize, int data[])
      fgets(filename, MAX_FILENAME_SIZE, stdin);
 
       /*如果遇到換行符號就改成\0*/
+      /*FIXME：僅英數環境下適用，為一個不好的workaround*/
       for(j = 0; j < MAX_FILENAME_SIZE; j++){
         if(filename[j] == '\r' || filename[j] == '\n'){
           filename[j] = '\0';
