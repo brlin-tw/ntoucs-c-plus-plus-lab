@@ -28,7 +28,8 @@ void readFile(unsigned *dataSize, int data[])
      /*counter*/
      unsigned i;
 
-     char filename[30];
+     char filename[MAX_FILENAME_SIZE];
+     string dummy_buffer;
 
      cout << "Input the file name: ";
 
@@ -42,12 +43,15 @@ void readFile(unsigned *dataSize, int data[])
       assert(in_stream.fail() == false);*/
 
      if(in_stream.is_open() == false){
-        cout << "開啟檔案失敗！，請確定當前工作目錄是否存在這個檔案。" << endl;
+        cerr << "開啟檔案失敗！，請確定當前工作目錄是否存在這個檔案。" << endl;
 
       }
 
       /*讀取總數值數*/
       in_stream >> *dataSize;
+
+      /*ignore string at the back of the number*/
+      getline(in_stream, dummy_buffer);
 
      /*假設資料大小小於陣列最大大小*/
      assert(*dataSize <= MAX_DATASIZE);
@@ -55,6 +59,10 @@ void readFile(unsigned *dataSize, int data[])
 
      for (i=0; i < *dataSize; i++){
         in_stream >> data[i];
+
+        /*ignore string at the back of the number*/
+        getline(in_stream, dummy_buffer);
+
 
         /*假設讀取到的資料都在 1 和 9 之間*/
         assert(data[i] >= 1 && data[i] <= 9);
@@ -66,6 +74,34 @@ void readFile(unsigned *dataSize, int data[])
 
 }
 
+short writeFile(const unsigned dataSize, const int data[])
+{
+  char filename[MAX_FILENAME_SIZE];
+  unsigned i;
+
+  /*open file phase*/
+  cout << "Please input the filename to output(Max." << MAX_FILENAME_SIZE << "):";
+  cin >> filename;
+
+  ofstream output_file(filename);
+
+  if(!output_file){
+    cerr << "[ERROR] File cannot be opened!" << endl;
+    return -1;
+  }
+
+  /**write file phase**/
+  /*write total number*/
+  output_file << dataSize << endl;
+
+  /*write all data*/
+  for(i = 0; i < dataSize; ++i){
+    output_file << data[i] << endl;
+  }
+
+  /*function ran successfully*/
+  return 0;
+}
 // output array contents (20 values per row)
 void printArray(const int a[], int size)
 {

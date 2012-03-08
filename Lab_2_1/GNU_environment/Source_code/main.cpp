@@ -83,6 +83,8 @@ restart_program:
     // reading file
     readFile(&dataSize, data);
 
+    //write file
+    writeFile(dataSize, data);
 
     // process responses
     mean(data, dataSize);
