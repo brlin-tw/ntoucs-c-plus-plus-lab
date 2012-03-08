@@ -83,13 +83,14 @@ restart_program:
     // reading file
     readFile(&dataSize, data);
 
-    //write file
-    writeFile(dataSize, data);
 
     // process responses
     mean(data, dataSize);
     median(data, dataSize);
     mode(frequency, data, dataSize);
+
+    //write file
+    writeFile(dataSize, data);
 
     // pause program
     if(pauseProgram() == 1){

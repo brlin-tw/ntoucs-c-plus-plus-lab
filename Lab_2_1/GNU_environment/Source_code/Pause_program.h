@@ -1,4 +1,4 @@
-#ifndef INCLUDED_PAUSE_PROGRAM_H
+﻿#ifndef INCLUDED_PAUSE_PROGRAM_H
   #define INCLUDED_PAUSE_PROGRAM_H_INCLUDED
   #ifdef __cplusplus
     extern "C"{

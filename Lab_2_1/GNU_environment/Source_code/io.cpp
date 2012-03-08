@@ -17,7 +17,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-
+#include <cstring>
 #define MAX_FILENAME_SIZE 30
 #include "main.h"
 
@@ -80,13 +80,17 @@ short writeFile(const unsigned dataSize, const int data[])
   unsigned i;
 
   /*open file phase*/
-  cout << "Please input the filename to output(Max." << MAX_FILENAME_SIZE << "):";
+  cout << "Please input the filename to output(Max." << MAX_FILENAME_SIZE << ", enter \"NONE\" to skip):";
   cin >> filename;
+
+  if(!strcmp(filename, "NONE")){
+    return 0;
+  }
 
   ofstream output_file(filename);
 
-  if(!output_file){
-    cerr << "[ERROR] File cannot be opened!" << endl;
+  if(!output_file.is_open()){
+    cout << "[ERROR] File cannot be opened!" << endl;
     return -1;
   }
 
