@@ -8,4 +8,8 @@
 
   void printArray(const int[], int);
 
+  /*writeFile function
+      dataSize:array size
+      data: data array*/
+  short writeFile(const unsigned dataSize, const int data[]);
 #endif // INCLUDED_IO_H

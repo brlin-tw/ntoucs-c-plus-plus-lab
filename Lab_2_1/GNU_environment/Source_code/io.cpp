@@ -12,11 +12,12 @@
  * consequential damages in connection with, or arising out of, the       *
  * furnishing, performance, or use of these programs.                     *
  **************************************************************************/
-#include <stdio.h>
+/*#include <stdio.h>*/
 #include <assert.h>
 #include <fstream>
+#include <iostream>
 #include <string>
-
+#include <cstring>
 #define MAX_FILENAME_SIZE 30
 #include "main.h"
 
@@ -24,74 +25,99 @@ using namespace std;
 
 void readFile(unsigned *dataSize, int data[])
 {
-     unsigned i, j;
+     /*counter*/
+     unsigned i;
 
-     FILE *fp;
-     char filename[30];
+     char filename[MAX_FILENAME_SIZE];
+     string dummy_buffer;
 
+     cout << "Input the file name: ";
 
+      /*還沒有試出來如何限制讀取字元數*/
+      cin >> filename;
 
-     printf("Input the file name: ");
+      /*嘗試開啟檔案*/
+      ifstream in_stream(filename);
 
-     /*使用標準C函式fgets代替較不安全的gets()
-       因為fgets()讀不到字串時fopen()會開檔失敗故無需檢查回傳
-       數值*/
-     fgets(filename, MAX_FILENAME_SIZE, stdin);
+      /*assertion:檔案的fail bit 為unset
+      assert(in_stream.fail() == false);*/
 
-      /*如果遇到換行符號就改成\0*/
-      for(j = 0; j < MAX_FILENAME_SIZE; j++){
-        if(filename[j] == '\r' || filename[j] == '\n'){
-          filename[j] = '\0';
-          break;
-        }
+     if(in_stream.is_open() == false){
+        cerr << "開啟檔案失敗！，請確定當前工作目錄是否存在這個檔案。" << endl;
+
       }
 
-    /*因為可移植性不夠所以不實作fopen的安全性加強，用C++的library來替代之
-      http://stackoverflow.com/questions/2575116/fopen-fopen-s-and-writing-to-files
-    */
-     /*fp = fopen(filename, "rt");
-    do{
-     if(fp == NULL){
-      printf("您輸入的檔案名稱不存在於您目前的工作目錄，請再次輸入一次或是按下Ctrl-C按鍵組合強行中止程式運行。\n"
-             "請按Enter鍵繼續…\n");
-      getchar();
-      continue;
-     }else{
-      break;
-     }
+      /*讀取總數值數*/
+      in_stream >> *dataSize;
 
-     }while(1);
-    */
-     ifstream in(filename);
-      string str;
-      getline(in, str);
-      in >> dataSize;
-      /*將讀取範圍限制在9999以內
-     fscanf(fp, "%4u", dataSize);*/
+      /*ignore string at the back of the number*/
+      getline(in_stream, dummy_buffer);
 
      /*假設資料大小小於陣列最大大小*/
      assert(*dataSize <= MAX_DATASIZE);
 
+
      for (i=0; i < *dataSize; i++){
-        fscanf(fp, "%5d", &data[i]);
+        in_stream >> data[i];
+
+        /*ignore string at the back of the number*/
+        getline(in_stream, dummy_buffer);
+
 
         /*假設讀取到的資料都在 1 和 9 之間*/
         assert(data[i] >= 1 && data[i] <= 9);
      }
 
+      /*關檔
+     fclose(fp);*/
+      in_stream.close();
 
-     fclose(fp);
 }
 
+short writeFile(const unsigned dataSize, const int data[])
+{
+  char filename[MAX_FILENAME_SIZE];
+  unsigned i;
+
+  /*open file phase*/
+  cout << "Please input the filename to output(Max." << MAX_FILENAME_SIZE << ", enter \"NONE\" to skip):";
+  cin >> filename;
+
+  if(!strcmp(filename, "NONE")){
+    return 0;
+  }
+
+  ofstream output_file(filename);
+
+  if(!output_file.is_open()){
+    cout << "[ERROR] File cannot be opened!" << endl;
+    return -1;
+  }
+
+  /**write file phase**/
+  /*write total number*/
+  output_file << dataSize << endl;
+
+  /*write all data*/
+  for(i = 0; i < dataSize; ++i){
+    output_file << data[i] << endl;
+  }
+
+  /*function ran successfully*/
+  return 0;
+}
 // output array contents (20 values per row)
 void printArray(const int a[], int size)
 {
     for (int i = 0; i < size; i++)
     {
         if (i % 20 == 0)  // begin new line every 20 values
-            printf("\n");
+            cout << endl;
 
-        printf("%2d", a[i]);
+        /*printf("%2d", a[i]);*/
+        /*設定下一個cout使用的field大小*/
+        cout.width(2);
+        cout << a[i];
 
     }
 }
