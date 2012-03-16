@@ -27,8 +27,14 @@
 /*////////環境設定(Environment Settings)////////*/
 
 /*////////程式所include的標頭檔(Included Headers)////////*/
+/*我們需要vector物件*/
+#include <vector>
+
 /*我們需要使用暫停函式*/
 #include "pauseProgram/Pause_program.h"
+
+/*我們需要定義好的資料結構*/
+#include "main.h"
 
 /*////////常數與巨集(Constants & Macros)以及其他#define指令////////*/
 
@@ -42,11 +48,19 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
+/*使用std namespace的identifier*/
+using namespace std;
+
 int main()
 {
 
 /*用來重新開始程式的label*/
 restart_program:
+  /*一個DataRecord的vector*/
+  vector<DataRecord> recordArray;
+
+  /*讀取raw1.dat格式的檔案
+  readFile();*/
 
   /*暫停程式*/
   if(pauseProgram() == 1){
