@@ -16,7 +16,7 @@ Debug*/
 Release*/
 
 #Resources目錄底下的東西不想被排除
-!Resoources/
+!Resources/
 
 ##Linux通用設定
 .*
