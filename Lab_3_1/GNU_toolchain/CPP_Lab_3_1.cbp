@@ -68,6 +68,18 @@
 		</Compiler>
 		<Unit filename="Source_code/Complex.cpp" />
 		<Unit filename="Source_code/Complex.h" />
+		<Unit filename="Source_code/Messages_templates/zh_TW.h" />
+		<Unit filename="Source_code/Messages_templates/zh_TW/Debug.zh_TW.h" />
+		<Unit filename="Source_code/Messages_templates/zh_TW/Errors.zh_TW.h" />
+		<Unit filename="Source_code/Messages_templates/zh_TW/Prompt.zh_TW.h" />
+		<Unit filename="Source_code/Project_specific_configurations/Debug.h" />
+		<Unit filename="Source_code/Project_specific_configurations/Source_code/Project_specific_configurations/Debug.h" />
+		<Unit filename="Source_code/Project_specific_configurations/Source_code/Project_specific_configurations/System_category.h" />
+		<Unit filename="Source_code/Project_specific_configurations/System_category.h" />
+		<Unit filename="Source_code/pauseProgram/Pause_program.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Source_code/pauseProgram/Pause_program.h" />
 		<Unit filename="Source_code/testComplex.cpp" />
 		<Extensions>
 			<code_completion />
