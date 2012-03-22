@@ -76,7 +76,7 @@ restart_program:
         system("ls -l");
     }
     std::cout << std::endl << "==================" << std::endl
-                            <<"請按Enter鍵繼續...";
+                           <<"請按Enter鍵繼續...";
     getchar();
     #endif
 

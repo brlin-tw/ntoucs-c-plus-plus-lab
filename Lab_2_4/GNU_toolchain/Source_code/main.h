@@ -7,6 +7,8 @@
 
 #ifndef MAIN_H_INCLUDED
   #define MAIN_H_INCLUDED
+  /*使用std namespace的identifier*/
+  using namespace std;
 
   /*DataRecord資料結構*/
   typedef struct dataRecord{

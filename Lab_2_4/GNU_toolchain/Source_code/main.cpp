@@ -30,11 +30,17 @@
 /*我們需要vector物件*/
 #include <vector>
 
+/*我們需要輸出訊息的函式*/
+#include <iostream>
+
 /*我們需要使用暫停函式*/
 #include "pauseProgram/Pause_program.h"
 
 /*我們需要定義好的資料結構*/
 #include "main.h"
+
+/*我們需要輸出輸入用的函式*/
+#include "input_output.h"
 
 /*////////常數與巨集(Constants & Macros)以及其他#define指令////////*/
 
@@ -48,20 +54,26 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
-/*使用std namespace的identifier*/
-using namespace std;
 
 int main()
 {
-
-/*用來重新開始程式的label*/
-restart_program:
   /*一個DataRecord的vector*/
   vector<DataRecord> recordArray;
 
-  /*讀取raw1.dat格式的檔案
-  readFile();*/
+/*用來重新開始程式的label*/
+restart_program:
 
+  /*讀取raw1.dat格式的檔案*/
+  if(!readFile(recordArray)){
+    cout << "讀取資料檔案結束。";
+
+  }else{
+    cout << "讀取資料檔案失敗！程式異常終止！";
+    goto exit_program;
+  }
+
+/*用來結束程式的label*/
+exit_program:
   /*暫停程式*/
   if(pauseProgram() == 1){
     goto restart_program;
