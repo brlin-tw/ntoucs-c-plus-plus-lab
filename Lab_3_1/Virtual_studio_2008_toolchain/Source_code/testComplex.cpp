@@ -1,14 +1,14 @@
-/*µ{¦¡®Ø¬[(Program Framework)
+ï»¿/*testComplex.cpp
 -----------------------------------
-§ó·s¬ö¿ı | Changelog
+æ›´æ–°ç´€éŒ„ | Changelog
   Changelog is now stored on GitHub
-¤wª¾°İÃD | Known Issues
+å·²çŸ¥å•é¡Œ | Known Issues
   Known issues is now stored on GitHub
-«İ¿ì¨Æ¶µ | Todos
+å¾…è¾¦äº‹é … | Todos
   Todo is now stored on GitHub
-µÛ§@Åv«Å§i | Copyright notice
-  Copyright 2012 ªL³Õ¤¯(Henry Lin)
-´¼¼z°]²£±ÂÅv±ø´Ú¡G
+è‘—ä½œæ¬Šå®£å‘Š | Copyright notice
+  Copyright 2012 æ—åšä»(Henry Lin)
+æ™ºæ…§è²¡ç”¢æˆæ¬Šæ¢æ¬¾ï¼š
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU Lesser General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -23,27 +23,48 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*--------------µ{¦¡½X¶}©l(Code Started)--------------*/
-/*--------------«e´Á³B²z¾¹«ü¥O(Preprocessor Directive)--------------*/
-/*////////Àô¹Ò³]©w(Environment Settings)////////*/
+/*--------------ç¨‹å¼ç¢¼é–‹å§‹(Code Started)--------------*/
+/*--------------å‰æœŸè™•ç†å™¨æŒ‡ä»¤(Preprocessor Directive)--------------*/
+/*////////ç’°å¢ƒè¨­å®š(Environment Settings)////////*/
 
-/*////////µ{¦¡©Òincludeªº¼ĞÀYÀÉ(Included Headers)////////*/
+/*////////ç¨‹å¼æ‰€includeçš„æ¨™é ­æª”(Included Headers)////////*/
+/*We need complex number class*/
+#include "Complex.h"
 
-/*////////±`¼Æ»P¥¨¶°(Constants & Macros)¥H¤Î¨ä¥L#define«ü¥O////////*/
+/*We need pauseProgram function*/
+#include "pauseProgram/Pause_program.h"
 
-/*////////¨ä¥L«e´Á³B²z¾¹«ü¥O(Other Preprocessor Directives////////*/
+/*We need console output method*/
+#include <iostream>
 
-/*--------------¥ş°ì«Å§i»P©w¸q(Global Declaration & Definition)--------------*/
-/*////////¸ê®Æµ²ºc(Data Structures)¡Btypedefs¸òenumerations////////*/
+/*////////å¸¸æ•¸èˆ‡å·¨é›†(Constants & Macros)ä»¥åŠå…¶ä»–#defineæŒ‡ä»¤////////*/
 
-/*////////¨ç¦¡Âú«¬(Function Prototypes)////////*/
+/*////////å…¶ä»–å‰æœŸè™•ç†å™¨æŒ‡ä»¤(Other Preprocessor Directives////////*/
 
-/*////////¥ş°ìÅÜ¼Æ(Global Variables)////////*/
+/*--------------å…¨åŸŸå®£å‘Šèˆ‡å®šç¾©(Global Declaration & Definition)--------------*/
+/*////////è³‡æ–™çµæ§‹(Data Structures)ã€typedefsè·Ÿenumerations////////*/
 
-/*--------------¥D­nµ{¦¡½X(Main Code)--------------*/
+/*////////å‡½å¼é››å‹(Function Prototypes)////////*/
+
+/*////////å…¨åŸŸè®Šæ•¸(Global Variables)////////*/
+
+/*--------------ä¸»è¦ç¨‹å¼ç¢¼(Main Code)--------------*/
+using namespace std;
 int main()
 {
 
+restart_program:
 
+  //é€²è¡Œè¤‡æ•¸é¡åˆ¥å…ƒä»¶æ¸¬è©¦
+  if(!CComplex::unitTest()){
+    cout << "å…ƒä»¶æ¸¬è©¦æœªé€šéï¼è»Ÿé«”ç„¡æ³•ç¹¼çºŒé‹è¡Œã€‚" << endl
+         << "è«‹ä¿ç•™ç¨‹å¼è¼¸å‡ºä¹‹æ‰€æœ‰è¨Šæ¯ä»¥æäº¤ç¨‹å¼ç¼ºé™·å ±å‘Šä¾›è»Ÿé«”é–‹ç™¼è€…è™•ç†é€™å€‹å•é¡Œã€‚" << endl
+         << "æäº¤å ±å‘Šç¶²é åœ°å€ï¼šhttps://github.com/Vdragon/NTOU_CPP_Lab_Opensource_Project/issues" << endl;
+  }
+
+/*end_program:*/
+  if(pauseProgram() == 1){
+    goto restart_program;
+  }
   return 0;
 }

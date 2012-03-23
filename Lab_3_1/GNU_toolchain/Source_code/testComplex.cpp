@@ -49,6 +49,7 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
+using namespace std;
 int main()
 {
 

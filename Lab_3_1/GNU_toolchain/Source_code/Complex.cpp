@@ -1,4 +1,4 @@
-/*testComplex.cpp
+﻿/*testComplex.cpp
 -----------------------------------
 更新紀錄 | Changelog
   Changelog is now stored on GitHub
@@ -58,6 +58,8 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
+/*We use standard namespace*/
+using namespace std;
 
 CComplex::CComplex(void)
 {

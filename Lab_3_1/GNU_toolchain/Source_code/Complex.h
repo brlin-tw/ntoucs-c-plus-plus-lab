@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 /* 如果浮點數小於這個常數就會被視為等於零
  * 注意：設成太小的數值可能導致問題。*/
@@ -8,10 +8,7 @@
 #define COMPLEX_NUMBER_DIVISION_TAG "【複數除法模組】"
 #define UNIT_TEST_TAG "【元件測試模組】"
 
-
-/*We use standard namespace*/
-using namespace std;
-
+/*複數物件類別*/
 class CComplex
 {
 public:
