@@ -6,7 +6,7 @@
      已廢棄，改用DEBUG preprocessor宣告*/
 
   /*是否build跟偵錯有關的程式碼？
-   * （如果無法於整合式開發環境的專案設定中設定再設這裡）*/
+   * （如果無法於整合式開發環境的專案設定中的前期處理器(Preprocessor)部份設定再設這裡）*/
   /*#define DEBUG*/
   /*#define NDEBUG*/
 

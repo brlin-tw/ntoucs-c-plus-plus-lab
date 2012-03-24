@@ -37,6 +37,12 @@
 /*We need console output method*/
 #include <iostream>
 
+/*我們需要程式名稱*/
+#include "testComplex.h"
+
+/*我們需要showSoftwareInfo() */
+#include "Show_software_info/Show_software_info.h"
+
 /*////////常數與巨集(Constants & Macros)以及其他#define指令////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -54,6 +60,8 @@ int main()
 {
 
 restart_program:
+  /*顯示軟體資訊*/
+  show_software_info(PROGRAM_NAME);
 
   //進行複數類別元件測試
   if(!CComplex::unitTest()){
