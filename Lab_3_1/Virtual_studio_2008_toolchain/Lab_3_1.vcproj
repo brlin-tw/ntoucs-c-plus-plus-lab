@@ -180,6 +180,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Source_code\Show_software_info\Show_software_info.c"
+				>
+			</File>
+			<File
 				RelativePath=".\Source_code\testComplex.cpp"
 				>
 			</File>
@@ -214,7 +218,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Source_code\Show_software_info\Show_software_info.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Source_code\Project_specific_configurations\Software_info.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Source_code\Project_specific_configurations\System_category.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Source_code\testComplex.h"
 				>
 			</File>
 			<File

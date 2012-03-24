@@ -17,6 +17,7 @@
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-DDEBUG" />
 				</Compiler>
 			</Target>
 			<Target title="釋出版本(Linux x86)">
@@ -30,6 +31,7 @@
 					<Add option="-pedantic" />
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
+					<Add option="-DNDEBUG" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -73,14 +75,20 @@
 		<Unit filename="Source_code/Messages_templates/zh_TW/Errors.zh_TW.h" />
 		<Unit filename="Source_code/Messages_templates/zh_TW/Prompt.zh_TW.h" />
 		<Unit filename="Source_code/Project_specific_configurations/Debug.h" />
+		<Unit filename="Source_code/Project_specific_configurations/Software_info.h" />
 		<Unit filename="Source_code/Project_specific_configurations/Source_code/Project_specific_configurations/Debug.h" />
 		<Unit filename="Source_code/Project_specific_configurations/Source_code/Project_specific_configurations/System_category.h" />
 		<Unit filename="Source_code/Project_specific_configurations/System_category.h" />
+		<Unit filename="Source_code/Show_software_info/Show_software_info.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Source_code/Show_software_info/Show_software_info.h" />
 		<Unit filename="Source_code/pauseProgram/Pause_program.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Source_code/pauseProgram/Pause_program.h" />
 		<Unit filename="Source_code/testComplex.cpp" />
+		<Unit filename="Source_code/testComplex.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
