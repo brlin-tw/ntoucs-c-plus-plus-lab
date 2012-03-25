@@ -48,7 +48,7 @@
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="4"
-				ShowIncludes="true"
+				ShowIncludes="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -172,6 +172,10 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\Source_code\Complex_number_abstract_data_structure\Complex.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Source_code\Complex.cpp"
 				>
 			</File>
@@ -180,7 +184,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Source_code\portableEOLalgorithm\portableEOLalgorithm.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Source_code\Show_software_info\Show_software_info.c"
+				>
+			</File>
+			<File
+				RelativePath=".\Source_code\Solve_equations_algorithms\Solve_equations_algorithms.cpp"
 				>
 			</File>
 			<File
@@ -198,6 +210,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Source_code\Complex_number_abstract_data_structure\Complex.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Source_code\Project_specific_configurations\Debug.h"
 				>
 			</File>
@@ -210,7 +226,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Source_code\Project_specific_configurations\Math.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Source_code\pauseProgram\Pause_program.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Source_code\portableEOLalgorithm\portableEOLalgorithm.h"
 				>
 			</File>
 			<File
@@ -226,11 +250,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Source_code\Solve_equations_algorithms\Solve_equations_algorithms.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Source_code\Project_specific_configurations\System_category.h"
 				>
 			</File>
 			<File
 				RelativePath=".\Source_code\testComplex.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Source_code\Messages_templates\zh_TW\Warnings.zh_TW.h"
 				>
 			</File>
 			<File
