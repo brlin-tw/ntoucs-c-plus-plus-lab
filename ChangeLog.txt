@@ -1,3 +1,50 @@
+* 2-4：完成移植Visual Studio toolchain - cb3f87d (Mon Mar 26 05:13:52 2012 +0800) Ｖ字龍(Vdragon)
+* 2-4完成 - 5c80b6a (Mon Mar 26 04:59:33 2012 +0800) Ｖ字龍(Vdragon)
+*   Merge branch 'Lab_2_4' - 4acf001 (Mon Mar 26 02:57:16 2012 +0800) Ｖ字龍(Vdragon)
+|\  
+| * Merge branch '實作步驟二'; commit '6028ff3' into Lab_2_4 - 112acd3 (Sat Mar 17 06:14:56 2012 +0800) Ｖ字龍(Vdragon)
+* |   Merge branch 'Lab_2_4_實作步驟二' - d65a8e8 (Mon Mar 26 02:56:56 2012 +0800) Ｖ字龍(Vdragon)
+|\ \  
+| * | 目前進度 - 753e34a (Thu Mar 22 10:55:14 2012 +0800) Ｖ字龍(Vdragon)
+| * | 將Standard C Library header檔案改為Standard C++的形式 - cfb0064 (Sun Mar 18 21:44:05 2012 +0800) Ｖ字龍(Vdragon)
+| |/  
+| * 定義好資料結構 - 328f220 (Sat Mar 17 06:13:41 2012 +0800) Ｖ字龍(Vdragon)
+| * 加入標準C++函式庫include路徑 - 6028ff3 (Sat Mar 17 06:12:58 2012 +0800) Ｖ字龍(Vdragon)
+| * 2.4初步建立 - 0542439 (Sat Mar 17 05:33:15 2012 +0800) Ｖ字龍(Vdragon)
+| * 更新.gitignore - ad71294 (Sat Mar 17 05:32:28 2012 +0800) Ｖ字龍(Vdragon)
+| * 加入Lab 2.4 檔案、更新.gitignore - 2d5e13f (Sat Mar 17 04:50:49 2012 +0800) Ｖ字龍(Vdragon)
+* |   Merge branch 'Lab_2_3' - 80c82bd (Mon Mar 26 01:54:49 2012 +0800) Ｖ字龍(Vdragon)
+|\ \  
+| * | Lab 3-1 完成Visual Studio 下的實作 - d0da41c (Mon Mar 26 01:47:57 2012 +0800) Ｖ字龍(Vdragon)
+| * | 加入程式原始碼 - 48894a0 (Sat Mar 17 02:44:32 2012 +0800) Ｖ字龍(Vdragon)
+| |/  
+* | 完成3-1 - 25ad0fb (Mon Mar 26 01:16:45 2012 +0800) Ｖ字龍(Vdragon)
+* | 初步完成步驟十一 - 4ad8df9 (Mon Mar 26 00:45:30 2012 +0800) Ｖ字龍(Vdragon)
+* | 更新 - 0af6ccd (Sun Mar 25 03:48:21 2012 +0800) Ｖ字龍(Vdragon)
+* | 步驟十移植Visual Studio 完成 - b286e6a (Sun Mar 25 03:47:17 2012 +0800) Ｖ字龍(Vdragon)
+* | 更新部份字串、加入showSoftwareInfo - c5e9773 (Sun Mar 25 02:19:54 2012 +0800) Ｖ字龍(Vdragon)
+* | 修復多個由Visual C++ toolchain發現的問題，移植Visual Studio 2008完成 - b753a6e (Fri Mar 23 15:42:26 2012 +0800) Ｖ字龍(Vdragon)
+* | 完成３-１步驟１０ - f33b00a (Fri Mar 23 06:48:55 2012 +0800) Ｖ字龍(Vdragon)
+* | 加入2.4 3.1 - 12bc590 (Thu Mar 22 11:00:08 2012 +0800) Ｖ字龍(Vdragon)
+* | 更新 - 209af46 (Sat Mar 17 05:07:27 2012 +0800) Ｖ字龍(Vdragon)
+* | 更新.gitignore：不排除Eclipse專案檔案 - 46b5a23 (Sat Mar 17 04:51:53 2012 +0800) Ｖ字龍(Vdragon)
+|/  
+*   Merge branch 'do_2_1' - 073742f (Thu Mar 8 11:56:07 2012 +0800) Ｖ字龍(Vdragon)
+|\  
+| * 完成2-1：加入Visual Studio 2008 - f7c7377 (Thu Mar 8 11:55:56 2012 +0800) Ｖ字龍(Vdragon)
+* |   Merge branch 'do_2_1' - 55bed74 (Thu Mar 8 11:53:22 2012 +0800) Ｖ字龍(Vdragon)
+|\ \  
+| |/  
+| * 完成2-1 - 75740ed (Thu Mar 8 11:53:03 2012 +0800) Ｖ字龍(Vdragon)
+| * 完成步驟3, 4 - d168cb6 (Thu Mar 8 11:22:42 2012 +0800) Ｖ字龍(Vdragon)
+| * 更新1-2 - 29d87a7 (Thu Mar 8 02:07:12 2012 +0800) Ｖ字龍(Vdragon)
+| * 更新2-1 - 0b5bda9 (Thu Mar 8 02:06:32 2012 +0800) Ｖ字龍(Vdragon)
+| * 完成步驟2 - 51834e7 (Sat Mar 3 22:34:56 2012 +0800) Ｖ字龍(Vdragon)
+* | 新增fopen()說明 - e145e5e (Thu Mar 8 02:15:47 2012 +0800) Ｖ字龍(Vdragon)
+|/  
+* 完成2-0、剛開始2-1 - 3da4568 (Sat Mar 3 19:32:14 2012 +0800) Ｖ字龍(Vdragon)
+* 更新ChangeLog.txt - a9496dc (Thu Mar 1 03:16:13 2012 +0800) Ｖ字龍(Vdragon)
+* 更名授權條款 - 383d182 (Thu Mar 1 03:15:52 2012 +0800) Ｖ字龍(Vdragon)
 * 新增pauseProgram()、修正不相容C的C++註解 - 040902e (Thu Mar 1 03:01:12 2012 +0800) Ｖ字龍(Vdragon)
 * 解決issue #8、加入pauseProgram() - b4d6871 (Thu Mar 1 02:33:10 2012 +0800) Ｖ字龍(Vdragon)
 * 部份修正issue #8 - 90351b4 (Wed Feb 29 23:21:47 2012 +0800) Ｖ字龍(Vdragon)
