@@ -25,10 +25,10 @@
 <option id="gnu.cpp.compiler.exe.debug.option.optimization.level.380650766" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1307334363" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.option.preprocessor.def.39369510" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
-<listOptionValue builtIn="false" value="NDEBUG"/>
+<listOptionValue builtIn="false" value="DEBUG"/>
 </option>
 <option id="gnu.cpp.compiler.option.warnings.pedantic.1771395016" name="Pedantic (-pedantic)" superClass="gnu.cpp.compiler.option.warnings.pedantic" value="true" valueType="boolean"/>
-<option id="gnu.cpp.compiler.option.include.paths.1037088826" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<option id="gnu.cpp.compiler.option.include.paths.1037088826" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/usr/include/c++/4.6.1"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1174890417" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -37,8 +37,11 @@
 <option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.1759155341" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 <option id="gnu.c.compiler.exe.debug.option.debugging.level.363549018" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 <option id="gnu.c.compiler.option.warnings.pedantic.1868043181" name="Pedantic (-pedantic)" superClass="gnu.c.compiler.option.warnings.pedantic" value="true" valueType="boolean"/>
-<option id="gnu.c.compiler.option.include.paths.1506186410" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+<option id="gnu.c.compiler.option.include.paths.1506186410" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/usr/include"/>
+</option>
+<option id="gnu.c.compiler.option.preprocessor.def.symbols.144506786" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="DEBUG"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1796647900" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>
@@ -504,7 +507,7 @@
 <listOptionValue builtIn="false" value="NDEBUG"/>
 </option>
 <option id="gnu.cpp.compiler.option.warnings.pedantic.607420418" name="Pedantic (-pedantic)" superClass="gnu.cpp.compiler.option.warnings.pedantic" value="true" valueType="boolean"/>
-<option id="gnu.cpp.compiler.option.include.paths.426939809" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<option id="gnu.cpp.compiler.option.include.paths.426939809" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/usr/include/c++/4.6.1"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.456752466" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -513,8 +516,11 @@
 <option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.exe.release.option.optimization.level.1023638553" name="Optimization Level" superClass="gnu.c.compiler.exe.release.option.optimization.level" valueType="enumerated"/>
 <option id="gnu.c.compiler.exe.release.option.debugging.level.2052077284" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 <option id="gnu.c.compiler.option.warnings.pedantic.271828906" name="Pedantic (-pedantic)" superClass="gnu.c.compiler.option.warnings.pedantic" value="true" valueType="boolean"/>
-<option id="gnu.c.compiler.option.include.paths.1430493272" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+<option id="gnu.c.compiler.option.include.paths.1430493272" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/usr/include"/>
+</option>
+<option id="gnu.c.compiler.option.preprocessor.def.symbols.1610660313" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="NDEBUG"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.300207036" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>

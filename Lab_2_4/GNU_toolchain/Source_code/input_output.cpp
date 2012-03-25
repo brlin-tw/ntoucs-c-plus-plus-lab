@@ -46,6 +46,7 @@
 /*我們需要存取專案的偵錯設定*/
 #include "Project_specific_configurations/Debug.h"
 
+
 /*////////常數與巨集(Constants & Macros)以及其他#define指令////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -59,7 +60,7 @@
 
 /*--------------主要程式碼(Main Code)--------------*/
 /*讀取raw1.dat格式檔案的函式*/
-short readFile(vector<DataRecord> data_array)
+short readFile(vector<DataRecord> &data_array)
 {
   /*用來保存使用者輸入檔案名稱的字串*/
   string filename;
@@ -98,7 +99,7 @@ short readFile(vector<DataRecord> data_array)
 #endif
 
     /*批量讀取檔案資料到vector中*/
-    for(i = 1; i <= total; ++i){
+    for(i = 0; i < total; ++i){
       /*將資料讀到read_temp中*/
       read_temp.lineNumber = i;
       input_file >> read_temp.value;

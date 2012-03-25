@@ -19,7 +19,7 @@
    * 回傳值：
    *   0－讀檔完成
    *   -1－檔案開啟失敗*/
-  short readFile(vector<DataRecord> data_array);
+  short readFile(vector<DataRecord> &data_array);
 
 
 

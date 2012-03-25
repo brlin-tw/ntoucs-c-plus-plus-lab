@@ -16,6 +16,8 @@
     int lineNumber;
     /*數值*/
     int value;
+
+    bool operator==(const struct dataRecord &y);
   }DataRecord;
 
 #endif /* MAIN_H_INCLUDED */
