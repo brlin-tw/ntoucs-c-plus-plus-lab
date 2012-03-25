@@ -19,7 +19,7 @@ void set_initial_leak_test()
 		*/
     tmpFlag |= _CRTDBG_CHECK_ALWAYS_DF ;
 		/*
-		Prevents memory from actually being freed, as for simulating low-memory conditions. When this bit is on, freed blocks are kept in the debug heap¡¦s linked list but are marked as _FREE_BLOCK and filled with a special byte value.
+		Prevents memory from actually being freed, as for simulating low-memory conditions. When this bit is on, freed blocks are kept in the debug heapï¿½ï¿½s linked list but are marked as _FREE_BLOCK and filled with a special byte value.
 		*/
     tmpFlag |= _CRTDBG_DELAY_FREE_MEM_DF ;
 
@@ -52,6 +52,8 @@ void set_initial_leak_test()
 #ifdef TEST_MEM_LEAKS_BREAK_NUM
     /* force a leak to verify memory leak testing */
     _CrtSetBreakAlloc(TEST_MEM_LEAKS_BREAK_NUM);
+
+
 #endif
 }
 

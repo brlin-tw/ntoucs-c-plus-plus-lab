@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////////////////////////////////////
 /* allocation # at which to break */
-#define TEST_MEM_LEAKS_BREAK_NUM 23    
+#define TEST_MEM_LEAKS_BREAK_NUM 51
 
 #define TEST_MEM_LEAKS_BREAK 1          /* 1 to break at an allocation*/
 

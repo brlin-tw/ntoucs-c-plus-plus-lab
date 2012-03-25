@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+﻿#include <cstdio>
 #include <malloc.h>
 
 #include "memory_leak.h"
@@ -15,6 +15,6 @@ void main()
         ptr[i] = i;
     //delete[] ptr;
     /*free(ptr);*/
-    //getchar();
+    
     return ;
 }
