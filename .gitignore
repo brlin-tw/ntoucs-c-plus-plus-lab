@@ -1,4 +1,4 @@
-##.gitignore範本
+﻿##.gitignore範本
 ##.gitignore用途
 #   避免git將不想add至staging area的檔案add到staging area中。
 ##.gitignore語法

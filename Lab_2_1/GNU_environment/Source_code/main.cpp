@@ -28,8 +28,8 @@
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 
 /*////////程式所include的標頭檔(Included Headers)////////*/
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <iostream>
 #include "main.h"
 #include "io.h"
@@ -76,7 +76,7 @@ restart_program:
         system("ls -l");
     }
     std::cout << std::endl << "==================" << std::endl
-                            <<"請按Enter鍵繼續...";
+                           <<"請按Enter鍵繼續...";
     getchar();
     #endif
 
