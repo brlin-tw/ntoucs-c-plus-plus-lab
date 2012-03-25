@@ -38,13 +38,13 @@
 #include <cmath>
 
 /*We need error messages*/
-#include "Messages_templates/zh_TW.h"
+#include "../Messages_templates/zh_TW.h"
 
 /* We need cout*/
 #include <iostream>
 
 /* 我們需要編譯DEBUG專用的程式碼*/
-#include "Project_specific_configurations/Debug.h"
+#include "../Project_specific_configurations/Debug.h"
 
 /*////////常數與巨集(Constants & Macros)以及其他#define指令////////*/
 
@@ -132,8 +132,8 @@ bool CComplex::divide(CComplex divider)
   /***測試例外情況階段***/
   /*被除數是零除法沒有定義*/
   if(divider.isZero()){
-    cout << COMPLEX_NUMBER_DIVISION_TAG << ERROR_DIVIDE_BY_ZERO
-         << COMPLEX_NUMBER_DIVISION_TAG << "Complex Number Division Failed!" << endl;
+    cout << ERROR_TAG << COMPLEX_NUMBER_DIVISION_TAG << ERROR_DIVIDE_BY_ZERO
+         << ERROR_TAG << COMPLEX_NUMBER_DIVISION_TAG << "Complex Number Division Failed!" << endl;
     return false;
   }
 
@@ -191,8 +191,27 @@ double CComplex::getImaginary()
 /*a method to test CComplex class*/
 bool CComplex::unitTest()
 {
+  {
+    /*複數等於零method測試*/
+    CComplex x1, x2, x3, x4;
 
-  {/*複數相等method測試*/
+    x1.setValue(0,0);
+    x2.setValue(0.02, -0.14);
+    x3.setValue(3,0);
+    x4.setValue(0,3);
+
+    assert(x1.isZero());
+    assert(!x2.isZero());
+    assert(!x3.isZero());
+    assert(!x4.isZero());
+#ifdef DEBUG
+  cout << DEBUG_TAG << UNIT_TEST_TAG
+       << "複數等於零method測試通過！" << endl;
+#endif
+  }
+  {
+
+    /*複數相等method測試*/
     CComplex z1, z2;
 
     z1.setValue(3.14159, 2.71787);
@@ -268,8 +287,25 @@ bool CComplex::unitTest()
            << "複數除法method測試通過！" << endl;
   #endif
   }
+  {/* 是否為實數method測試*/
+    CComplex x1, x2, x3;
+    x1.setValue(3, 0);
+    x2.setValue(3,-3);
+    x3.setValue(0,3);
 
+    assert(x1.isReal());
+    assert(!x2.isReal());
+    assert(!x3.isReal());
+#ifdef DEBUG
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "是否為實數method測試通過！" << endl;
+#endif
+  }
   /*success*/
+#ifdef DEBUG
+  cout << DEBUG_TAG << UNIT_TEST_TAG
+       << "複數抽象資料結構單元測試完全通過！" << endl;
+#endif
   return true;
 }
 
@@ -285,8 +321,9 @@ void CComplex::print()
    * originally used for divide-by-0 checking*/
 inline bool CComplex::isZero()
 {
-  /*兩數相乘為零表示兩者接分別為零*/
-  return fabs(m_real * m_imaginary) < MAX_ZERO_LIMIT;
+
+  /*實虛部係數皆為零者為零*/
+  return (fabs(m_real) < MAX_ZERO_LIMIT && fabs(m_imaginary) < MAX_ZERO_LIMIT);
 }
 
 /*一個inline的method用來將一個複數轉型成其共軛型式*/
@@ -297,4 +334,15 @@ inline void CComplex::toConjugate()
 
   /*done*/
   return;
+}
+
+/* an inline method to check if complex number is real,
+ * originally used for print() format check*/
+bool CComplex::isReal()
+{
+  if(fabs(m_imaginary) < MAX_ZERO_LIMIT){
+    return true;
+  }else{
+    return false;
+  }
 }

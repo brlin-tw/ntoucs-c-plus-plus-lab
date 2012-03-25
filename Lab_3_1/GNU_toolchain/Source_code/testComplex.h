@@ -7,7 +7,8 @@
     extern "C"{
   #endif
   /*程式名稱*/
-#define PROGRAM_NAME "Lab 3-1測試程式"
+  #define PROGRAM_NAME "Lab 3-1測試程式"
+
   #ifdef __cplusplus
     }
   #endif
