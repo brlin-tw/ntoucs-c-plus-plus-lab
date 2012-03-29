@@ -75,6 +75,7 @@
   /* overload ostream::operator<< 的 複數insertion operator */
   ostream &operator<<(ostream &os, CComplex &rhs);
 
-
+  /*步驟七*/
+  ostream *operator<<(ostream *output, CComplex source);
 #endif
 

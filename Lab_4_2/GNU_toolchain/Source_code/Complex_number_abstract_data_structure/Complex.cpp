@@ -421,3 +421,12 @@ ostream &operator<<(ostream &os, CComplex &rhs)
 
   return os;
 }
+
+/*步驟七*/
+ostream *operator<<(ostream *output, CComplex source)
+{
+  *output << "[[" ;
+  source.print2Stream(*output);
+  *output << "]]";
+  return output;
+}

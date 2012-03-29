@@ -79,10 +79,23 @@ restart_program:
 
     x.setValue(3, 4); y.setValue(5, 6);
 
-    operator<<(operator<<(operator<<(operator<<(operator<<(cout, '('), x) , ")*(") , y), ')');
+    operator<<(operator<<(operator<<(operator<<(operator<<(cout, '('), x) , ")*(") , y), ')') << endl;
 
   }
 
+  /*步驟七*/
+  {
+    CComplex x1, x2;
+
+    x1.setValue(3.22, -4.19);
+    x2.setValue(-3.1415, 200);
+
+    operator<<(&cout, x1);
+
+    *operator<<(&cout, x1) << endl;
+    *operator<<(operator<<(&cout, x1), x2) << endl;
+
+  }
   /*暫停程式運行（於main函式中）*/
   if(pauseProgram() == 1){
     goto restart_program;
