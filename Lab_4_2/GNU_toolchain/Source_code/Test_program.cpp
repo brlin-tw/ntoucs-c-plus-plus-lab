@@ -62,13 +62,26 @@ restart_program:
   CComplex::unitTest();
 
   /*步驟五*/
-  CComplex x;
+  {
+    CComplex x;
 
-  x.setValue(3, 4);
+    x.setValue(3, 4);
 
-  ofstream file("outputfile.txt", ios::out);
+    ofstream file("outputfile.txt", ios::out);
 
-  file << x; // 在檔案裡寫入 3 + 4 i
+    file << x; // 在檔案裡寫入 3 + 4 i
+  }
+
+
+  /*步驟六*/
+  {
+    CComplex x, y;
+
+    x.setValue(3, 4); y.setValue(5, 6);
+
+    operator<<(operator<<(operator<<(operator<<(operator<<(cout, '('), x) , ")*(") , y), ')');
+
+  }
 
   /*暫停程式運行（於main函式中）*/
   if(pauseProgram() == 1){
