@@ -5,7 +5,9 @@
 <storageModule moduleId="org.eclipse.cdt.core.settings">
 <cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.1481972625">
 <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.1481972625" moduleId="org.eclipse.cdt.core.settings" name="Debug">
-<externalSettings/>
+<externalSettings>
+<externalSetting languages="cdt.managedbuild.tool.gnu.c.compiler.input.87439555"/>
+</externalSettings>
 <extensions>
 <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 <extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -26,6 +28,8 @@
 <option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1139657892" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.option.include.paths.679430230" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/usr/include/c++/4.6.1"/>
+<listOptionValue builtIn="false" value="/usr/include/c++/4.6/tr1/"/>
+<listOptionValue builtIn="false" value="/usr/include/c++/4.6/i686-linux-gnu/"/>
 </option>
 <option id="gnu.cpp.compiler.option.preprocessor.def.1485734193" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="DEBUG"/>
@@ -37,6 +41,7 @@
 <option id="gnu.c.compiler.exe.debug.option.debugging.level.460719551" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 <option id="gnu.c.compiler.option.include.paths.1882407636" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/usr/include"/>
+<listOptionValue builtIn="false" value="/usr/include/i386-linux-gnu/"/>
 </option>
 <option id="gnu.c.compiler.option.preprocessor.def.symbols.1693256179" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="DEBUG"/>
@@ -834,6 +839,8 @@
 <option id="gnu.cpp.compiler.exe.release.option.debugging.level.40577273" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.option.include.paths.221795888" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/usr/include/c++/4.6.1"/>
+<listOptionValue builtIn="false" value="/usr/include/c++/4.6/tr1/"/>
+<listOptionValue builtIn="false" value="/usr/include/c++/4.6/i686-linux-gnu/"/>
 </option>
 <option id="gnu.cpp.compiler.option.preprocessor.def.1283885122" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="NDEBUG"/>
@@ -845,6 +852,7 @@
 <option id="gnu.c.compiler.exe.release.option.debugging.level.1809393497" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 <option id="gnu.c.compiler.option.include.paths.325109717" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/usr/include"/>
+<listOptionValue builtIn="false" value="/usr/include/i386-linux-gnu/"/>
 </option>
 <option id="gnu.c.compiler.option.preprocessor.def.symbols.158548652" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="NDEBUG"/>
