@@ -66,12 +66,45 @@ using namespace std;
   /*用來讀取資料檔案的函式*/
   short readFile(vector<CComplex> *pVector)
   {
+    /*存放檔案名稱的陣列*/
     char filename[FILENAME_MAX];
+
+    /*讀取檔案的stream*/
+    ifstream file;
+
+    /**/
+    CComplex bufferCComplex;
+
+    /**/
+    double bufferReal, bufferImaginary;
+
 #ifdef DEBUG
     cout << DEBUG_TAG
          << "用來存放檔案名稱的陣列大小為" << FILENAME_MAX << endl;
 #endif
     askFile(filename);
+    if(openFile(filename, "r", file)){
+      cerr << "讀取檔案失敗！" << endl;
+      return -1;
+    }
+    /*讀取檔案階段*/
+    while(true){
+      file >> bufferReal >> bufferImaginary;
+      if(file.eof()){
+#ifdef DEBUG
+        cout << DEBUG_TAG << "[END OF FILE]" << endl;
+#endif
+        break;
+      }
+
+      bufferCComplex.setValue(bufferReal, bufferImaginary);
+#ifdef DEBUG
+      cout << DEBUG_TAG << bufferCComplex << endl;
+#endif
+      (*pVector).push_back(bufferCComplex);
+    }
+
+    closeFile(filename, file);
     /*success*/
     return 0;
   }

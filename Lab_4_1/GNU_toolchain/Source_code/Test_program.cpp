@@ -29,25 +29,22 @@
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
 /*我們需要EXIT_SUCCESS*/
 #include <cstdlib>
-
-/**/
-#include "pauseProgram/Pause_program.h"
-
-/**/
-#include "Show_software_info/Show_software_info.h"
-
-/**/
-#include "Test_program.h"
-
 /**/
 #include <vector>
 
 /**/
+#include "pauseProgram/Pause_program.h"
+/**/
+#include "Show_software_info/Show_software_info.h"
+/**/
+#include "Test_program.h"
+/**/
 #include "Complex_number_abstract_data_structure/Complex.h"
+/**/
+#include "Messages_templates/zh_TW.h"
 
 /*我們需要輸出輸入的library*/
 #include "input_output.h"
-
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -65,16 +62,30 @@ using namespace std;
 
 int main(void)
 {
-  /**/
-  vector<CComplex> complex_numbers;
+
 
 /*用來重新運行程式的label*/
 restart_program:
+  /**/
+  vector<CComplex> complex_numbers;
+
   /**/
   show_software_info((char *)PROGRAM_NAME);
 
   /**/
   readFile(&complex_numbers);
+#ifdef DEBUG
+  vector<CComplex>::iterator complexRef;
+  unsigned count;
+
+  cout << DEBUG_TAG << "complex_number vector目前的內容：" << endl;
+  for(complexRef = complex_numbers.begin(), count = 0;
+      complexRef < complex_numbers.end(); ++complexRef, ++count){
+    cout << DEBUG_TAG << "complex_number[" << count << "] = "
+         << (*complexRef) << endl;
+  }
+#endif
+
 
   /*暫停程式運行（於main函式中）*/
   if(pauseProgram() == 1){

@@ -46,6 +46,10 @@
 /* 我們需要編譯DEBUG專用的程式碼*/
 #include "../Project_specific_configurations/Debug.h"
 
+
+/**/
+#include <iostream>
+
 /*////////常數與巨集(Constants & Macros)以及其他#define指令////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -159,16 +163,16 @@ bool CComplex::divide(CComplex divider)
   return true;
 }
 /*method to get the length of the CComplex*/
-double CComplex::magnitude()
+double CComplex::getMagnitude()
 {
   return sqrt(m_real * m_real + m_imaginary * m_imaginary);
 }
 
 /*method to test if both complex number is equal */
-bool CComplex::equal(CComplex target, double max_zero_limit)
+bool CComplex::isEqual(CComplex target, double max_zero_limit)
 {
   subtract(target);
-  if(magnitude() < max_zero_limit){
+  if(getMagnitude() < max_zero_limit){
     return true;
   }
   else{
@@ -216,7 +220,7 @@ bool CComplex::unitTest()
 
     z1.setValue(3.14159, 2.71787);
     z2.setValue(3.14159, 2.71787);
-    assert("z1.equal(z2)");
+    assert("z1.isEqual(z2)");
   #ifdef DEBUG
     cout << DEBUG_TAG << UNIT_TEST_TAG
          << "複數相等method測試通過！" << endl;
@@ -230,7 +234,7 @@ bool CComplex::unitTest()
     y2.setValue(2.968, 33.235);
     y1.add(y2);
     y3.setValue(3.086 + 2.968, -2.54 + 33.235);
-    assert(y1.equal(y3, MAX_ZERO_LIMIT));
+    assert(y1.isEqual(y3, MAX_ZERO_LIMIT));
   #ifdef DEBUG
     cout << DEBUG_TAG << UNIT_TEST_TAG
          << "複數加法method測試通過！" << endl;
@@ -243,7 +247,7 @@ bool CComplex::unitTest()
   z2.setValue(2.968, 33.235);
   z1.subtract(z2);
   z3.setValue(3.086 - 2.968, -2.54 - 33.235);
-  assert(z1.equal(z3, MAX_ZERO_LIMIT));
+  assert(z1.isEqual(z3, MAX_ZERO_LIMIT));
 #ifdef DEBUG
   cout << DEBUG_TAG << UNIT_TEST_TAG
        << "複數減法method測試通過！" << endl;
@@ -279,7 +283,7 @@ bool CComplex::unitTest()
       cout << DEBUG_TAG << UNIT_TEST_TAG
            << "assert(x1.divide(x2)) = "; x1.print();cout <<endl;
   #endif
-      assert(x1.equal(x3, 1e-10));
+      assert(x1.isEqual(x3, 1e-10));
       x2.setValue(0, 0);
       assert(!x1.divide(x2));
   #ifdef DEBUG
@@ -301,10 +305,52 @@ bool CComplex::unitTest()
          << "是否為實數method測試通過！" << endl;
 #endif
   }
+
+  {/* 複製複數method測試*/
+    CComplex x1, x2;
+    x1.setValue(3, 0);
+    x2.setValue(x1);
+    assert(x1.isEqual(x2, MAX_ZERO_LIMIT));
+#ifdef DEBUG
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "複製複數method測試通過！" << endl;
+#endif
+  }
+
+  {/* 印出複數method測試*/
+    CComplex x1, x2;
+#ifdef DEBUG
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "印出複數method測試：" << endl;
+    x1.setValue(-1.54, 3.22);
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "(-1.54 + 3.22i).print() = "; x1.print(); cout << endl;
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "(-1.54 + 3.22i).print2Stream(cout) = "; x1.print2Stream(cout); cout << endl;
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << x1 << " << (-1.54 + 3.22i)" << endl;
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "請自行檢查輸出是否正確。" << endl;
+#endif
+  }
+  {/* overloaded operator測試*/
+    CComplex x1, x2;
+#ifdef DEBUG
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "overloaded operator測試：" << endl;
+#endif
+    x1.setValue(-1.54, 3.22);
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "(-1.54 + 3.22i) = " << x1 << endl;
+#ifdef DEBUG
+    cout << DEBUG_TAG << UNIT_TEST_TAG
+         << "請自行檢查輸出是否正確。" << endl;
+#endif
+  }
   /*success*/
 #ifdef DEBUG
   cout << DEBUG_TAG << UNIT_TEST_TAG
-       << "複數抽像資料結構單元測試完全通過！" << endl;
+       << "複數抽象資料結構單元測試完全通過！" << endl;
 #endif
   return true;
 }
@@ -338,11 +384,40 @@ inline void CComplex::toConjugate()
 
 /* an inline method to check if complex number is real,
  * originally used for print() format check*/
-bool CComplex::isReal()
+inline bool CComplex::isReal()
 {
   if(fabs(m_imaginary) < MAX_ZERO_LIMIT){
     return true;
   }else{
     return false;
   }
+}
+
+/* an method to copy an 存在的複數到此複數物件中*/
+void CComplex::setValue(CComplex &source)
+{
+  setValue(source.getReal(), source.getImaginary());
+
+  /*done*/
+  return;
+}
+
+/* 將物件印到指定output stream的method
+ * 此method為print()的廣域用途版本*/
+void CComplex::print2Stream(ostream &output)
+{
+  output << m_real << " + " << m_imaginary << 'i';
+
+  /*完成*/
+  return;
+}
+
+/* overload ostream 的 << operator*/
+ostream &operator<<(ostream &os, CComplex &rhs)
+{
+
+
+  rhs.print2Stream(os);
+
+  return os;
 }

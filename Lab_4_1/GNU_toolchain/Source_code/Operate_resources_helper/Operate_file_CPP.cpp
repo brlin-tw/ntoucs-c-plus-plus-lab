@@ -27,14 +27,20 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
-/*we need printf*/
-#include <cstdio>
+/*we need cout*/
+#include <iostream>
 
 /*we need list files*/
 #include "../List_directory_files/listDirectoryFiles.h"
 
 /*we need file operation*/
 #include <fstream>
+
+/**/
+#include "../Messages_templates/zh_TW.h"
+
+/*askFile 需要吃EOL*/
+#include "../portableEOLalgorithm/portableEOLalgorithm.h"
 
 /*////////常數與巨集(Constants & Macros)////////*/
 
@@ -49,30 +55,41 @@
 
 /*--------------主要程式碼(Main Code)--------------*/
 using namespace std;
-/*詢問欲開啟檔案的函式*/
+/* 詢問欲開啟檔案的函式
+ * FIXME:應改用較安全的String來當作filename*/
   void askFile(char filename[])
   {
+    /**/
     listDirectoryFiles();
-    printf("目前工作目錄(working directory)下的檔案資訊如上，請輸入要開啟的檔案名稱：");
+    cout << "目前工作目錄(working directory)下的檔案資訊如上，請輸入要開啟的檔案名稱：";
 
-    /*FIXME:目前尚無能夠完美處理stdin的解決方案*/
-    gets(filename);
+    cin >> filename;
+
+    skipEOLsequence(cin);
 
     /*done*/
     return;
   }
 
-  /*開啟檔案函式*/
+  /*開啟檔案函式
+   * FIXME:應改用較安全的String來當作filename*/
   short openFile(const char filename[], const char mode[], ifstream& input_file)
   {
-    /* FIXME:目前無視於mode的設定直接假設開啟的檔案為RW*/
+    /* FIXME:目前無視於mode的設定直接假設開啟的檔案為RW
+     * FIXME:目前沒有判斷是否開檔失敗*/
     input_file.open(filename, fstream::in | fstream::out);
-
+    if(!input_file.is_open()){
+      cerr << ERROR_TAG << ERROR_FILE_OPEN_FAIL << endl;
+      DEBUG_LOCATION(); cout << endl;
+      /*檔案開啟失敗*/
+      return -1;
+    }
+    /*開啟檔案成功*/
     return 0;
-
   }
 
-  /*關閉檔案函式*/
+  /* 關閉檔案函式
+   * FIXME:應改用較安全的String來當作filename*/
   short closeFile(const char filename[], ifstream& input_file)
   {
     /* FIXME:目前沒有檢查關閉檔案是否成功*/

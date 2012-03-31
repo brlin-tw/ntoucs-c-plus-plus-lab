@@ -9,6 +9,7 @@ void askFile(char filename[])
 {
   listDirectoryFiles();
   printf("目前工作目錄(working directory)下的檔案資訊如上，請輸入要開啟的檔案名稱：");
+
   /*FIXME:目前尚無能夠完美處理stdin的解決方案*/
   gets(filename);
 
