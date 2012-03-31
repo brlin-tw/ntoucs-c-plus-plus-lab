@@ -8,7 +8,7 @@
   #endif
   
   /*軟體名稱*/
-  #define SOFTWARE_NAME "Lab 3-1"
+  #define SOFTWARE_NAME "Lab 4-1"
   /*軟體開發者名稱*/
   #define DEVELOPER_NAME "林博仁(Henry Lin)"
   /*軟體開發者的電子郵件地址*/

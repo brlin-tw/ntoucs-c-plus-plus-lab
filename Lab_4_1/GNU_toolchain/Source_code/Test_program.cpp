@@ -27,7 +27,7 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
-/*我們需要EXIT_*/
+/*我們需要EXIT_SUCCESS*/
 #include <cstdlib>
 
 /**/
@@ -44,6 +44,9 @@
 
 /**/
 #include "Complex_number_abstract_data_structure/Complex.h"
+
+/*我們需要輸出輸入的library*/
+#include "input_output.h"
 
 /*////////常數與巨集(Constants & Macros)////////*/
 
@@ -65,6 +68,8 @@ int main(void)
   /**/
   vector<CComplex> complex_numbers;
 
+  /**/
+  readFile(complex_numbers);
 
 /*用來重新運行程式的label*/
 restart_program:
