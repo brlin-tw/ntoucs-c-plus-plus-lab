@@ -42,6 +42,12 @@
 /*我們需要vector資料結構的定義*/
 #include <vector>
 
+/*我們需要狀態標籤*/
+#include "Messages_templates/zh_TW.h"
+
+/*需要cout*/
+#include <iostream>
+
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -58,9 +64,13 @@
 using namespace std;
 
   /*用來讀取資料檔案的函式*/
-  short readFile(vector<CComplex> &pVector)
+  short readFile(vector<CComplex> *pVector)
   {
     char filename[FILENAME_MAX];
+#ifdef DEBUG
+    cout << DEBUG_TAG
+         << "用來存放檔案名稱的陣列大小為" << FILENAME_MAX << endl;
+#endif
     askFile(filename);
     /*success*/
     return 0;

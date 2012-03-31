@@ -68,14 +68,13 @@ int main(void)
   /**/
   vector<CComplex> complex_numbers;
 
-  /**/
-  readFile(complex_numbers);
-
 /*用來重新運行程式的label*/
 restart_program:
   /**/
   show_software_info((char *)PROGRAM_NAME);
 
+  /**/
+  readFile(&complex_numbers);
 
   /*暫停程式運行（於main函式中）*/
   if(pauseProgram() == 1){

@@ -27,9 +27,10 @@
 <option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1689228802" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1139657892" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.option.include.paths.679430230" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="/usr/include"/>
+<listOptionValue builtIn="false" value="/usr/include/i386-linux-gnu/"/>
 <listOptionValue builtIn="false" value="/usr/include/c++/4.6.1"/>
-<listOptionValue builtIn="false" value="/usr/include/c++/4.6/tr1/"/>
-<listOptionValue builtIn="false" value="/usr/include/c++/4.6/i686-linux-gnu/"/>
+<listOptionValue builtIn="false" value="/usr/include/c++/4.6.1/i686-linux-gnu/"/>
 </option>
 <option id="gnu.cpp.compiler.option.preprocessor.def.1485734193" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="DEBUG"/>
@@ -838,9 +839,10 @@
 <option id="gnu.cpp.compiler.exe.release.option.optimization.level.746267667" name="Optimization Level" superClass="gnu.cpp.compiler.exe.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.exe.release.option.debugging.level.40577273" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.option.include.paths.221795888" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="/usr/include"/>
+<listOptionValue builtIn="false" value="/usr/include/i386-linux-gnu/"/>
 <listOptionValue builtIn="false" value="/usr/include/c++/4.6.1"/>
-<listOptionValue builtIn="false" value="/usr/include/c++/4.6/tr1/"/>
-<listOptionValue builtIn="false" value="/usr/include/c++/4.6/i686-linux-gnu/"/>
+<listOptionValue builtIn="false" value="/usr/include/c++/4.6.1/i686-linux-gnu/"/>
 </option>
 <option id="gnu.cpp.compiler.option.preprocessor.def.1283885122" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="NDEBUG"/>
