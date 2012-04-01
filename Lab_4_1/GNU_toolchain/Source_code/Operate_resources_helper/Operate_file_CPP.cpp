@@ -79,7 +79,7 @@ using namespace std;
      * FIXME:目前沒有判斷是否開檔失敗*/
     input_file.open(filename, fstream::in | fstream::out);
     if(!input_file.is_open()){
-      cerr << ERROR_TAG << ERROR_FILE_OPEN_FAIL << endl;
+      cerr << ERROR_TAG << ERROR_FILE_OPEN_FAIL;
       DEBUG_LOCATION(); cout << endl;
       /*檔案開啟失敗*/
       return -1;

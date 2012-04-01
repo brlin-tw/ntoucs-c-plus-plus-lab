@@ -2,7 +2,7 @@
   #define COMPLEX_H_INCLUDED
   /* 如果浮點數小於這個常數就會被視為等於零
    * 注意：設成太小的數值可能導致問題。*/
-  #define MAX_ZERO_LIMIT 0.0000001
+  #define MAX_ZERO_LIMIT 0.00001
 
   /* 標示目前執行位置的標籤*/
   #define COMPLEX_NUMBER_DIVISION_TAG "【複數除法模組】"
@@ -18,6 +18,8 @@
   {
   public:
     CComplex(void);
+    /*順便設定係數*/
+    CComplex(double real, double imaginary);
 
     virtual ~CComplex(void);
 
@@ -25,7 +27,7 @@
     /*method to assign value to a CComplex*/
     void setValue(double real, double imaginary);
     /* an method to copy an 存在的複數到此複數物件中*/
-    void setValue(CComplex &source);
+    void setValue(CComplex source);
     /*method to add another CComplex to this CComplex*/
     void add(CComplex target);
     /*method to subtract another CComplex to this CComplex*/
