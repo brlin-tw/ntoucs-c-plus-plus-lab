@@ -33,6 +33,8 @@
 #include <vector>
 /**/
 #include <cassert>
+/*we need sort*/
+#include <algorithm>
 
 /**/
 #include "pauseProgram/Pause_program.h"
@@ -55,7 +57,18 @@
 /*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
 
-/*////////函式雛型(Function Prototypes)////////*/
+/*////////函式及函式雛型(Function & Function Prototypes)////////*/
+/*用來讓sort()做遞增排序的比較函式*/
+inline bool compareIncrease(CComplex first, CComplex second)
+{
+  /*greater*/
+  if(first.getMagnitude() < second.getMagnitude()){
+    return true;
+  }else{
+    /*lesser*/
+    return false;
+  }
+}
 
 /*////////全域變數(Global Variables)////////*/
 
@@ -112,8 +125,20 @@ restart_program:
          << "product = " << product << endl;
 #endif
     assert(product.isEqual(answer, MAX_ZERO_LIMIT));
-
   }
+
+  /*步驟六、七*/
+  {
+    /**/
+    unsigned i;
+
+    sort(complex_numbers.begin(), complex_numbers.end(), compareIncrease);
+
+    for(i = 0; i < complex_numbers.size(); ++i){
+      cout << complex_numbers[i] << endl;
+    }
+  }
+
 
 /**/
 end_program:
