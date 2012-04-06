@@ -172,3 +172,6 @@ local.properties
 
 # PDT-specific
 .buildpath
+
+##StarUML備份檔案
+*.~ml
