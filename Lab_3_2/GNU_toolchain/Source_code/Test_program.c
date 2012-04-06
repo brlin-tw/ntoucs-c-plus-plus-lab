@@ -51,9 +51,33 @@
 /*--------------主要程式碼(Main Code)--------------*/
 int main(void)
 {
+SaleItem *items[100];
+
+/*商品的數量*/
+int nItems;
 
 restart_program:
   show_software_info("Lab 3-2測試程式");
+
+  unitTestInitialize(&nItems, items);
+
+  /* 請在此處撰寫一個迴圈來列印所有 nItems 個商品
+   * 的內容，這個迴圈的內容應該只有一個簡單的函式
+   * 呼叫，通通透過欄位 print 這個函式指標變數來呼叫，
+   * 因為此時已經將所有商品抽象化看成是一致的 SaleItem
+   * 的東西了 */
+  {
+    unsigned i;
+
+    for (i = 0; i < nItems; ++i) {
+      (*items[i]).print(items[i]);
+    }
+  }
+  {
+    unsigned i;
+    for (i=0; i<nItems; ++i)
+      free(items[i]);
+  }
 
   if(pauseProgram() == 1){
     goto restart_program;

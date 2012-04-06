@@ -65,7 +65,7 @@
     void (*print)(SaleItem *);
     char title[81];
     /*系列的名稱*/
-    char series_title[11];
+    char series_title[81];
     /*演員群*/
     char casts[101];
     short unsigned year;
@@ -78,6 +78,8 @@
 
   /*狹域化的印出VCD資訊的函式*/
   void printVCD(SaleItem *vcd);
+  /*用來做unit測試的初始化資料函式*/
+  void unitTestInitialize(int *nItems, SaleItem *items[]);
 
   #ifdef __cplusplus
     }

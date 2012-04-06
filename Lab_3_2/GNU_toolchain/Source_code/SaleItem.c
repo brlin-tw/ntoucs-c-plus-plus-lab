@@ -32,6 +32,9 @@
 
 /*Standard C Library*/
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -85,11 +88,68 @@ void printVCD(SaleItem *vcd)
   VCD * accessPtr = (VCD *) vcd;
 
   fprintf(stdout, "雜誌名稱為「%s」\n", accessPtr->title);
-  fprintf(stdout, "　　集數為「%s」\n", accessPtr->series_title);
+  fprintf(stdout, "　　系列的名稱為「%s」\n", accessPtr->series_title);
   fprintf(stdout, "　　演員群為「%s」\n", accessPtr->casts);
   fprintf(stdout, "　　出版年份為「西元%hu年」\n", accessPtr->year);
   fprintf(stdout, "　　製作人為「%s」\n", accessPtr->producer);
   fprintf(stdout, "　　定價為「%lf」元\n", accessPtr->price);
+  /*done*/
+  return;
+}
+
+/*用來做unit測試的初始化資料函式*/
+void unitTestInitialize(int *nItems, SaleItem *items[])
+{
+  Book *bPtr;
+  Magazine*mPtr;
+  VCD *vPtr;
+
+  bPtr = (Book*) malloc(sizeof(Book)); // 配置
+  items[0] = (SaleItem *) bPtr; // 強制型態轉換
+  bPtr->size = sizeof(Book);  // 結構佔記憶體大小
+  bPtr->print = printBook;  // 指向列印本結構之函式
+  strncpy(bPtr->title,
+    "Harry Potter and the Prisoner of Azkaban ", 81);
+  bPtr->title[80] = '\0';
+  strncpy(bPtr->author, "J.K. Rowling ", 51);
+  bPtr->author[50] = '\0';
+  strncpy(bPtr->publisher, "Bloomsbury", 51);
+  bPtr->publisher[50] = '\0';
+  bPtr->year = 2000;
+  bPtr->price = 7.99;
+
+  mPtr = (Magazine*)
+      malloc(sizeof(Magazine));
+  items[1] = (SaleItem *) mPtr;
+  mPtr->size = sizeof(Magazine);
+  mPtr->print = printMagazine;
+  strncpy(mPtr->title, "Reader's Digest", 81);
+  mPtr->title[80] = '\0';
+  strncpy(mPtr->issue, "---", 11);
+  mPtr->issue[10] = '\0';
+  mPtr->year = 2005;
+  mPtr->month = 03;
+  strncpy(mPtr->publisher,
+    "The Reader's Digest Association, Inc.", 51);
+  mPtr->title[50] = '\0';
+  mPtr->price = 13.5;
+
+  vPtr = (VCD*) malloc(sizeof(VCD));
+  items[2] = (SaleItem *) vPtr;
+  vPtr->print = printVCD;
+  strncpy(vPtr->title, "The Two Towers", 81);
+  vPtr->title[80] = '\0';
+  strncpy(vPtr->series_title, "Lord of the Rings", 81);
+  vPtr->series_title[80] = '\0';
+  strncpy(vPtr->casts, "Elijah Wood, Ian Mackellen", 101);
+  vPtr->casts[100] = '\0';
+  vPtr->year = 2003;
+  strncpy(vPtr->producer, "Entertainment in Video", 31);
+  vPtr->producer[30] = '\0';
+  vPtr->price = 70;
+
+  *nItems = 3;
+
   /*done*/
   return;
 }
