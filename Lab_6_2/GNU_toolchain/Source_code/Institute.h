@@ -1,4 +1,8 @@
-﻿/*Institute.h
+﻿
+#if !defined(_INSTITUTE_H)
+#define _INSTITUTE_H
+
+/*Institute.h
 -----------------------------------
 更新紀錄 | Changelog
   Changelog is now stored on GitHub
@@ -27,13 +31,22 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/**/
+#include <string>
 
+using namespace std;
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
 
 /*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
+class Institute {
+private:
+  string m_name;
+  Institute();
+  ~Institute();
+};
 
 /*////////函式和函式雛型(Function & Function Prototypes)////////*/
 
@@ -42,15 +55,6 @@
 /*--------------主要程式碼(Main Code)--------------*/
 
 
-#if !defined(_INSTITUTE_H)
-#define _INSTITUTE_H
 
-
-class Institute {
-private:
-  int m_name;
-  Institute();
-  ~Institute();
-};
 
 #endif  //_INSTITUTE_H

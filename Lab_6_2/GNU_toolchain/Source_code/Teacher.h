@@ -1,4 +1,7 @@
-﻿/*Teacher.h
+﻿#if !defined(_TEACHER_H)
+#define _TEACHER_H
+
+/*Teacher.h
 -----------------------------------
 更新紀錄 | Changelog
   Changelog is now stored on GitHub
@@ -27,13 +30,28 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/**/
+#include <string>
 
+using namespace std;
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
 
 /*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
+
+class Teacher {
+private:
+  string m_name;
+  unsigned m_ID;
+  unsigned m_year;
+  unsigned m_semester;
+  Teacher();
+  ~Teacher();
+public:
+
+};
 
 /*////////函式和函式雛型(Function & Function Prototypes)////////*/
 
@@ -42,18 +60,6 @@
 /*--------------主要程式碼(Main Code)--------------*/
 
 
-#if !defined(_TEACHER_H)
-#define _TEACHER_H
 
-
-class Teacher {
-private:
-  int m_name;
-  int m_ID;
-  int m_year;
-  int m_semester;
-  Teacher();
-  ~Teacher();
-};
 
 #endif  //_TEACHER_H
