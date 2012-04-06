@@ -58,7 +58,13 @@ int main()
 {
 /*用來重新運行程式的label*/
 restart_program:
+  /**/
   show_software_info("Lab 6-2測試程式");
+
+
+
+
+
   /*暫停程式運行（於main函式中）*/
   if(pauseProgram() == 1){
     goto restart_program;
