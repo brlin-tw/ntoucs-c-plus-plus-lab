@@ -69,13 +69,13 @@ restart_program:
   {
     unsigned i;
 
-    for (i = 0; i < nItems; ++i) {
+    for (i = 0; i < (unsigned)nItems; ++i) {
       (*items[i]).print(items[i]);
     }
   }
   {
     unsigned i;
-    for (i=0; i<nItems; ++i)
+    for (i=0; i < (unsigned)nItems; ++i)
       free(items[i]);
   }
 
