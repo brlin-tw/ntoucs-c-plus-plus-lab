@@ -12,14 +12,16 @@
 using namespace std;
 
 class Course {
+public:
+  Course();
+  ~Course();
 private:
   string m_name;
   unsigned m_ID;
   unsigned m_year;
   unsigned m_semester;
   Teacher *teacher;
-  Course();
-  ~Course();
+
 };
 
 #endif  //_COURSE_H

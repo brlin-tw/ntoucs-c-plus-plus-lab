@@ -27,6 +27,13 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/*標準C++函式庫*/
+#include <string>
+#include <iostream>
+
+/*Vdragon's Library Collection*/
+#include "portableEOLalgorithm/portableEOLalgorithm.h"
+
 /*大學ADT*/
 #include "College.h"
 /*////////常數與巨集(Constants & Macros)////////*/
@@ -42,9 +49,12 @@
 
 /*--------------主要程式碼(Main Code)--------------*/
 
+College::College(){
 
-College::College() {
-
+}
+College::College(ifstream& universityData) {
+  string buffer;
+  //getline(universityData, m_name)
 }
 
 College::~College() {

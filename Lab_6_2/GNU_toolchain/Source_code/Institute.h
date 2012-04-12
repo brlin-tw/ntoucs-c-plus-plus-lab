@@ -46,11 +46,13 @@ using namespace std;
 /*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
 class Institute {
+public:
+  Institute();
+  ~Institute();
 private:
   vector<Course *> courses;
   string m_name;
-  Institute();
-  ~Institute();
+
 };
 
 /*////////函式和函式雛型(Function & Function Prototypes)////////*/

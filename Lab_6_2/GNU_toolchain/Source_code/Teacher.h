@@ -49,6 +49,9 @@ using namespace std;
 class Course;
 
 class Teacher {
+public:
+  Teacher();
+  ~Teacher();
 private:
   string m_name;
   /* Building file: ../Source_code/College.cpp
@@ -62,8 +65,7 @@ In file included from ../Source_code/Course.h:9:0,
    因為Course.h尚未parse至宣告Course class的位置，而本檔案第39行所include的Course.h因為include guard而
    略過此header的parsing所以會找不到Course的定義，此時需額外宣告使toolchain知道Course的存在。*/
   vector<Course *> courses;
-  Teacher();
-  ~Teacher();
+
 public:
 
 };

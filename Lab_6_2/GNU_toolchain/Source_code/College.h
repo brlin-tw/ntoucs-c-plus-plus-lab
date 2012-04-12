@@ -13,13 +13,14 @@ using namespace std;
 
 class College {
 public:
-
+  ~College();
+  College(ifstream& universityData);
+  College();
 private:
   int m_name;
   vector<Department *> m_departments;
   vector<Institute *> m_institutes;
-  ~College();
-  College();
+
 };
 
 #endif  //_COLLEGE_H

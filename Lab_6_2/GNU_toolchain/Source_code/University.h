@@ -13,9 +13,13 @@
 #include "Teacher.h"
 
 
+
 using namespace std;
 
 class University {
+public:
+  University();
+  ~University();
 private:
   /*大學的名稱*/
   string m_name;
@@ -24,8 +28,7 @@ private:
             College。*/
   vector <College *> m_colleges;
 
-  University();
-  ~University();
+
 };
 
 #endif  //_UNIVERSITY_H

@@ -48,12 +48,12 @@ using namespace std;
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
 class Department {
 public:
-
+  Department();
+  ~Department();
 private:
   string m_name;
   vector<Course *> courses;
-  Department();
-  ~Department();
+
 };
 
 /*////////函式和函式雛型(Function & Function Prototypes)////////*/

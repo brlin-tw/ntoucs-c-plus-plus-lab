@@ -62,7 +62,7 @@
 </toolChain>
 </folderInfo>
 <sourceEntries>
-<entry excluding="Resources" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+<entry excluding="Source_code/Operate_resources_helper/Operate_file_C.h|Source_code/Operate_resources_helper/Operate_file_C.c|Resources" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 </sourceEntries>
 </configuration>
 </storageModule>
@@ -544,7 +544,7 @@
 </toolChain>
 </folderInfo>
 <sourceEntries>
-<entry excluding="Resources" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+<entry excluding="Source_code/Operate_resources_helper/Operate_file_C.h|Source_code/Operate_resources_helper/Operate_file_C.c|Resources" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 </sourceEntries>
 </configuration>
 </storageModule>
