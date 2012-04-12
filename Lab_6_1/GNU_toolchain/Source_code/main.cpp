@@ -5,30 +5,18 @@
 #include <ctime>   // time()
 #include <iostream>
 
-void main()
+
+int main()
 {
-    int   i;
-    Game  theGame;
-    Bag  *pickedBag;
-    Ball *pickedBall;
-    int   totalCount = 0;
-    int   secondIsAlsoRed = 0;
+  Game  theGame;
+  srand(0);
 
-    srand(time(0));
+  double result;
+  result = theGame.test3when2(theGame);
+  std::cout << "The probability that remaining ball is red = "
+            << result << "\n";
 
-    for (i=0; i<10000; i++)
-    {
-        pickedBag = theGame.getABag();
-        pickedBall = pickedBag->getABall();
-        if (pickedBall->isRed())
-        {
-            totalCount++;
-            if (pickedBag->getABall()->isRed())
-                secondIsAlsoRed++;
-        }
-        pickedBag->putBallsBack();
-    }
+  result = theGame.dice(theGame);
 
-    std::cout << "The probability that remaining ball is red = " 
-              << ((double)secondIsAlsoRed/totalCount) << "\n";
+  return 0;
 }

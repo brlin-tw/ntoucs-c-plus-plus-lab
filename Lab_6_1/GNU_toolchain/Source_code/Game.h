@@ -9,8 +9,11 @@ public:
     Bag *getABag();
     Game();
     ~Game();
+    double test3when2(Game& theGame);
+    double dice(Game& theGame);
 private:
-    Bag *m_bags[3];
+    const int m_numberOfBags;
+    Bag *m_bags[4];
 };
 
 #endif

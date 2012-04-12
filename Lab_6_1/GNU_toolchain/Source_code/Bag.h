@@ -8,10 +8,10 @@ class Bag
 public:
     Ball *getABall();
     void putBallsBack();
-    Bag(Ball::Colors color1, Ball::Colors color2);
+    Bag(Ball::Colors color1, Ball::Colors color2, Ball::Colors color3);
     ~Bag();
 private:
-    Ball *m_balls[2];
+    Ball *m_balls[3];
     int m_numberOfBalls;
 };
 
