@@ -27,6 +27,8 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/*大學ADT*/
+#include "University.h"
 
 /*////////常數與巨集(Constants & Macros)////////*/
 
@@ -41,8 +43,6 @@
 
 /*--------------主要程式碼(Main Code)--------------*/
 
-
-#include "Course.h"
 
 Course::Course() {
 

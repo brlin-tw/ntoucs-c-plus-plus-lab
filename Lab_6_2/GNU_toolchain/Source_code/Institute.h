@@ -31,10 +31,14 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
-/**/
+/*Standard C++ Library*/
 #include <string>
-
+#include <vector>
 using namespace std;
+
+/*大學抽象資料類型*/
+#include "Course.h"
+
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -43,6 +47,7 @@ using namespace std;
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
 class Institute {
 private:
+  vector<Course *> courses;
   string m_name;
   Institute();
   ~Institute();

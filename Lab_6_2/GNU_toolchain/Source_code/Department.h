@@ -30,10 +30,16 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
-/**/
+/*Standard C++ library*/
 #include <string>
+#include <vector>
 
 using namespace std;
+
+/*大學ADT*/
+#include "Course.h"
+
+
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -41,8 +47,11 @@ using namespace std;
 /*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
 class Department {
+public:
+
 private:
   string m_name;
+  vector<Course *> courses;
   Department();
   ~Department();
 };

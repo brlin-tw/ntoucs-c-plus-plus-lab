@@ -30,23 +30,38 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
-/**/
+/*標準C++函式庫*/
 #include <string>
-
+#include <vector>
 using namespace std;
+
+/*大學ADT*/
+#include "Course.h"
+
+
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
 
 /*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
+/* 另外宣告Course */
+class Course;
 
 class Teacher {
 private:
   string m_name;
-  unsigned m_ID;
-  unsigned m_year;
-  unsigned m_semester;
+  /* Building file: ../Source_code/College.cpp
+Invoking: GCC C++ Compiler
+g++ -DDEBUG -I/usr/include -I/usr/include/i386-linux-gnu/ -I/usr/lib/gcc/i686-linux-gnu/4.6/include/ -I/usr/include/c++/4.6.1 -I/usr/include/c++/4.6.1/i686-linux-gnu/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Source_code/College.d" -MT"Source_code/College.d" -o"Source_code/College.o" "../Source_code/College.cpp"
+In file included from ../Source_code/Course.h:9:0,
+                 from ../Source_code/Department.h:40,
+                 from ../Source_code/College.h:10,
+                 from ../Source_code/College.cpp:31:
+../Source_code/Teacher.h:55:10: 錯誤： 「Course」 在此作用欄位中尚未宣告
+   因為Course.h尚未parse至宣告Course class的位置，而本檔案第39行所include的Course.h因為include guard而
+   略過此header的parsing所以會找不到Course的定義，此時需額外宣告使toolchain知道Course的存在。*/
+  vector<Course *> courses;
   Teacher();
   ~Teacher();
 public:
