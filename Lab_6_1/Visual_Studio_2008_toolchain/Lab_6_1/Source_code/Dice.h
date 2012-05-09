@@ -1,4 +1,4 @@
-/* Dice.h */
+﻿/* Dice.h */
 /* include guard：避免同一個header檔案被include第二次。*/
 #ifndef DICE_H_
   #define DICE_H_

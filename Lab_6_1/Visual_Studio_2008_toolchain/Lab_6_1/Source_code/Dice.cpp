@@ -1,4 +1,4 @@
-/*Dice.cpp
+﻿/*Dice.cpp
 -----------------------------------
 更新紀錄 | Changelog
   Changelog is now stored on GitHub

@@ -1,4 +1,4 @@
-#ifndef game_h
+﻿#ifndef game_h
 #define game_h
 
 /* 試驗進行的次數 */

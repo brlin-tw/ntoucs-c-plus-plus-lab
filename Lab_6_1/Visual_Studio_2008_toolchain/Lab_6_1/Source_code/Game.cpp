@@ -1,4 +1,4 @@
-
+﻿
 //試驗函式庫
 #include "Game.h"
 #include "Bag.h"

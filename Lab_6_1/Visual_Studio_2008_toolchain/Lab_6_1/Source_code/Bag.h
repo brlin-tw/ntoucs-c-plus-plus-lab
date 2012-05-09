@@ -1,4 +1,4 @@
-#ifndef BAG_H
+﻿#ifndef BAG_H
 #define BAG_H
 
 #include "Ball.h"
