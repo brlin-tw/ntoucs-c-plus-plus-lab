@@ -51,7 +51,7 @@
 
 /*--------------主要程式碼(Main Code)--------------*/
 /* 讀取含有大學資料檔案的函式 */
-short importData(University &university)
+short importData(University *university)
 {
   string filename;
   ifstream universityData;
@@ -61,9 +61,10 @@ short importData(University &university)
     cerr << ERROR_TAG << "無法匯入大學資料！" << endl;
     return -1;
   }
+  /* 開始讀取檔案 */
+  university = new University(universityData);
 
-
-
+  /* 關閉檔案 */
   closeFile(filename, universityData);
   /*成功完成*/
   return 0;
