@@ -1,4 +1,7 @@
-﻿/*Department.h
+﻿#if !defined(_DEPARTMENT_H)
+#define _DEPARTMENT_H
+
+/*Department.h
 -----------------------------------
 更新紀錄 | Changelog
   Changelog is now stored on GitHub
@@ -27,6 +30,15 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/*Standard C++ library*/
+#include <string>
+#include <vector>
+
+using namespace std;
+
+/*大學ADT*/
+#include "Course.h"
+
 
 /*////////常數與巨集(Constants & Macros)////////*/
 
@@ -34,23 +46,20 @@
 
 /*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
 /*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
+class Department {
+public:
+  Department();
+  ~Department();
+private:
+  string m_name;
+  vector<Course *> courses;
+
+};
 
 /*////////函式和函式雛型(Function & Function Prototypes)////////*/
 
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
-
-
-#if !defined(_DEPARTMENT_H)
-#define _DEPARTMENT_H
-
-
-class Department {
-private:
-  int m_name;
-  Department();
-  ~Department();
-};
 
 #endif  //_DEPARTMENT_H
