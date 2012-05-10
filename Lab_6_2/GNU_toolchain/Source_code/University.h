@@ -19,6 +19,13 @@ using namespace std;
 class University {
 public:
   University();
+  /* 從resource/ntou1.txt檔案格式的檔案讀取資料並建構University物件
+   * 的constructor
+   *
+   * 參數
+   * 　infile 資料檔案的stream
+   */
+  University(ifstream &infile);
   ~University();
 private:
   /*大學的名稱*/

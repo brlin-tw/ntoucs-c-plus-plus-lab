@@ -34,6 +34,9 @@
 #include <vector>
 using namespace std;
 
+/* Ｖ字龍的Ｃ＋＋函式庫蒐集 */
+#include "portableEOLalgorithm/portableEOLalgorithm.h"
+
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -52,6 +55,18 @@ University::University() {
 
 }
 
+/* 從resource/ntou1.txt檔案格式的檔案讀取資料並建構University物件
+ * 的constructor
+ *
+ * 參數
+ * 　infile 資料檔案的stream
+ */
+University::University(ifstream &schoolData)
+{
+  /* 讀取大學名稱 */
+  portableGetline(schoolData, m_name);
+
+}
 University::~University() {
 
 

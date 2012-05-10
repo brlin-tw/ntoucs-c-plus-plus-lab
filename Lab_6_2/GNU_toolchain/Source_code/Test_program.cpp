@@ -62,7 +62,7 @@ restart_program:
   /**/
   show_software_info("Lab 6-2測試程式");
 
-  University ntou;
+  University *ntou = NULL;
   if(importData(ntou) == -1){
     cerr << "程式無法繼續進行！" << endl;
     goto restart_program;
