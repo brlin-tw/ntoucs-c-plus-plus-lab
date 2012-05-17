@@ -5,5 +5,5 @@
       Linux console = 1
       Symbian console = 2
       Sony Play Station Portable console = 3 */
-  #define SYSTEM_CATEGORY 0
+  #define SYSTEM_CATEGORY 1
 #endif /* SYSTEM_CATEGORY_H_INCLUDED*/
