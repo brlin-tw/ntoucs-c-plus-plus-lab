@@ -52,9 +52,18 @@
 College::College(){
 
 }
+
+/* 自Resources/ntou1.txt格式的資料檔案獲取學院資料的constructer */
 College::College(ifstream& universityData) {
-  string buffer;
-  //getline(universityData, m_name)
+  portableGetline(universityData, m_name);
+
+  /* 建構底下的學系 */{
+    unsigned numberOfDepartments;
+    universityData >> numberOfDepartments;
+
+  }
+
+
 }
 
 College::~College() {

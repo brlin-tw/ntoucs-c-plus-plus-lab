@@ -42,9 +42,6 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
-
-
-
 Department::Department() {
 
 }
@@ -53,3 +50,7 @@ Department::~Department() {
 
 }
 
+/* 自Resources/ntou1.txt格式的資料檔案獲取學系資料 */
+Department::Department(infile &schoolData) {
+
+}

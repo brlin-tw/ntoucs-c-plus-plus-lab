@@ -13,9 +13,11 @@ using namespace std;
 
 class College {
 public:
-  ~College();
-  College(ifstream& universityData);
   College();
+  ~College();
+  /* 自Resources/ntou1.txt格式的資料檔案獲取學院資料的constructer */
+  College(ifstream& universityData);
+
 private:
   int m_name;
   vector<Department *> m_departments;

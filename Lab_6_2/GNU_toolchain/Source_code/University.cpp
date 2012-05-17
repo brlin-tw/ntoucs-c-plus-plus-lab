@@ -61,10 +61,21 @@ University::University() {
  * 參數
  * 　infile 資料檔案的stream
  */
-University::University(ifstream &schoolData)
+University::University(ifstream &universityData)
 {
   /* 讀取大學名稱 */
-  portableGetline(schoolData, m_name);
+  portableGetline(universityData, m_name);
+
+  /* 建立底下的Department */{
+    unsigned numberOfColleges;
+
+    schoolData >> numberOfColleges;
+    skipEOLsequence(universityData);
+
+    for(register unsigned i = 0; i < numberOfColleges; ++i){
+      m_colleges.push_back(new (nothrow) College(universityData));
+    }
+  }
 
 }
 University::~University() {

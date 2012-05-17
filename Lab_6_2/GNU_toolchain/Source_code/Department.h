@@ -50,6 +50,8 @@ class Department {
 public:
   Department();
   ~Department();
+  /* 自Resources/ntou1.txt格式的資料檔案獲取學系資料 */
+  Department(infile &schoolData);
 private:
   string m_name;
   vector<Course *> courses;
