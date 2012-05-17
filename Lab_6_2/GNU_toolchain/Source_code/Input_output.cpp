@@ -62,11 +62,13 @@ short importData(University *university)
     return -1;
   }
   /* 開始讀取檔案 */
+
   university = new (nothrow)University(universityData);
   if(university == NULL){
     cout << ERROR_TAG << "建立University物件失敗！" << endl;
     return -2;
   }
+
 
   /* 關閉檔案 */
   closeFile(filename, universityData);

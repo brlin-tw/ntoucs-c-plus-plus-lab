@@ -76,8 +76,8 @@ University::University(ifstream &universityData)
       m_colleges.push_back(new (nothrow) College(universityData));
     }
   }
-
 }
+
 University::~University() {
 
   /* 解構所有的學院 */

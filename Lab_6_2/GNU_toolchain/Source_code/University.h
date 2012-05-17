@@ -26,6 +26,7 @@ public:
    * 　universityData 資料檔案的stream
    */
   University(ifstream &universityData);
+
   ~University();
 
 private:
