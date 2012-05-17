@@ -367,7 +367,7 @@ bool CComplex::unitTest()
   /*success*/
 
   cout << DEBUG_TAG << UNIT_TEST_TAG
-       << "複數抽象資料結構單元測試完全通過！" << endl;
+       << "複數抽像資料結構單元測試完全通過！" << endl;
 
   return true;
 }

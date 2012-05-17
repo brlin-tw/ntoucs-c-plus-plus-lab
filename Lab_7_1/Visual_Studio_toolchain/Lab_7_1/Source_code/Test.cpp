@@ -1,4 +1,4 @@
-/*Test.cpp
+﻿/*Test.cpp
 -----------------------------------
 更新紀錄 | Changelog
   Changelog is now stored on GitHub

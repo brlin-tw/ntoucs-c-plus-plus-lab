@@ -3,6 +3,7 @@
 	<name>CPP_Lab_7_1</name>
 	<comment></comment>
 	<projects>
+		<project>Complex_number_abstract_data_type</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
