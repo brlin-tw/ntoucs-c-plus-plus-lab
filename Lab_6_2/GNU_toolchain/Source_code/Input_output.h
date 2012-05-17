@@ -8,6 +8,4 @@
 
   /* 讀取含有大學資料檔案的函式 */
   short importData(University *university);
-  
-
 #endif /* INPUT_OUTPUT_H_ */

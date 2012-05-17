@@ -69,7 +69,7 @@ University::University(ifstream &universityData)
   /* 建立底下的Department */{
     unsigned numberOfColleges;
 
-    schoolData >> numberOfColleges;
+    universityData >> numberOfColleges;
     skipEOLsequence(universityData);
 
     for(register unsigned i = 0; i < numberOfColleges; ++i){
@@ -80,6 +80,11 @@ University::University(ifstream &universityData)
 }
 University::~University() {
 
+  /* 解構所有的學院 */
+  for(vector<College *>::iterator i = m_colleges.begin();
+      i < m_colleges.end(); ++i){
+    delete *i;
+  }
 
 }
 

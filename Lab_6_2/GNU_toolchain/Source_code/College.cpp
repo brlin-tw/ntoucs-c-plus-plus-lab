@@ -61,12 +61,17 @@ College::College(ifstream& universityData) {
     unsigned numberOfDepartments;
     universityData >> numberOfDepartments;
 
+    for(unsigned i = 0; i < numberOfDepartments; ++i){
+      m_departments.push_back(new (nothrow) Department(universityData));
+    }
+
   }
-
-
 }
 
 College::~College() {
-
+  for(vector<Department *>::iterator i = m_departments.begin();
+      i < m_departments.end(); ++i){
+    delete *i;
+  }
 }
 

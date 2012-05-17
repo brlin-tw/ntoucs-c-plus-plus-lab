@@ -3,7 +3,10 @@
 
 #if !defined(_COLLEGE_H)
 #define _COLLEGE_H
+
+/* Standard C++ Library */
 #include <vector>
+#include <string>
 using namespace std;
 
 /*大學ADT*/
@@ -19,7 +22,7 @@ public:
   College(ifstream& universityData);
 
 private:
-  int m_name;
+  string m_name;
   vector<Department *> m_departments;
   vector<Institute *> m_institutes;
 
