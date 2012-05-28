@@ -60,11 +60,11 @@ College::College(ifstream& universityData) {
   /* 建構底下的學系 */{
     unsigned numberOfDepartments;
     universityData >> numberOfDepartments;
+    skipEOLsequence(universityData);
 
     for(register unsigned i = 0; i < numberOfDepartments; ++i){
       m_departments.push_back(new (nothrow) Department(universityData));
     }
-
   }
 }
 
