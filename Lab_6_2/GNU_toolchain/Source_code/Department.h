@@ -33,12 +33,10 @@
 /*Standard C++ library*/
 #include <string>
 #include <vector>
-
 using namespace std;
 
 /*大學ADT*/
 #include "Course.h"
-
 
 /*////////常數與巨集(Constants & Macros)////////*/
 

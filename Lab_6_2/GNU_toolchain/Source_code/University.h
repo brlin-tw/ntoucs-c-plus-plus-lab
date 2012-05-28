@@ -1,9 +1,16 @@
 ﻿/*University.h*/
 #if !defined(_UNIVERSITY_H)
 #define _UNIVERSITY_H
+
+
+/*||||| Forward declarations |||||*/
+class University;
+
+/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /**/
 #include <string>
 #include <vector>
+using namespace std;
 
 /*大學ADT*/
 #include "College.h"
@@ -12,10 +19,9 @@
 #include "Course.h"
 #include "Teacher.h"
 
+/*||||| 常數與巨集 | Constants & Macros |||||*/
 
-
-using namespace std;
-
+/*||||| Definition of data type, enumeration, data structure and class |||||*/
 class University {
 public:
   University();

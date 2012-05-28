@@ -36,6 +36,7 @@
 
 /*大學ADT*/
 #include "College.h"
+
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -48,7 +49,6 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
-
 College::College(){
 
 }
@@ -61,7 +61,7 @@ College::College(ifstream& universityData) {
     unsigned numberOfDepartments;
     universityData >> numberOfDepartments;
 
-    for(unsigned i = 0; i < numberOfDepartments; ++i){
+    for(register unsigned i = 0; i < numberOfDepartments; ++i){
       m_departments.push_back(new (nothrow) Department(universityData));
     }
 

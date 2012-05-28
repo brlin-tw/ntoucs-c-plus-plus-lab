@@ -26,10 +26,11 @@
   You should have received a copy of the GNU Lesser General Public License
   along with this software.  If not, see <http://www.gnu.org/licenses/>.
 */
+/*||||| Forward declarations |||||*/
+/* 宣告Course */
+class Course;
 
-/*--------------程式碼開始(Code Started)--------------*/
-/*--------------前期處理器指令(Preprocessor Directive)--------------*/
-/*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /*標準C++函式庫*/
 #include <string>
 #include <vector>
@@ -38,16 +39,9 @@ using namespace std;
 /*大學ADT*/
 #include "Course.h"
 
+/*||||| 常數與巨集 | Constants & Macros |||||*/
 
-/*////////常數與巨集(Constants & Macros)////////*/
-
-/*////////其他前期處理器指令(Other Preprocessor Directives////////*/
-
-/*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
-/*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
-/* 另外宣告Course */
-class Course;
-
+/*||||| Definition of data type, enumeration, data structure and class |||||*/
 class Teacher {
 public:
   Teacher();
@@ -69,14 +63,5 @@ In file included from ../Source_code/Course.h:9:0,
 public:
 
 };
-
-/*////////函式和函式雛型(Function & Function Prototypes)////////*/
-
-/*////////全域變數(Global Variables)////////*/
-
-/*--------------主要程式碼(Main Code)--------------*/
-
-
-
 
 #endif  //_TEACHER_H

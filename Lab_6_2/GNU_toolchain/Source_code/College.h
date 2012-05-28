@@ -4,6 +4,10 @@
 #if !defined(_COLLEGE_H)
 #define _COLLEGE_H
 
+/*||||| Forward declarations |||||*/
+class College;
+
+/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /* Standard C++ Library */
 #include <vector>
 #include <string>
@@ -12,8 +16,9 @@ using namespace std;
 /*大學ADT*/
 #include "Department.h"
 #include "Institute.h"
+/*||||| 常數與巨集 | Constants & Macros |||||*/
 
-
+/*||||| Definition of data type, enumeration, data structure and class |||||*/
 class College {
 public:
   College();
