@@ -32,9 +32,12 @@ public:
    * 　universityData 資料檔案的stream
    */
   University(ifstream &universityData);
-
   ~University();
 
+  /* 印出大學資訊的函式
+   * 參數
+   * 　output - 輸出資訊的stream   */
+  void print(std::ostream &output);
 private:
   /*大學的名稱*/
   string m_name;

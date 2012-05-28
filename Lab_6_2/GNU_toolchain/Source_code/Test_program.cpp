@@ -30,6 +30,7 @@
 /**/
 #include <cstdlib>
 #include <iostream>
+using namespace std;
 
 /*大學ADT*/
 #include "University.h"
@@ -41,7 +42,6 @@
 /**/
 #include "Input_output.h"
 
-using namespace std;
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -62,13 +62,15 @@ restart_program:
   /**/
   show_software_info("Lab 6-2測試程式");
 
-  University *ntou = NULL;
+  University * ntou = NULL;
 
-  if(importData(ntou) == -1){
+  if(importData(&ntou) != 0){
     cerr << "程式無法繼續進行！" << endl;
     goto end_program;
   }
 
+  ntou->print(cout);
+  delete ntou;
 end_program:
   /*暫停程式運行（於main函式中）*/
   if(pauseProgram() == 1){

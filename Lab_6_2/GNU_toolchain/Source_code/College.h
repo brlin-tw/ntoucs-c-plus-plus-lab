@@ -25,7 +25,10 @@ public:
   ~College();
   /* 自Resources/ntou1.txt格式的資料檔案獲取學院資料的constructer */
   College(ifstream& universityData);
-
+  /* 印出學院資訊的函式
+   * 參數
+   * 　output - 輸出資訊的stream   */
+  void print(std::ostream &output);
 private:
   string m_name;
   vector<Department *> m_departments;

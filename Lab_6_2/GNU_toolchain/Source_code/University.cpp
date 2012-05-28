@@ -32,10 +32,12 @@
 
 /*Standard C++ Library*/
 #include <vector>
+#include <iostream>
 using namespace std;
 
 /* Ｖ字龍的Ｃ＋＋函式庫蒐集 */
 #include "portableEOLalgorithm/portableEOLalgorithm.h"
+#include "Messages_templates/zh_TW.h"
 
 /*////////常數與巨集(Constants & Macros)////////*/
 
@@ -66,23 +68,43 @@ University::University(ifstream &universityData)
 
   /* 建立底下的Department */{
     unsigned numberOfColleges;
+    College *allocator = NULL;
 
     universityData >> numberOfColleges;
     skipEOLsequence(universityData);
 
     for(register unsigned i = 0; i < numberOfColleges; ++i){
-      m_colleges.push_back(new (nothrow) College(universityData));
+      allocator = new (nothrow) College(universityData);
+      if(allocator == NULL){
+        cout << ERROR_TAG << ERROR_MEMORY_ALLOCATION_FAIL
+             << ERROR_TAG << "建立College物件失敗！" << endl;
+      }
+      m_colleges.push_back(allocator);
     }
   }
 }
 
 University::~University() {
-
   /* 解構所有的學院 */
   for(vector<College *>::iterator i = m_colleges.begin();
       i < m_colleges.end(); ++i){
     delete *i;
   }
-
 }
 
+void University::print(ostream &output){
+  output << "大學名稱：" << m_name << endl;
+
+  /* 印出大學底下的系所資訊 */{
+    vector<College *>::iterator i;
+
+    for(i = m_colleges.begin();
+        i < m_colleges.end();
+        ++i){
+      (*i)->print(output);
+    }
+  }
+
+  /* 完成print操作 */
+  return;
+}

@@ -51,7 +51,7 @@
 
 /*--------------主要程式碼(Main Code)--------------*/
 /* 讀取含有大學資料檔案的函式 */
-short importData(University *university)
+short importData(University * *university)
 {
   string filename;
   ifstream universityData;
@@ -63,8 +63,8 @@ short importData(University *university)
   }
   /* 開始讀取檔案 */
 
-  university = new (nothrow)University(universityData);
-  if(university == NULL){
+  *university = new (nothrow)University(universityData);
+  if(*university == NULL){
     cout << ERROR_TAG << "建立University物件失敗！" << endl;
     return -2;
   }

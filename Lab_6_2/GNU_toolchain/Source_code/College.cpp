@@ -30,9 +30,11 @@
 /*標準C++函式庫*/
 #include <string>
 #include <iostream>
+using namespace std;
 
 /*Vdragon's Library Collection*/
 #include "portableEOLalgorithm/portableEOLalgorithm.h"
+#include "Messages_templates/zh_TW.h"
 
 /*大學ADT*/
 #include "College.h"
@@ -59,11 +61,19 @@ College::College(ifstream& universityData) {
 
   /* 建構底下的學系 */{
     unsigned numberOfDepartments;
+    Department *allocator = NULL;
+
     universityData >> numberOfDepartments;
     skipEOLsequence(universityData);
 
     for(register unsigned i = 0; i < numberOfDepartments; ++i){
-      m_departments.push_back(new (nothrow) Department(universityData));
+      allocator = new (nothrow) Department(universityData);
+
+      if(allocator == NULL){
+        cout << ERROR_TAG << ERROR_MEMORY_ALLOCATION_FAIL
+             << ERROR_TAG << "建立Department物件失敗！" << endl;
+      }
+      m_departments.push_back(allocator);
     }
   }
 }
@@ -75,3 +85,16 @@ College::~College() {
   }
 }
 
+void College::print(std::ostream &output){
+  output << "學院名稱：" << m_name << endl;
+
+  /* 印出底下的系所資訊 */{
+    for(vector<Department *>::iterator i = m_departments.begin();
+        i < m_departments.end();
+        ++i){
+      (*i)->print(output);
+    }
+  }
+
+  return;
+}

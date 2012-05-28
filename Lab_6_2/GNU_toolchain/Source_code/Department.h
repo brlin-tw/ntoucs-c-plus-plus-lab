@@ -50,6 +50,10 @@ public:
   ~Department();
   /* 自Resources/ntou1.txt格式的資料檔案獲取學系資料 */
   Department(ifstream &schoolData);
+  /* 印出系所資訊的函式
+   * 參數
+   * 　output - 輸出資訊的stream   */
+  void print(std::ostream &output);
 private:
   string m_name;
   vector<Course *> courses;
