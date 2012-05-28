@@ -29,10 +29,12 @@
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
 /*大學ADT*/
 #include "University.h"
+#include "Input_output.h"
 
 /*Standard C++ Library*/
 #include <vector>
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 /* Ｖ字龍的Ｃ＋＋函式庫蒐集 */
@@ -107,4 +109,21 @@ void University::print(ostream &output){
 
   /* 完成print操作 */
   return;
+}
+
+void University::unitTest(){
+  cout << "開始執行University物件之單元測試" << endl;
+  /* 測試Resources/ntou1.txt類型的資料檔案讀取 */{
+    University * ntou = NULL;
+
+    cout << "請輸入測試資料檔案「Resources/ntou1.txt」後按Enter鍵。" << endl;
+    assert(importData(&ntou) == 0);
+    ntou->print(cout);
+    cout << DEBUG_TAG << "請對照是否與資料檔案內容相同" << endl;
+    delete ntou;
+  }
+
+  /* 完成測試 */
+  cout << "University物件之單元測試完成" << endl;
+  return ;
 }

@@ -38,6 +38,8 @@ public:
    * 參數
    * 　output - 輸出資訊的stream   */
   void print(std::ostream &output);
+  /* 元件測試函式 */
+  static void unitTest();
 private:
   /*大學的名稱*/
   string m_name;
