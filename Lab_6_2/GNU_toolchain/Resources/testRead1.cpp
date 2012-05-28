@@ -4,7 +4,7 @@
 #include <fstream>
 using namespace std;
 
-void main()
+int main()
 {
     char buf[50];
     fstream infile("ntou1.txt");
@@ -14,7 +14,7 @@ void main()
         cout << "µLªk¶}±Ò ntou1.txt\n";
         cout << "Press <enter> to continue ...\n";
         cin.getline(buf, 50, '\n');
-        return;
+        return -1;
     }
 
     char campusName[50];
@@ -46,4 +46,5 @@ void main()
     }
     cout << "Press <enter> to continue ...\n";
     cin.getline(buf, 50, '\n');
+    return 0;
 }

@@ -23,29 +23,18 @@
   You should have received a copy of the GNU Lesser General Public License
   along with this software.  If not, see <http://www.gnu.org/licenses/>.
 */
-
-/*--------------程式碼開始(Code Started)--------------*/
-/*--------------前期處理器指令(Preprocessor Directive)--------------*/
-/*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /*大學ADT*/
 #include "University.h"
-
-/*////////常數與巨集(Constants & Macros)////////*/
-
-/*////////其他前期處理器指令(Other Preprocessor Directives////////*/
-
-/*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
-/*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
-
-/*////////函式和函式雛型(Function & Function Prototypes)////////*/
-
-/*////////全域變數(Global Variables)////////*/
-
-/*--------------主要程式碼(Main Code)--------------*/
-
-
 #include "Teacher.h"
 
+/*|||||常數與巨集 | Constants & Macros |||||*/
+
+/*||||| Definition of data type, enumeration, data structure and class |||||*/
+
+/*||||| 全域變數 | Global Variables |||||*/
+
+/*||||| 主要程式碼 | Main Code |||||*/
 Teacher::Teacher() {
 
 }

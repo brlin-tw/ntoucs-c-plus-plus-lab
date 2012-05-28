@@ -30,12 +30,15 @@
 /*標準C++函式庫*/
 #include <string>
 #include <iostream>
+using namespace std;
 
 /*Vdragon's Library Collection*/
 #include "portableEOLalgorithm/portableEOLalgorithm.h"
+#include "Messages_templates/zh_TW.h"
 
 /*大學ADT*/
 #include "College.h"
+
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -48,16 +51,50 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
-
 College::College(){
 
 }
+
+/* 自Resources/ntou1.txt格式的資料檔案獲取學院資料的constructer */
 College::College(ifstream& universityData) {
-  string buffer;
-  //getline(universityData, m_name)
+  portableGetline(universityData, m_name);
+
+  /* 建構底下的學系 */{
+    unsigned numberOfDepartments;
+    Department *allocator = NULL;
+
+    universityData >> numberOfDepartments;
+    skipEOLsequence(universityData);
+
+    for(register unsigned i = 0; i < numberOfDepartments; ++i){
+      allocator = new (nothrow) Department(universityData);
+
+      if(allocator == NULL){
+        cout << ERROR_TAG << ERROR_MEMORY_ALLOCATION_FAIL
+             << ERROR_TAG << "建立Department物件失敗！" << endl;
+      }
+      m_departments.push_back(allocator);
+    }
+  }
 }
 
 College::~College() {
-
+  for(vector<Department *>::iterator i = m_departments.begin();
+      i < m_departments.end(); ++i){
+    delete *i;
+  }
 }
 
+void College::print(std::ostream &output){
+  output << "學院名稱：" << m_name << endl;
+
+  /* 印出底下的系所資訊 */{
+    for(vector<Department *>::iterator i = m_departments.begin();
+        i < m_departments.end();
+        ++i){
+      (*i)->print(output);
+    }
+  }
+
+  return;
+}

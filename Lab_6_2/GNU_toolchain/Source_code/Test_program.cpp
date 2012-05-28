@@ -30,6 +30,7 @@
 /**/
 #include <cstdlib>
 #include <iostream>
+using namespace std;
 
 /*大學ADT*/
 #include "University.h"
@@ -38,10 +39,6 @@
 #include "pauseProgram/Pause_program.h"
 #include "Show_software_info/Show_software_info.h"
 
-/**/
-#include "Input_output.h"
-
-using namespace std;
 /*////////常數與巨集(Constants & Macros)////////*/
 
 /*////////其他前期處理器指令(Other Preprocessor Directives////////*/
@@ -55,21 +52,16 @@ using namespace std;
 
 /*--------------主要程式碼(Main Code)--------------*/
 
-int main()
+int main(int argc, char *argv[])
 {
 /*用來重新運行程式的label*/
 restart_program:
   /**/
   show_software_info("Lab 6-2測試程式");
 
-  University ntou;
-  if(importData(ntou) == -1){
-    cerr << "程式無法繼續進行！" << endl;
-    goto restart_program;
-  }
+  University::unitTest();
 
-
-
+end_program:
   /*暫停程式運行（於main函式中）*/
   if(pauseProgram() == 1){
     goto restart_program;

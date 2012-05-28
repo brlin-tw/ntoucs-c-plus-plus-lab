@@ -1,7 +1,5 @@
-﻿
-#if !defined(_INSTITUTE_H)
+﻿#if !defined(_INSTITUTE_H)
 #define _INSTITUTE_H
-
 /*Institute.h
 -----------------------------------
 更新紀錄 | Changelog
@@ -27,10 +25,9 @@
   You should have received a copy of the GNU Lesser General Public License
   along with this software.  If not, see <http://www.gnu.org/licenses/>.
 */
-
-/*--------------程式碼開始(Code Started)--------------*/
-/*--------------前期處理器指令(Preprocessor Directive)--------------*/
-/*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/*||||| Forward declarations |||||*/
+class Institute;
+/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /*Standard C++ Library*/
 #include <string>
 #include <vector>
@@ -39,12 +36,9 @@ using namespace std;
 /*大學抽象資料類型*/
 #include "Course.h"
 
-/*////////常數與巨集(Constants & Macros)////////*/
+/*||||| 常數與巨集 | Constants & Macros |||||*/
 
-/*////////其他前期處理器指令(Other Preprocessor Directives////////*/
-
-/*--------------全域宣告與定義(Global Declaration & Definition)--------------*/
-/*////////Classes、資料結構(Data Structures)、type definitions跟enumerations////////*/
+/*||||| Definition of data type, enumeration, data structure and class |||||*/
 class Institute {
 public:
   Institute();
@@ -54,14 +48,4 @@ private:
   string m_name;
 
 };
-
-/*////////函式和函式雛型(Function & Function Prototypes)////////*/
-
-/*////////全域變數(Global Variables)////////*/
-
-/*--------------主要程式碼(Main Code)--------------*/
-
-
-
-
 #endif  //_INSTITUTE_H

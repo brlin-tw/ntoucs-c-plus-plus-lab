@@ -1,16 +1,20 @@
 ﻿/*Course.h*/
+#ifndef COURSE_H
+#define COURSE_H
 
-
-#if !defined(_COURSE_H)
-#define _COURSE_H
+/*||||| Forward declarations |||||*/
+class Course;
+/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /**/
 #include <string>
+using namespace std;
+
 /*大學ADT*/
 #include "Teacher.h"
 
+/*||||| 常數與巨集 | Constants & Macros |||||*/
 
-using namespace std;
-
+/*||||| Definition of data type, enumeration, data structure and class |||||*/
 class Course {
 public:
   Course();

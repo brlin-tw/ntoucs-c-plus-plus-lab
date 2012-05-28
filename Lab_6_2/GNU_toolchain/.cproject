@@ -29,8 +29,6 @@
 									<listOptionValue builtIn="false" value="/usr/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/i386-linux-gnu/"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gcc/i686-linux-gnu/4.6/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/c++/4.6.1"/>
-									<listOptionValue builtIn="false" value="/usr/include/c++/4.6.1/i686-linux-gnu/"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.2085283452" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="DEBUG"/>
@@ -558,4 +556,8 @@
 			</profile>
 		</scannerConfigBuildInfo>
 	</storageModule>
+<<<<<<< HEAD
+=======
+	<storageModule moduleId="refreshScope"/>
+>>>>>>> Lab6.2
 </cproject>

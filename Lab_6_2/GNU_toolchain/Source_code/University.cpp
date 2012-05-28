@@ -29,10 +29,17 @@
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
 /*大學ADT*/
 #include "University.h"
+#include "Input_output.h"
 
 /*Standard C++ Library*/
 #include <vector>
+#include <iostream>
+#include <cassert>
 using namespace std;
+
+/* Ｖ字龍的Ｃ＋＋函式庫蒐集 */
+#include "portableEOLalgorithm/portableEOLalgorithm.h"
+#include "Messages_templates/zh_TW.h"
 
 /*////////常數與巨集(Constants & Macros)////////*/
 
@@ -46,14 +53,77 @@ using namespace std;
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
-
-
 University::University() {
 
 }
 
-University::~University() {
+/* 從resource/ntou1.txt檔案格式的檔案讀取資料並建構University物件
+ * 的constructor
+ *
+ * 參數
+ * 　infile 資料檔案的stream
+ */
+University::University(ifstream &universityData)
+{
+  /* 讀取大學名稱 */
+  portableGetline(universityData, m_name);
 
+  /* 建立底下的Department */{
+    unsigned numberOfColleges;
+    College *allocator = NULL;
 
+    universityData >> numberOfColleges;
+    skipEOLsequence(universityData);
+
+    for(register unsigned i = 0; i < numberOfColleges; ++i){
+      allocator = new (nothrow) College(universityData);
+      if(allocator == NULL){
+        cout << ERROR_TAG << ERROR_MEMORY_ALLOCATION_FAIL
+             << ERROR_TAG << "建立College物件失敗！" << endl;
+      }
+      m_colleges.push_back(allocator);
+    }
+  }
 }
 
+University::~University() {
+  /* 解構所有的學院 */
+  for(vector<College *>::iterator i = m_colleges.begin();
+      i < m_colleges.end(); ++i){
+    delete *i;
+  }
+}
+
+void University::print(ostream &output){
+  output << "大學名稱：" << m_name << endl;
+
+  /* 印出大學底下的系所資訊 */{
+    vector<College *>::iterator i;
+
+    for(i = m_colleges.begin();
+        i < m_colleges.end();
+        ++i){
+      (*i)->print(output);
+    }
+  }
+
+  /* 完成print操作 */
+  return;
+}
+
+void University::unitTest(){
+  cout << "開始執行University物件之單元測試" << endl;
+  /* 測試Resources/ntou1.txt類型的資料檔案讀取 */{
+    University * ntou = NULL;
+
+    cout << "請輸入測試資料檔案「Resources/ntou1.txt」後按Enter鍵。" << endl;
+    assert(importData(&ntou) == 0);
+    ntou->print(cout);
+    cout << DEBUG_TAG << "請對照是否與資料檔案內容相同" << endl;
+    delete ntou;
+  }
+
+  /* 完成測試 */
+  cout << "University物件之單元測試完成" << endl;
+  return ;
+}

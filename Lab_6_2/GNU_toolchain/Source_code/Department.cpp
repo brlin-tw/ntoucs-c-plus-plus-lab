@@ -27,8 +27,15 @@
 /*--------------程式碼開始(Code Started)--------------*/
 /*--------------前期處理器指令(Preprocessor Directive)--------------*/
 /*////////程式所include之函式庫的標頭檔(Included Library Headers)////////*/
+/* 標準C++函式庫 */
+#include "iostream"
+using namespace std;
+
 /*大學ADT*/
 #include "University.h"
+
+/* Vdragon's Library Collection */
+#include "portableEOLalgorithm/portableEOLalgorithm.h"
 
 /*////////常數與巨集(Constants & Macros)////////*/
 
@@ -42,9 +49,6 @@
 /*////////全域變數(Global Variables)////////*/
 
 /*--------------主要程式碼(Main Code)--------------*/
-
-
-
 Department::Department() {
 
 }
@@ -53,3 +57,13 @@ Department::~Department() {
 
 }
 
+/* 自Resources/ntou1.txt格式的資料檔案獲取學系資料 */
+Department::Department(ifstream &schoolData) {
+  portableGetline(schoolData, m_name);
+  return;
+}
+
+void Department::print(std::ostream &output){
+  output << "系所名稱：" << m_name << endl;
+  return;
+}
