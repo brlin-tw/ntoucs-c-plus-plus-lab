@@ -119,7 +119,7 @@ void University::unitTest(){
     cout << "請輸入測試資料檔案「Resources/ntou1.txt」後按Enter鍵。" << endl;
     assert(importData(&ntou) == 0);
     ntou->print(cout);
-    cout << DEBUG_TAG << "請對照是否與資料檔案內容相同" << endl;
+    cout << DEBUG_TAG << "請對照輸出結果是否與資料檔案內容相同" << endl;
     delete ntou;
   }
 

@@ -86,7 +86,7 @@ College::~College() {
 }
 
 void College::print(std::ostream &output){
-  output << "學院名稱：" << m_name << endl;
+  output << "　學院名稱：" << m_name << endl;
 
   /* 印出底下的系所資訊 */{
     for(vector<Department *>::iterator i = m_departments.begin();

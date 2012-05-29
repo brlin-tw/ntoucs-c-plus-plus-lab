@@ -64,6 +64,6 @@ Department::Department(ifstream &schoolData) {
 }
 
 void Department::print(std::ostream &output){
-  output << "系所名稱：" << m_name << endl;
+  output << "　　系所名稱：" << m_name << endl;
   return;
 }

@@ -18,7 +18,7 @@ void askFile(char filename[])
 }
 
 /*開啟檔案函式*/
-FILE * openFile(const char const filename[], const char const mode[])
+FILE * openFile(const char filename[], const char mode[])
   {
   FILE * filePtr = fopen(filename, mode);
 
