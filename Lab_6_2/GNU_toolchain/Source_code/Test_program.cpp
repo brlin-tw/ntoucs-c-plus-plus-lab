@@ -61,7 +61,6 @@ restart_program:
 
   University::unitTest();
 
-end_program:
   /*暫停程式運行（於main函式中）*/
   if(pauseProgram() == 1){
     goto restart_program;
