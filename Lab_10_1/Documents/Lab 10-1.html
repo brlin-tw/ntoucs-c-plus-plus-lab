@@ -1,0 +1,366 @@
+<html>
+
+<head>
+<title>
+Lab 10-1
+</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+<META HTTP-EQUIV="Expires" CONTENT="Mon, 15 Apr 2002 00:00:00 GMT">
+</head>
+
+<body bgcolor="#C8F4F4" background="../../../images/cyan_diffuse.gif">
+
+<!---------------------------------------------------------------->
+
+<center>
+<H1>
+Lab 10-1: 串列 (List) 容器類別 (Container)
+</H1>
+<center><p><img src=../../../images/rainbow.gif></center>
+
+  <table width="700" border="0" cellspacing="10" cellpadding="6">
+    <tr bgcolor="#6633DD" align="center"> 
+      <td width="75" align="center"><font color='white'>&nbsp;</font></td>
+      <th width="580" align="center"><font color='white'></font></th>
+    </tr>
+
+    <tr bgcolor="#DDEEBB">
+      <th width="75" align="center">實習目標</th>
+      <td width="580">
+    實作一個 List 類別
+    <br>
+    每一個節點請用 Inner Class 及 friend 來定義
+    </td>
+    </tr>
+
+    <tr bgcolor="#6633DD" align="center"> 
+      <td width="75" align="center"><font color='white'>&nbsp;</font></td>
+      <th width="580" align="center"><font color='white'></font></th>
+    </tr>
+
+    <tr bggcolor="#DDEEBB" bgcolor="#FFFFCC">
+      <th width="75" align="center">步驟一</th>
+      <td width="580">
+    如下圖, 
+    串列 (List) 是一種很常用的資料結構,
+    這種資料結構最主要的優點是它可以允許彈性地更改資料的順序,
+    允許在任何地方新增及刪除資料節點
+        <center>
+    <img src=ListFig01.gif>
+        </center>
+        在這個實習中我們要實作一個簡化的串列類別, 
+    練習 Inner Class 以及 friend class 的使用方法
+    </td>
+    </tr>
+  
+    <tr bgcolor="#DDEEBB" bggcolor="#FFFFCC">
+      <th width="75" align="center">步驟二</th>
+      <td width="580">
+    我們要實作的串列中每一個節點的資料部份是一個指標,
+    指向 Student 類別的物件,
+    如下圖所示:
+        <center>
+    <img src=ListFig02.gif>
+        </center>
+        所以我們先定義 Student 類別,
+    基本的資料型態和界面如下:
+        <pre>
+    class Student
+    {
+    public:
+        Student(const char *name, const char *ID, 
+                const char *phone, const char *department);
+        ~Student();
+        void display(ostream &os) const;
+    private:
+        char *m_name;
+        char *m_ID;
+        char *m_phone;
+        char *m_department;
+    };</pre>
+    
+    請實作這個類別的建構元, 解構元, 以及一個簡單的 display() 列印資料函式
+    </td>
+    </tr>
+
+    <tr bggcolor="#DDEEBB" bgcolor="#FFFFCC">
+      <th width="75" align="center">步驟三</th>
+      <td width="580">
+    接下來請定義 StudentList 類別,
+    其主要的資料與界面如下:
+        <pre>
+    class StudentList
+    {
+    public:
+        StudentList();
+        ~StudentList();
+        void appendEntry(Student *student);
+        bool deleteEntry(char *id);
+        Student *find(char *id);
+    private:
+        Node *m_head, *m_tail;
+    };</pre>
+    
+    其中 Node 為一個 Inner Class, 
+    請在 StudentList 類別內定義此類別,
+    如下:
+        <pre>
+    class StudentList
+    {
+        class <font color=red>Node</font>
+        {
+        public:
+            Node(Student *data);
+            ~Node();
+        private:
+            Student *m_data;
+            Node *m_next;
+        };
+    public:
+        StudentList();
+        ~StudentList();
+        ...
+    };</pre>
+        <p>請注意: 如此定義的 inner class 的全名是 StudentList::Node,
+    定義在 StudentList 的 private 區域之內, 是一個 <font color="#FF0000">private inner class</font>, 
+    因為是 private 區域, 
+    所以在 StudentList 類別之外並沒有辦法直接用到這個類別, 例如在 main() 函式內如果你想要宣告一個 StudentList::Node mynode; 編譯器會告訴你無法直接使用 private class。
+    </p>
+        <p>另外請注意 Node 類別雖然在 StudentList 類別內定義,
+    但是並沒有說它可以存取 StudentList 的私有資料,
+    同樣地 StudentList 也不能存取 Node 類別的私有資料，類別的邊界還是存在的。
+    </p></td>
+    </tr>
+  
+    <tr bgcolor="#DDEEBB" bggcolor="#FFFFCC">
+      <th width="75" align="center">步驟四</th>
+      <td width="580">
+    首先請實作 Node 類別建構元 Node(Student *data),
+    此函式傳入一個 Student 物件的指標,
+    請將此指標記錄在 m_data 欄位內
+        <p>
+    其次為 Node 類別的解構元 ~Node(),
+    此函式需要刪除所記錄的 Student 物件
+    
+        <p>
+    然後實作 StudentList 建構元與 ~StudentList 解構元函式
+    <br>
+    解構元函式需要把所有的 Node 節點都釋放掉
+        <p>請注意:一個指標容器物件裡面到底需不需要負責他所指向物件的刪除, 是一個設計者可以自己決定的選項, 上面這個 StudentList 在解構時基本上會把所有指到的 Student 物件刪除, 但是 C++ 標準函式庫裡面的 vector 容器就不會幫你刪除, 例如
+        <pre>    int i;
+    vector&lt;Student *&gt; sVector;
+
+    for (i=0; i&lt;10; i++)
+        sVector.push_back(new Student("Carol Chen", "333331111", 
+                                      "0933333111", "Business"));</pre>
+        <p>
+    當 sVector 解構時並不會自動解構所有指到的 Student 物件, 
+	你可以下載 <a href="testVector.zip">testVector.zip</a>, 編譯, 用 debugger 執行, 可以看到記憶體
+	沒有釋放的錯誤
+	
+	    <p>其次請實作 void appendEntry(Student *student); 
+    <br>
+    這個函式應該要產生一個節點 new Node(student),
+    把這個節點接在目前的串列的最後面,
+    修改 m_tail 指標。
+    請特別小心處理 m_head == 0 且 m_tail == 0 的狀況
+        <p>
+    這個函式需要直接存取 Node::m_data 以及 Node::m_next,
+    請使用 friend 語法在 Node 類別內允許 StudentList 
+    類別的成員函式直接存取, 特別注意一下, 因為 C/C++ 的編譯器只會由頭到尾檢查程式一次, 所以如果你定義 friend 
+    void StudentList::appendEntry(Student *); 則這個 friend 敘述之前一定要先定義 appendEntry 成員函式, 例如:
+        <pre>
+class StudentList
+{
+public:
+    void appendEntry(Student *student);
+    ...
+private:
+    class Node
+    {
+    friend StudentList::appendEntry(Student *);
+        ...
+    };
+    ...
+};</pre></td>
+    </tr>
+
+    <tr bggcolor="#DDEEBB" bgcolor="#FFFFCC">
+      <th width="75" align="center">步驟五</th>
+      <td width="580">
+    請實作
+    Student *StudentList::find(char *id);
+        <p>
+    傳入的參數是一個記錄 id 的字元陣列,
+    你的函式需要一個節點一個節點去比對每一筆資料,
+    看看是否那個學生的 m_ID 為所傳入的 id?
+    如果是的話, 
+    將此 Student 物件的指標傳出
+        <p>
+    在實作之前,
+    我們應該先在 Student 類別內實作一個比較 id 字串的成員函式
+        <pre>
+    bool Student::IDEquals(char *id)
+    {
+        ...
+    }</pre>
+    
+    StudentList::find(char *id) 的主要內容如下:
+        <pre>
+    Node *ptr;
+    for (ptr=m_head; ptr!=0; ptr=ptr-&gt;m_next)
+        if (ptr-&gt;m_data-&gt;IDEquals(id))
+            return ptr-&gt;m_data;
+    return 0;</pre></td>
+    </tr>
+
+    <tr bgcolor="#DDEEBB" bggcolor="#FFFFCC">
+      <th width="75" align="center">步驟六</th>
+      <td width="580">
+    請實作
+    bool StudentList::deleteEntry(char *id);
+        <p>
+    要實作刪除一個節點的功能,
+    至少需要兩個 Node 的指標變數,
+    主要的程式片段如下: (可以自己寫的話就自己先設計看看吧!)
+        <pre><font color=#DDEEEE>
+    if (m_head-&gt;m_data-&gt;IDEquals(id))
+    {
+        ptr1 = m_head;
+        m_head = m_head-&gt;m_next;
+        delete ptr1;
+        return true;
+    }
+    for (ptr2=m_head, ptr1=m_head-&gt;m_next; ptr1!=0; 
+         ptr2=ptr1, ptr1=ptr1-&gt;m_next)
+        if (ptr1-&gt;m_data-&gt;IDEquals(id))
+        {
+            ptr2-&gt;m_next = ptr1-&gt;m_next;
+            if (ptr1 == m_tail)
+                m_tail = ptr2;
+            delete ptr1;
+            return true;
+        }
+    return false;</font></pre>
+    
+    以上片段是 m_head != 0 且 m_tail != 0 的狀況,
+    你還需要考慮 m_head == m_tail 的狀況,
+    程式片段如下:
+        <pre><font color=#DDEEEE>
+    if (m_head-&gt;m_data-&gt;IDEquals(id))
+    {
+        delete m_head;
+        m_head = m_tail = 0;
+        return true;
+    }
+    return false;</font></pre>
+    
+    以及 m_head == 0 && m_tail == 0 的狀況
+    </td>
+    </tr>
+
+    <tr bggcolor="#DDEEBB" bgcolor="#FFFFCC">
+      <th width="75" align="center">步驟七</th>
+      <td width="580">
+    請注意目前這個 StudentList 類別並不完備 (complete),
+    我們定義了增加/尋找/刪除資料節點的函式,
+    但是並沒有實作讀出資料的函式,
+    我們會在下一個實習中實作
+    </td>
+    </tr>
+
+    <tr bgcolor="#DDEEBB" bggcolor="#FFFFCC">
+      <th width="75" align="center" bgcolor="#DDEEBB">步驟八</th>
+      <td width="580">
+    請測試下列程式
+        <pre>
+    void main()
+    {
+        StudentList sList;
+        sList.appendEntry(new Student("Mary Chen", "111111111", 
+                                      "0933111111", "Business"));
+        sList.appendEntry(new Student("John Wang", "222222222", 
+                                      "0928222222", 
+                                      "Computer Science"));
+        sList.appendEntry(new Student("Mel Lee", "333333333", 
+                                      "0968333333", 
+                                      "Mechanical Engineering"));
+        sList.appendEntry(new Student("Bob Tsai", "444444444", 
+                                      "0930444444", 
+                                      "Electrical Engineering"));
+        sList.appendEntry(new Student("Ron Yang", "555555555", 
+                                      "0918555555", 
+                                      "Computer Science"));
+        
+        sList.find("222222222")-&gt;display(cout); cout &lt;&lt; endl;
+
+        if (sList.deleteEntry("444444444"))
+            cout &lt;&lt; "Bob Tsai's entry deleted successfully!\n";
+        else
+            cout &lt;&lt; "Bob Tsai's entry deletion failed!\n";
+
+        if (sList.find("444444444") == 0)
+            cout &lt;&lt; "Can not fine Bob Tsai's entry!\n";
+    }</pre></td>
+    </tr>
+    <tr bggcolor="#DDEEBB" bgcolor="#FFFFCC">
+      <th align="center">步驟九</th>
+      <td>
+    請助教檢查後,
+    將所完成的 project (去掉 debug/ 資料匣下的所有內容) 壓縮起來, 
+    選擇 Lab10-1 <a href="http://sirius.cs.ntou.edu.tw/cppBB/index_cpp.php">上傳</a>,
+    後面的實習課程可能需要使用這裡所完成的程式
+    </td>
+    </tr>
+
+    <tr bggcolor="#DDEEBB" bgcolor="#DDEEBB">
+      <th align="center">&nbsp;</th>
+      <td>另外可以嘗試使用 C++ <a href="http://www.cplusplus.com/reference/stl/list/">標準函式庫裡面的 list</a> 來完成我們上面所作的 StudentList 的功能, 熟悉一下 C++ 的 list</td>
+    </tr>
+
+  </table>
+</center>
+
+<!---------------------------------------------------------------->
+<center><p><img src=../../../images/rainbow.gif></center>
+<DIV ALIGN=right>
+<P>
+<FONT SIZE=-1><I>
+回
+<a href=../../index.html>
+C++ 物件導向程式設計課程
+</a>
+首頁
+<br>
+<I>
+<script LANGUAGE="JavaScript">
+<!--
+lastDate = new Date(document.lastModified);
+if (document.all) // IE
+{
+    if (lastDate.getYear() < 1000)
+    {
+        lastDate.setYear(lastDate.getYear()+2000);
+        lastDate.setTime(lastDate.getTime()-lastDate.getTimezoneOffset()*60000);
+    }
+}
+document.write("最近更新日期: "+lastDate)
+//-->
+</script>
+<br>
+製作日期: 05/03/2004
+by 丁培毅 (Pei-yih Ting)
+<BR>E-mail: <A HREF = "mailto:pyting@mail.ntou.edu.tw">pyting@mail.ntou.edu.tw</A>
+TEL: 02 24622192x6615
+<br><a href=http://www.ntou.edu.tw><font color=#0000aa>海洋大學</font></a>
+<a href=http://www.ntou.edu.tw/eecs/index.htm><font color=#0000cc>電機資訊學院</a>
+<a href=http://www.cs.ntou.edu.tw/>資訊工程系</a>
+<a href=http://squall.cs.ntou.edu.tw/>Lagoon</a>
+</FONT></I>
+</P>
+<img src=../../../images/albatros80x100.gif width=80 height=100>
+</DIV>
+
+
+</body>
+</html>
