@@ -3,6 +3,9 @@
 	<name>CPP_Lab_10_1</name>
 	<comment></comment>
 	<projects>
+		<project>Messages_templates</project>
+		<project>pauseProgram</project>
+		<project>Project_specific_configurations</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

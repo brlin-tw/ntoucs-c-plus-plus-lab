@@ -29,6 +29,11 @@
 
 /* Vdragon's Library Collection */
 #include "Messages_templates/zh_TW.h"
+#include "Random_name_generator/Random_name_generator.h"
+
+/*Standard C++ Library */
+#include <cstdlib>
+#include <ctime>
 
 /*|||||常數與巨集 | Constants & Macros |||||*/
 
@@ -42,7 +47,16 @@ StudentList::StudentList(){
 }
 
 StudentList::~StudentList(){
-
+  /* 情況 - 列表中無資料 */
+  if(_head == NULL){
+    return;
+  }else/* 情況 - 列表中有資料 */{
+    StudentList::Node *next = NULL;
+    for(StudentList::Node *i = _head; i != NULL; i = next){
+      next = _head->_next;
+      delete i;
+    }
+  }
 }
 
 StudentList::Node::Node(Student *data){
@@ -70,4 +84,23 @@ short StudentList::appendEntry(Student *newStudent){
 
   /* 完成appendEntry操作 */
   return 0;
+}
+
+void StudentList::unitTest(){
+  cout << "====學生列表抽象資料類型元件測試====" << endl;
+  /* 測試appendEntry()跟destructor */{
+    char name_temp[11];
+
+    srand(time(NULL));
+    for(short i = 0; i < 15; ++i){
+      generateRandomChineseName(name_temp);
+      Student *student_temp_ref = new Student(name_temp, "A200799088", "0483726938", "中興大學資訊工程學系");
+      StudentList list;
+      student_temp_ref->display(cout);
+
+      list.appendEntry(student_temp_ref);
+    }
+  }
+  cout << "================================" << endl;
+  return;
 }

@@ -19,10 +19,13 @@ public:
    * 　0 - 操作成功
    * 　-1 - 操作失敗（可用記憶體空間不足）*/
   short appendEntry(Student *student);
+  /* 元件測試成員函式 */
+  static void unitTest();
 private:
   /* list的節點 */
   class Node{
     friend short StudentList::appendEntry(Student *student);
+    friend StudentList::~StudentList();
   private:
     Student *_data;
     Node *_next;

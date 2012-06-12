@@ -1,4 +1,4 @@
-/* Test_program.cpp
+﻿/* Test_program.cpp
 -----------------------------------
 更新紀錄 | Changelog
   Changelog is now stored on GitHub
@@ -24,11 +24,8 @@
   along with CPP_Lab_10_1.  If not, see <http://www.gnu.org/licenses/>.
 */
 /*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
-/* 學生抽象資料類型 */
+/* 學生抽像資料類型 */
 #include "Student.hpp"
-
-/* 學生列表抽象資料類型 */
-#include "StudentList.hpp"
 
 /* Standard C++ Library */
 #include <cstdlib>
@@ -48,7 +45,6 @@ int main(int argc, char *argv[])
 {
   restart_program:
   Student::unitTest();
-  StudentList::unitTest();
 
   if(1 == pauseProgram()){
     goto restart_program;
