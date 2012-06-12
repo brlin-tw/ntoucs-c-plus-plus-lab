@@ -86,6 +86,6 @@ void Student::unitTest(){
     test.display(cout);
   }
 
-  cout << "============================" << endl;
+  cout << "=====元件測試結束==============" << endl;
   return;
 }
