@@ -24,6 +24,8 @@ public:
     const char department[]);
   ~Student();
   void display(ostream &output) const;
+  /* 測試學生是否相等的函式 */
+  bool equal(string id);
   static void unitTest();
 private:
   /* 姓名 */
@@ -35,6 +37,4 @@ private:
   /* 學系名稱 */
   char *_department;
 };
-
-
 #endif /* STUDENT_HPP_ */

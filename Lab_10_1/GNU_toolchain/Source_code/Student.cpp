@@ -30,6 +30,7 @@
 /* 標準C++函式庫 */
 #include <iostream>
 #include <cstring>
+#include <string>
 using namespace std;
 
 /*|||||常數與巨集 | Constants & Macros |||||*/
@@ -69,6 +70,11 @@ void Student::display(ostream &output) const{
   output << "學生系所：" << _department << endl;
   output << "===============" << endl;
   return;
+}
+
+/* 測試學生是否相等的函式 */
+bool Student::equal(string id){
+  return !id.compare(_ID);
 }
 
 void Student::unitTest(){

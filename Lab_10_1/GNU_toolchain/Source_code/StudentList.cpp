@@ -34,6 +34,7 @@
 /*Standard C++ Library */
 #include <cstdlib>
 #include <ctime>
+#include <cassert>
 
 /*|||||常數與巨集 | Constants & Macros |||||*/
 
@@ -53,7 +54,8 @@ StudentList::~StudentList(){
   }else/* 情況 - 列表中有資料 */{
     StudentList::Node *next = NULL;
     for(StudentList::Node *i = _head; i != NULL; i = next){
-      next = _head->_next;
+      next = i->_next;
+      assert(i != NULL);
       delete i;
     }
   }
@@ -65,25 +67,90 @@ StudentList::Node::Node(Student *data){
 }
 
 StudentList::Node::~Node(){
+  assert(_data != NULL);
   delete _data;
 }
 
 short StudentList::appendEntry(Student *newStudent){
-  Node *new_item = new (nothrow)Node(newStudent);
-  if(new_item == NULL){
+  Node *new_node = new (nothrow)Node(newStudent);
+  if(new_node == NULL){
     cout << ERROR_TAG << ERROR_MEMORY_ALLOCATION_FAIL;
     return -1;
   }
 
-  if(/* 狀況Ａ - list中沒有節點 */
+  if(/* 狀況 - list中沒有節點 */
       _head == NULL){
-    _head = _tail = new_item;
-  }/* 狀況Ｂ - list中有節點 */else{
-    _tail->_next = new_item;
+    _head = _tail = new_node;
+  }/* 狀況 - list中有節點 */else{
+    _tail->_next = new_node;
+    _tail = new_node;
   }
 
   /* 完成appendEntry操作 */
   return 0;
+}
+
+Student * StudentList::find(string id){
+  for(StudentList::Node *iter = _head;
+      iter != NULL;
+      iter = iter->_next){
+    if(iter->_data->equal(id)){
+      return iter->_data;
+    }
+  }
+  return NULL;
+}
+
+/* 刪除列表中指定學生的函式
+ * 參數 | Parameters
+ *   id - 學生ID
+ * 回傳值
+ *   刪除成功與否 */
+bool StudentList::deleteEntry(char *id){
+  //string temp(id);
+
+  /* 狀況 - 列表是空的 */
+  if(_head == NULL){
+    return false;
+  }else if(_head == _tail){
+    /* 狀況 - 只有一名學生 */
+    if(_head->_data->equal(id)){
+      assert(_head != NULL);
+      delete _head;
+      _head = _tail = NULL;
+      return true;
+    }else{
+      return false;
+    }
+  }else{
+    StudentList::Node *newHead = NULL;
+    /* 狀況 - 有兩名學生或以上
+     * 由於是uniLinkedList所以需要兩個ptr指向前一個學生與現在判斷的學生
+     * 第一個學生與其他學生分開來檢查 */
+    if(_head->_data->equal(id)){
+      newHead = _head->_next;
+      assert(_head != NULL);
+      delete _head;
+      _head = newHead;
+      return true;
+    }else{
+      StudentList::Node *previous, *current, *newNext = NULL;
+      for(previous = _head, current = _head->_next;
+          current != NULL;
+          previous = previous->_next, current = current->_next){
+        if(current->_data->equal(id)){
+          newNext = current->_next;
+          assert(current != NULL);
+          delete current;
+          previous->_next = newNext;
+          current = newNext;
+          return true;
+        }
+      }
+    }
+  }
+  /* 沒找到指定學生 */
+  return false;
 }
 
 void StudentList::unitTest(){
@@ -101,6 +168,8 @@ void StudentList::unitTest(){
       list.appendEntry(student_temp_ref);
     }
   }
+
+  /* 測試find() */
   cout << "================================" << endl;
   return;
 }
