@@ -10,7 +10,7 @@
 #  /FILE←只不track根目錄的FILE檔案
 #  build/←忽略build目錄下的所有檔案
 #  doc/*.txt←doc/a.txt會被忽略但是doc/a/b.txt則不會被忽略（那怎樣才能忽略呢？）
-##我自己的設定
+##我自己的設定##
 #Eclipse CDT會將可執行檔跟object檔案放在configuration同名的資料夾，加入我自己慣用的名稱設定
 Debug*/
 Release*/
@@ -18,23 +18,26 @@ Release*/
 #Resources目錄底下的東西不想被排除
 !Resources/
 
-##Linux通用設定
+#我慣用的備份檔副檔名
+*.backup
+
+##Linux通用設定##
 .*
 !.gitignore
 
 #KDE的資料夾設定
 .directory
 
-##Windows通用設定
+##Windows通用設定##
 # Windows image file caches
 Thumbs.db
 
 # Folder config file
 Desktop.ini
 
-##文字編輯軟體備份檔
+##文字編輯軟體備份檔##
 #通用備份檔副檔名
-*~
+*.*~*
 
 #Kate的備份檔
 *.kate-swp
@@ -53,6 +56,13 @@ Desktop.ini
 ##封存／壓縮檔
 *.7z
 *.zip
+*.tar
+
+##圖片檔案
+*.jpg
+*.png
+*.jpeg
+*.gif
 
 ##Code::Blocks專屬設定
 *.layout
@@ -138,6 +148,10 @@ UpgradeLog*.XML
 *.dep
 *.idb
 
+#Visual Studio 2010
+*.old
+*.vcxproj.filters
+
 ##Eclipse專屬設定
 *.pydevproject
 
@@ -173,5 +187,85 @@ local.properties
 # PDT-specific
 .buildpath
 
-##StarUML備份檔案
-*.~ml
+##HDL產生的檔案##
+#模擬用的程式
+Simulation/
+#模擬出來的波形檔
+*.vcd
+
+#Xilinx ISE
+_xmsgs/
+_ngo/
+iseconfig/
+isim/
+*_xdb/
+xst/
+isim.tmp_save/
+planAhead*/
+
+*.restore
+*.ise_ISE_Backup
+*_summary.html
+*.map
+*.mrp
+*.ngr
+*.ngd
+*.ngc
+*.bld
+*.cmd_log
+*.lso
+*.ntrc_log
+*.stx
+*.syr
+*.xst
+*.xrpt
+*.wdb
+*_envsettings.html
+*.xwv*
+*.jhd
+*.ant
+*.wcfg
+*.ise_.lock
+*.bgn
+*.bit
+*.drc
+*.lfp
+*.ncd
+*.pad
+*.par
+*.pcf
+*.twr
+*.twx
+*.ucf
+*.unroutes
+*.ut
+*.xpi
+*_guide.ncd
+*_map.ncd
+*_map.ngm
+*_pad.csv
+*_pad.txt
+*_summary.xml
+*_usage.xml
+*.gise
+*.prj
+*.ptwx
+*_bitgen.xwbt
+*.tcl
+*.log
+*.xmsgs
+*.cmd
+
+usage_statistics_webtalk.html
+device_usage_statistics.html
+isim.hdlsourcefiles
+webtalk_pn.xml
+xilinxsim.ini
+planAhead.jou
+
+
+##bomstrip備份檔案
+*.bom
+
+##DevC++整合式開發環境
+Makefile.win

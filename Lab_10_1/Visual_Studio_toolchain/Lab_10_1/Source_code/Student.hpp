@@ -4,6 +4,7 @@
   #define STUDENT_HPP_
 /*||||| Forward declarations |||||*/
 class Student;
+
 /*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /* 標準C++函式庫 */
 #include <iostream>
@@ -23,6 +24,8 @@ public:
     const char department[]);
   ~Student();
   void display(ostream &output) const;
+  /* 測試學生是否相等的函式 */
+  bool equal(string id);
   static void unitTest();
 private:
   /* 姓名 */
@@ -34,5 +37,4 @@ private:
   /* 學系名稱 */
   char *_department;
 };
-
 #endif /* STUDENT_HPP_ */
